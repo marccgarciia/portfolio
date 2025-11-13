@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Página principal en catalán -->
+  <url>
+    <loc>https://tudominio.com/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+  </url>
+  
+  <!-- Página en castellano -->
+  <url>
+    <loc>https://tudominio.com/es/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+  </url>
+  
+  <!-- Página en inglés -->
+  <url>
+    <loc>https://tudominio.com/en/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+  </url>
+
+</urlset>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Bàsic -->
+    <title>Marc García-Cuevas | Portfolio</title>
+    <meta name="description" content="Portfolio de Marc García-Cuevas - Programador, Dissenyador, Fotògraf i Músic">
+    <meta name="keywords" content="Marc García-Cuevas, portfolio, programador, dissenyador, fotògraf, músic, desenvolupament web, disseny gràfic">
+    <meta name="author" content="Marc García-Cuevas de Paz">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tudominio.com/">
+    <meta property="og:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="og:description" content="Programador · Dissenyador · Fotògraf · Músic. Projectes de desenvolupament web, fotografia creativa i experiències digitals.">
+    <meta property="og:image" content="https://tudominio.com/media/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tudominio.com/">
+    <meta property="twitter:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="twitter:description" content="Programador · Dissenyador · Fotògraf · Músic">
+    <meta property="twitter:image" content="https://tudominio.com/media/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- DNS Prefetch para dominios externos -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preconnect para Google Fonts (mejora velocidad de carga) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload CSS crítico (above the fold) -->
+    <link rel="preload" href="css/variables.css" as="style">
+    <link rel="preload" href="css/reset.css" as="style">
+    <link rel="preload" href="css/cursor.css" as="style">
+    <link rel="preload" href="css/navegacio.css" as="style">
+    <link rel="preload" href="css/hero.css" as="style">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/navegacio.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/projectes.css">
+    <link rel="stylesheet" href="css/sobre-mi.css">
+    <link rel="stylesheet" href="css/contacte.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Selector de Idioma */
+        .selector-idioma {
+            position: fixed;
+            top: 20px;
+            right: 40px;
+            z-index: 1003;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .selector-idioma a {
+            color: var(--gris);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 5px 8px;
+        }
+        
+        .selector-idioma a:hover {
+            color: var(--fosc);
+        }
+        
+        .selector-idioma a.actiu {
+            color: var(--fosc);
+            font-weight: 600;
+        }
+        
+        .selector-idioma .separador {
+            color: var(--gris-clar);
+            user-select: none;
+        }
+        
+        @media (max-width: 768px) {
+            .selector-idioma {
+                top: 15px;
+                right: 20px;
+                font-size: 0.7rem;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cursor Personalitzat -->
+    <div class="cursor"></div>
+    <div class="cursor-seguidor"></div>
+    
+    <!-- Selector de Idioma -->
+<div class="selector-idioma selector-idioma-desktop">
+    <a href="index.html" class="actiu">CA</a>
+    <span class="separador">/</span>
+    <a href="es/index.html">ES</a>
+    <span class="separador">/</span>
+    <a href="en/index.html">EN</a>
+</div>
+    
+    <!-- Nom Fix -->
+    <div class="nom-fix">MARC GARCÍA-CUEVAS</div>
+    
+    <!-- Fons Liquid Glass -->
+    <nav></nav>
+    
+    <!-- Links de Navegació Desktop -->
+    <div class="contenidor-links-nav">
+        <a href="#projectes">Projectes</a>
+        <a href="#sobre-mi">Sobre Mi</a>
+        <a href="#contacte">Contacte</a>
+    </div>
+    
+    <!-- Botó Menú Mòbil -->
+    <div class="boto-menu">
+        <div class="linia-menu"></div>
+    </div>
+    
+    <!-- Overlay Menú -->
+    <div class="capa-menu"></div>
+    
+    <!-- Menú Mòbil -->
+    <div class="menu-mobil">
+        <a href="#projectes">Projectes</a>
+        <a href="#sobre-mi">Sobre Mi</a>
+        <a href="#contacte">Contacte</a>
+
+        <!-- Selector de Idioma Móvil -->
+        <div class="selector-idioma selector-idioma-mobil">
+            <a href="index.html" class="actiu">CA</a>
+            <span class="separador">/</span>
+            <a href="es/index.html">ES</a>
+            <span class="separador">/</span>
+            <a href="en/index.html">EN</a>
+        </div>
+    </div>
+    
+    <!-- Secció Hero -->
+    <section class="hero">
+        <h1 class="hero-titol">
+            Design <span class="light">&</span><br>Creativity
+        </h1>
+        <p class="hero-subtitol">
+            Programador · Dissenyador · Fotògraf · Músic
+        </p>
+        <a href="#projectes" class="indicador-scroll" aria-label="Desplaça't a projectes">
+            <div class="fletxa-scroll"></div>
+        </a>
+    </section>
+    
+    <!-- Secció Projectes -->
+    <section id="projectes">
+        <div class="cap-seccio">
+            <div class="numero-seccio">01 — PROJECTES</div>
+            <h2 class="titol-seccio">Treballs Seleccionats</h2>
+            <p class="descripcio-seccio">
+                Una col·lecció de projectes que combinen disseny web, fotografia i experiències digitals.
+            </p>
+        </div>
+        
+        <div class="contenidor-projectes">
+            <!-- Projecte: Ball de Diables -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <video id="video-webball" loop muted playsinline poster="media/webball-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="media/WebBall.mp4" type="video/mp4">
+                        El teu navegador no suporta vídeos HTML5.
+                    </video>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Desenvolupament Web</div>
+                    <h3 class="titol-projecte">Ball de Diables del Prat</h3>
+                    <p class="descripcio-projecte">
+                        Renovació completa de la web de l'entitat cultural, modernitzant el disseny 
+                        i millorant l'experiència d'usuari per reflectir la identitat del Ball de Diables.
+                    </p>
+                    <a href="https://balldediablesdelprat.cat/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                        Veure projecte →
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Projecte: Fotografia -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <div class="graella-fotos">
+                        <div class="foto">
+                            <img src="media/Foto7.jpg" alt="Vista del Big Ben a Londres" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Arquitectura</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <img src="media/Foto3.jpg" alt="Paisatge dels Pics d'Europa" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Paisatge</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <img src="media/Foto5.jpg" alt="Carretilles" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Tradició</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <img src="media/Foto1.jpg" alt="Actuació del Ball de Diables del Prat" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Cultura</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <img src="media/Foto6.jpg" alt="Retrat artístic" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Retrat</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <img src="media/Foto9.jpg" alt="Costa de Menorca" loading="lazy">
+                            <div class="capa-foto">
+                                <span class="etiqueta-foto">Natura</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Fotografia</div>
+                    <h3 class="titol-projecte">Fotografia Creativa</h3>
+                    <p class="descripcio-projecte">
+                        Exploració visual del món que m'envolta, capturant moments, llums i textures 
+                        amb una mirada personal.
+                    </p>
+                </div>
+            </article>
+            
+            <!-- Projectes Vídeos Verticals Duals -->
+            <div class="projecte-vertical-dual">
+                <div class="graella-vertical-dual">
+                    <!-- Festa Major 2024 -->
+                    <div class="targeta-projecte-vertical">
+                        <div class="contenidor-imatge-projecte">
+                            <video id="video-festa2024" loop muted playsinline poster="media/festa2024-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="media/FestaMajor2024.mp4" type="video/mp4">
+                                El teu navegador no suporta vídeos HTML5.
+                            </video>
+                        </div>
+                        <div class="info-projecte">
+                            <div class="categoria-projecte">Audiovisual</div>
+                            <h3 class="titol-projecte">Festa Major 2024</h3>
+                            <p class="descripcio-projecte">
+                                Vídeo promocional dels actes de la Festa Major del Prat 2024, 
+                                realitzat per difondre i promocionar les activitats del Ball de Diables del Prat.
+                            </p>
+                            <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                                Veure a Instagram →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Festa Major 2025 -->
+                    <div class="targeta-projecte-vertical">
+                        <div class="contenidor-imatge-projecte">
+                            <video id="video-festa2025" loop muted playsinline poster="media/festa2025-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                                <source src="media/FestaMajor2025.mp4" type="video/mp4">
+                                El teu navegador no suporta vídeos HTML5.
+                            </video>
+                        </div>
+                        <div class="info-projecte">
+                            <div class="categoria-projecte">Audiovisual</div>
+                            <h3 class="titol-projecte">Festa Major 2025</h3>
+                            <p class="descripcio-projecte">
+                                Vídeo promocional dels actes de la Festa Major del Prat 2025, 
+                                continuant amb la tasca de difusió de la Cultura Popular del Prat.
+                            </p>
+                            <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                                Veure a Instagram →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projecte: Xarxes Socials -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <div class="graella-xarxes">
+                        <a href="https://www.instagram.com/balldediablesdelprat/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Ball de Diables del Prat">
+                            <img src="media/igball.jpg" alt="Perfil d'Instagram del Ball de Diables del Prat" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/federacioelnus/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Federació El Nus">
+                            <img src="media/ignus.jpg" alt="Perfil d'Instagram de la Federació El Nus" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/ballsdediables/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Xarxa de Balls de Diables">
+                            <img src="media/igxarxa.jpg" alt="Perfil d'Instagram de la Xarxa de Balls de Diables de Catalunya" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/estelaenglishacademy/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Estela English Academy">
+                            <img src="media/igeea.jpg" alt="Perfil d'Instagram d'Estela English Academy" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Xarxes Socials</div>
+                    <h3 class="titol-projecte">Gestió de Xarxes Socials</h3>
+                    <p class="descripcio-projecte">
+                        Estratègia de contingut i gestió de xarxes socials per diferents entitats culturals i educatives, 
+                        creant contingut visualment atractiu i gestionant la comunitat online.
+                    </p>
+                </div>
+            </article>
+            
+            <!-- Projecte: Disseny & Branding -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <div class="graella-disseny">
+                        <div class="disseny">
+                            <img src="media/DissenyiBranding1.jpg" alt="Disseny de lones publicitàries per a esdeveniments culturals" loading="lazy">
+                            <div class="capa-disseny">
+                                <span class="etiqueta-disseny">Lones</span>
+                            </div>
+                        </div>
+                        <div class="disseny">
+                            <img src="media/DissenyiBranding2.jpg" alt="Disseny de globus aerostàtics promocionals personalitzats" loading="lazy">
+                            <div class="capa-disseny">
+                                <span class="etiqueta-disseny">Globus</span>
+                            </div>
+                        </div>
+                        <div class="disseny">
+                            <img src="media/DissenyiBranding3.jpg" alt="Roll-up publicitari amb disseny corporatiu modern" loading="lazy">
+                            <div class="capa-disseny">
+                                <span class="etiqueta-disseny">Roll-up</span>
+                            </div>
+                        </div>
+                        <div class="disseny">
+                            <img src="media/DissenyiBranding4.jpg" alt="Figura promocional de goma de gran format" loading="lazy">
+                            <div class="capa-disseny">
+                                <span class="etiqueta-disseny">Figura</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Disseny Gràfic</div>
+                    <h3 class="titol-projecte">Disseny & Branding</h3>
+                    <p class="descripcio-projecte">
+                        Disseny i creació de materials gràfics per a esdeveniments i entitats culturals: lones, roll-ups, 
+                        globus i elements de comunicació visual que reflecteixen la identitat de cada projecte.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- Secció Sobre Mi -->
+    <section id="sobre-mi">
+        <div class="cap-seccio">
+            <div class="numero-seccio">02 — SOBRE MI</div>
+            <h2 class="titol-seccio">Marc García-Cuevas de Paz</h2>
+        </div>
+        
+        <div class="contingut-sobre-mi">
+            <p class="text-sobre-mi">
+                Soc un creador multidisciplinari apassionat per fusionar <strong>art i tecnologia</strong>. 
+                Treballo amb disseny, fotografia, programació i música, sempre buscant 
+                la bellesa en la simplicitat i l'autenticitat en cada projecte.
+            </p>
+            <p class="text-sobre-mi">
+                <strong>"El meu treball neix de la necessitat d'expressar, de sentir i de 
+                connectar amb allò que faig. Sense això, no té sentit."</strong>
+            </p>
+            
+            <div class="llista-habilitats">
+                <span class="etiqueta-habilitat">Programació</span>
+                <span class="etiqueta-habilitat">HTML/CSS/JS</span>
+                <span class="etiqueta-habilitat">SQL & PYTHON</span>
+                <span class="etiqueta-habilitat">UI/UX Design</span>
+                <span class="etiqueta-habilitat">Fotografia</span>
+                <span class="etiqueta-habilitat">Edició de Vídeo</span>
+                <span class="etiqueta-habilitat">Edició de Foto</span>
+                <span class="etiqueta-habilitat">Música</span>
+                <span class="etiqueta-habilitat">Adobe Creative</span>
+                <span class="etiqueta-habilitat">Figma</span>
+                <span class="etiqueta-habilitat">Git & GitHub</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Secció Contacte -->
+    <section id="contacte">
+        <div class="cap-seccio">
+            <div class="numero-seccio">03 — CONTACTE</div>
+            <h2 class="titol-seccio">Parlem</h2>
+            <p class="descripcio-seccio">
+                Tens un projecte en ment o vols col·laborar? Escriu-me!
+            </p>
+        </div>
+        
+        <div class="contingut-contacte">
+            <a href="mailto:marcg-c20@hotmail.es" class="email-contacte">marcg-c20@hotmail.es</a>
+            
+            <div class="links-xarxes">
+                <a href="https://www.instagram.com/marccgarciia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/marccgarciia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/marccgarciia" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Marc García-Cuevas de Paz</p>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="js/cursor.js"></script>
+    <script src="js/navegacio.js"></script>
+    <script src="js/animacions.js"></script>
+    <script src="js/videos.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+</body>
+</html>

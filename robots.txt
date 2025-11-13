@@ -1,0 +1,11 @@
+# robots.txt para Marc García-Cuevas Portfolio
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos que no necesitan indexarse
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap
+Sitemap: https://tudominio.com/sitemap.xml

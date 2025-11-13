@@ -1,0 +1,29 @@
+/* ============================================
+   OCULTAR SCROLLBARS
+   ============================================ */
+
+/* Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Assegurar que el scroll segueix funcionant */
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}

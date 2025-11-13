@@ -1,0 +1,230 @@
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+    .projecte {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .projecte:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .graella-vertical-dual {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MÒBIL
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        cursor: default;
+    }
+    
+    .cursor, .cursor-seguidor {
+        display: none;
+    }
+    
+    .nom-fix {
+        top: 18px;
+        font-size: 0.65rem;
+    }
+    
+    /* Ocultar navegació desktop */
+    nav {
+        display: none;
+    }
+    
+    .contenidor-links-nav {
+        display: none;
+    }
+    
+    /* Pestanyeta flotant */
+    .boto-menu {
+        display: flex;
+        position: fixed;
+        top: 20%;
+        right: 0;
+        width: 28px;
+        height: 60px;
+        z-index: 1003;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+        border: 0.5px solid rgba(0, 0, 0, 0.03);
+        border-right: none;
+        border-radius: 12px 0 0 12px;
+        
+        box-shadow: 
+            -2px 0 12px rgba(0, 0, 0, 0.04),
+            -4px 0 24px rgba(0, 0, 0, 0.02);
+        
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+    
+    .boto-menu:hover {
+        opacity: 1;
+        width: 32px;
+        background: rgba(255, 255, 255, 0.7);
+    }
+    
+    .boto-menu.active {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    /* Línia vertical indicadora */
+    .linia-menu {
+        width: 1.5px;
+        height: 24px;
+        background: var(--fosc);
+        border-radius: 2px;
+        opacity: 0.5;
+        transition: all 0.3s ease;
+    }
+    
+    .boto-menu:hover .linia-menu {
+        opacity: 0.8;
+        height: 28px;
+    }
+    
+    /* Overlay de fons */
+    .capa-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+        z-index: 999;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s ease;
+    }
+    
+    .capa-menu.active {
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    /* Menú lateral glassmorphism */
+    .menu-mobil {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        z-index: 1002;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 35px;
+        padding: 60px 50px;
+        
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
+        border-left: 0.5px solid rgba(0, 0, 0, 0.04);
+        
+        box-shadow: 
+            0 0 0 0.5px rgba(255, 255, 255, 0.5) inset,
+            -10px 0 60px rgba(0, 0, 0, 0.1);
+        
+        transition: right 0.3s linear;
+    }
+    
+    .menu-mobil.active {
+        right: 0;
+    }
+    
+    .menu-mobil a {
+        text-decoration: none;
+        color: var(--fosc);
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-align: right;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.3s ease;
+    }
+    
+    .menu-mobil.active a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .menu-mobil a:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+    
+    .menu-mobil a:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+    
+    .menu-mobil a:nth-child(3) {
+        transition-delay: 0.15s;
+    }
+    
+    .menu-mobil a:hover {
+        color: var(--gris);
+    }
+    
+    section {
+        padding: 80px 30px;
+    }
+    
+    .projecte {
+        margin-bottom: 80px;
+    }
+}
+/* ============================================
+   SELECTOR DE IDIOMA RESPONSIVE
+   ============================================ */
+
+/* Ocultar selector desktop en móvil */
+@media (max-width: 768px) {
+    .selector-idioma-desktop {
+        display: none !important;
+    }
+}
+
+/* Ocultar selector móvil en desktop */
+@media (min-width: 769px) {
+    .selector-idioma-mobil {
+        display: none !important;
+    }
+}
+
+/* Estilo del selector dentro del menú móvil */
+@media (max-width: 768px) {
+    .menu-mobil .selector-idioma-mobil {
+        position: static;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        justify-content: center;
+        opacity: 0;
+        transform: translateX(30px);
+        transition: all 0.3s ease;
+    }
+    
+    .menu-mobil.active .selector-idioma-mobil {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s;
+    }
+}

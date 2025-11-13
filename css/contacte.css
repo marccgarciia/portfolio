@@ -1,0 +1,54 @@
+/* ============================================
+   SECCIÓ CONTACTE
+   ============================================ */
+.contingut-contacte {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.email-contacte {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--fosc);
+    text-decoration: none;
+    display: inline-block;
+    margin: 50px 0;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.email-contacte:hover {
+    color: var(--gris);
+}
+
+.links-xarxes {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.links-xarxes a {
+    color: var(--gris);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+.links-xarxes a:hover {
+    color: var(--fosc);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    padding: 60px 40px;
+    text-align: center;
+    color: var(--gris);
+    font-size: 0.9rem;
+    border-top: 1px solid #f0f0f0;
+    font-weight: 300;
+}

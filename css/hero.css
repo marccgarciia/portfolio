@@ -1,0 +1,95 @@
+/* ============================================
+   SECCIÓ HERO
+   ============================================ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 180px 40px 80px;
+}
+
+.hero-titol {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7.5vw, 6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero-titol .light {
+    font-weight: 300;
+    color: var(--gris);
+}
+
+.hero-subtitol {
+    font-size: clamp(0.95rem, 2vw, 1.3rem);
+    font-weight: 300;
+    color: var(--gris);
+    max-width: 700px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 0.3s forwards;
+    letter-spacing: 0.5px;
+    margin-bottom: 60px;
+}
+
+/* Fletxa scroll */
+.indicador-scroll {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease 0.6s forwards;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.indicador-scroll:hover {
+    transform: translateY(5px);
+}
+
+.fletxa-scroll {
+    width: 1.5px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gris), transparent);
+    margin: 0 auto;
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.fletxa-scroll::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid var(--gris);
+    border-bottom: 1.5px solid var(--gris);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    from {
+        transform: translateY(30px);
+    }
+}
