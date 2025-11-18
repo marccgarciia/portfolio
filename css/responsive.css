@@ -244,14 +244,43 @@
         padding: 80px 30px;
     }
 
+    /* Invertir orden: título primero, imagen después en móvil */
     .projecte {
         margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Reducir espacio de la descripción en móvil */
+    .descripcio-projecte {
+        margin-bottom: 5px;
     }
 
     .projecte .contenidor-imatge-projecte {
         width: 100%;
         aspect-ratio: auto;
         height: auto;
+    }
+
+    .projecte .info-projecte {
+        order: 1;
+    }
+
+    .projecte .contenidor-imatge-projecte {
+        order: 2;
+    }
+
+    /* Asegurar que funciona con todos los projectes */
+    .projecte:has(.graella-xarxes) .info-projecte,
+    .projecte:has(.graella-disseny) .info-projecte,
+    .projecte:has(.graella-fotos) .info-projecte {
+        order: 1;
+    }
+
+    .projecte:has(.graella-xarxes) .contenidor-imatge-projecte,
+    .projecte:has(.graella-disseny) .contenidor-imatge-projecte,
+    .projecte:has(.graella-fotos) .contenidor-imatge-projecte {
+        order: 2;
     }
 
     /* ===== GALERIA DE FOTOS ===== */
