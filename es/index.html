@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Forzar scroll al top en cada carga/recarga
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Básico -->
     <title>Marc García-Cuevas | Portfolio</title>
     <meta name="description" content="Portfolio de Marc García-Cuevas - Programador, Diseñador, Fotógrafo y Músico">
-    <meta name="keywords" content="Marc García-Cuevas, portfolio, programador, diseñador, fotógrafo, músico, desarrollo web, diseño gráfico">
+    <meta name="keywords"
+        content="Marc García-Cuevas, portfolio, programador, diseñador, fotógrafo, músico, desarrollo web, diseño gráfico">
     <meta name="author" content="Marc García-Cuevas de Paz">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tudominio.com/es/">
     <meta property="og:title" content="Marc García-Cuevas — Portfolio">
-    <meta property="og:description" content="Programador · Diseñador · Fotógrafo · Músico. Proyectos de desarrollo web, fotografía creativa y experiencias digitales.">
+    <meta property="og:description"
+        content="Programador · Diseñador · Fotógrafo · Músico. Proyectos de desarrollo web, fotografía creativa y experiencias digitales.">
     <meta property="og:image" content="https://tudominio.com/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://tudominio.com/es/">
     <meta property="twitter:title" content="Marc García-Cuevas — Portfolio">
     <meta property="twitter:description" content="Programador · Diseñador · Fotógrafo · Músico">
     <meta property="twitter:image" content="https://tudominio.com/media/og-image.jpg">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    
+
     <!-- DNS Prefetch para dominios externos -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    
+
     <!-- Preconnect para Google Fonts (mejora velocidad de carga) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Preload CSS crítico (above the fold) -->
     <link rel="preload" href="../css/variables.css" as="style">
     <link rel="preload" href="../css/reset.css" as="style">
     <link rel="preload" href="../css/cursor.css" as="style">
     <link rel="preload" href="../css/navegacio.css" as="style">
     <link rel="preload" href="../css/hero.css" as="style">
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -60,7 +72,7 @@
     <link rel="stylesheet" href="../css/sobre-mi.css">
     <link rel="stylesheet" href="../css/contacte.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    
+
     <style>
         /* Selector de Idioma */
         .selector-idioma {
@@ -75,28 +87,28 @@
             font-weight: 500;
             letter-spacing: 1px;
         }
-        
+
         .selector-idioma a {
             color: var(--gris);
             text-decoration: none;
             transition: color 0.3s ease;
             padding: 5px 8px;
         }
-        
+
         .selector-idioma a:hover {
             color: var(--fosc);
         }
-        
+
         .selector-idioma a.actiu {
             color: var(--fosc);
             font-weight: 600;
         }
-        
+
         .selector-idioma .separador {
             color: var(--gris-clar);
             user-select: none;
         }
-        
+
         @media (max-width: 768px) {
             .selector-idioma {
                 top: 15px;
@@ -107,48 +119,176 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <!-- Spinner circular -->
+            <div class="spinner"></div>
+            <!-- M pequeña en el centro -->
+            <svg class="loader-m" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="m-path" d="M 20 80 L 20 20 L 50 60 L 80 20 L 80 80" fill="none" stroke="#1a1a1a"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #FFFFFF;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+            overflow: hidden;
+        }
+
+        #loader.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Spinner circular */
+        .spinner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #f0f0f0;
+            border-top: 3px solid #1a1a1a;
+            border-radius: 50%;
+            animation: spin 1.2s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* M pequeña en el centro */
+        .loader-m {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .m-path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: drawM 2s ease-out forwards;
+        }
+
+        @keyframes drawM {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Responsive móvil */
+        @media (max-width: 768px) {
+            .loader-content {
+                width: 80px;
+                height: 80px;
+            }
+
+            .loader-m {
+                width: 32px;
+                height: 32px;
+            }
+
+            .m-path {
+                stroke-width: 5;
+            }
+        }
+    </style>
+
+    <script>
+        // Verificar si ya se mostró el loader en esta sesión
+        const yaVioLoader = sessionStorage.getItem('loaderMostrado');
+
+        if (yaVioLoader) {
+            // Si ya lo vio, quitar el loader inmediatamente
+            document.getElementById('loader').remove();
+            document.body.style.overflow = '';
+        } else {
+            // Primera vez: mostrar loader
+            document.body.style.overflow = 'hidden';
+
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('hide');
+
+                // Restaurar scroll
+                document.body.style.overflow = '';
+
+                // Marcar que ya vio el loader
+                sessionStorage.setItem('loaderMostrado', 'true');
+
+                // Eliminar loader
+                setTimeout(() => {
+                    loader.remove();
+                }, 300);
+            }, 2000);
+        }
+    </script>
     <!-- Cursor Personalizado -->
     <div class="cursor"></div>
     <div class="cursor-seguidor"></div>
-    
+
     <!-- Selector de Idioma -->
-<div class="selector-idioma selector-idioma-desktop">
-    <a href="../index.html">CA</a>
-    <span class="separador">/</span>
-    <a href="index.html" class="actiu">ES</a>
-    <span class="separador">/</span>
-    <a href="../en/index.html">EN</a>
-</div>
-    
+    <div class="selector-idioma selector-idioma-desktop">
+        <a href="../index.html">CA</a>
+        <span class="separador">/</span>
+        <a href="index.html" class="actiu">ES</a>
+        <span class="separador">/</span>
+        <a href="../en/index.html">EN</a>
+    </div>
+
     <!-- Nombre Fijo -->
-    <div class="nom-fix">MARC GARCÍA-CUEVAS</div>
-    
+    <a href="#" class="nom-fix" style="text-decoration: none; color: inherit; cursor: pointer;">MARC GARCÍA-CUEVAS</a>
+
     <!-- Fondo Liquid Glass -->
     <nav></nav>
-    
+
     <!-- Links de Navegación Desktop -->
     <div class="contenidor-links-nav">
         <a href="#projectes">Proyectos</a>
         <a href="#sobre-mi">Sobre Mí</a>
         <a href="#contacte">Contacto</a>
     </div>
-    
+
     <!-- Botón Menú Móvil -->
     <div class="boto-menu">
         <div class="linia-menu"></div>
     </div>
-    
+
     <!-- Overlay Menú -->
     <div class="capa-menu"></div>
-    
+
     <!-- Menú Móvil -->
     <div class="menu-mobil">
         <a href="#projectes">Proyectos</a>
         <a href="#sobre-mi">Sobre Mí</a>
         <a href="#contacte">Contacto</a>
 
-         <!-- Selector de Idioma Móvil -->
+        <!-- Selector de Idioma Móvil -->
         <div class="selector-idioma selector-idioma-mobil">
             <a href="../index.html">CA</a>
             <span class="separador">/</span>
@@ -157,7 +297,7 @@
             <a href="../en/index.html">EN</a>
         </div>
     </div>
-    
+
     <!-- Sección Hero -->
     <section class="hero">
         <h1 class="hero-titol">
@@ -170,7 +310,7 @@
             <div class="fletxa-scroll"></div>
         </a>
     </section>
-    
+
     <!-- Sección Proyectos -->
     <section id="projectes">
         <div class="cap-seccio">
@@ -180,12 +320,13 @@
                 Una colección de proyectos que combinan diseño web, fotografía y experiencias digitales.
             </p>
         </div>
-        
+
         <div class="contenidor-projectes">
             <!-- Proyecto: Ball de Diables -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte">
-                    <video id="video-webball" loop muted playsinline poster="../media/webball-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <video id="video-webball" loop muted playsinline poster="../media/webball-poster.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
                         <source src="../media/WebBall.mp4" type="video/mp4">
                         Tu navegador no soporta videos HTML5.
                     </video>
@@ -194,15 +335,16 @@
                     <div class="categoria-projecte">Desarrollo Web</div>
                     <h3 class="titol-projecte">Ball de Diables del Prat</h3>
                     <p class="descripcio-projecte">
-                        Renovación completa del sitio web de la entidad cultural, modernizando el diseño 
+                        Renovación completa del sitio web de la entidad cultural, modernizando el diseño
                         y mejorando la experiencia de usuario para reflejar la identidad del Ball de Diables.
                     </p>
-                    <a href="https://balldediablesdelprat.cat/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                    <a href="https://balldediablesdelprat.cat/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
                         Ver proyecto →
                     </a>
                 </div>
             </article>
-            
+
             <!-- Proyecto: Fotografía -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte">
@@ -249,19 +391,20 @@
                     <div class="categoria-projecte">Fotografía</div>
                     <h3 class="titol-projecte">Fotografía Creativa</h3>
                     <p class="descripcio-projecte">
-                        Exploración visual del mundo que me rodea, capturando momentos, luces y texturas 
+                        Exploración visual del mundo que me rodea, capturando momentos, luces y texturas
                         con una mirada personal.
                     </p>
                 </div>
             </article>
-            
+
             <!-- Proyectos Videos Verticales Duales -->
             <div class="projecte-vertical-dual">
                 <div class="graella-vertical-dual">
                     <!-- Festa Major 2024 -->
                     <div class="targeta-projecte-vertical">
                         <div class="contenidor-imatge-projecte">
-                            <video id="video-festa2024" loop muted playsinline poster="../media/festa2024-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                            <video id="video-festa2024" loop muted playsinline poster="../media/festa2024-poster.jpg"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                                 <source src="../media/FestaMajor2024.mp4" type="video/mp4">
                                 Tu navegador no soporta videos HTML5.
                             </video>
@@ -270,19 +413,21 @@
                             <div class="categoria-projecte">Audiovisual</div>
                             <h3 class="titol-projecte">Festa Major 2024</h3>
                             <p class="descripcio-projecte">
-                                Video promocional de los actos de la Festa Major del Prat 2024, 
+                                Video promocional de los actos de la Festa Major del Prat 2024,
                                 realizado para difundir y promocionar las actividades del Ball de Diables del Prat.
                             </p>
-                            <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                            <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank"
+                                rel="noopener noreferrer" class="link-projecte">
                                 Ver en Instagram →
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Festa Major 2025 -->
                     <div class="targeta-projecte-vertical">
                         <div class="contenidor-imatge-projecte">
-                            <video id="video-festa2025" loop muted playsinline poster="../media/festa2025-poster.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                            <video id="video-festa2025" loop muted playsinline poster="../media/festa2025-poster.jpg"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                                 <source src="../media/FestaMajor2025.mp4" type="video/mp4">
                                 Tu navegador no soporta videos HTML5.
                             </video>
@@ -291,32 +436,43 @@
                             <div class="categoria-projecte">Audiovisual</div>
                             <h3 class="titol-projecte">Festa Major 2025</h3>
                             <p class="descripcio-projecte">
-                                Video promocional de los actos de la Festa Major del Prat 2025, 
+                                Video promocional de los actos de la Festa Major del Prat 2025,
                                 continuando con la tarea de difusión de la Cultura Popular del Prat.
                             </p>
-                            <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank" rel="noopener noreferrer" class="link-projecte">
+                            <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank"
+                                rel="noopener noreferrer" class="link-projecte">
                                 Ver en Instagram →
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Proyecto: Redes Sociales -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte">
                     <div class="graella-xarxes">
-                        <a href="https://www.instagram.com/balldediablesdelprat/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Ball de Diables del Prat">
-                            <img src="../media/igball.jpg" alt="Perfil de Instagram del Ball de Diables del Prat" loading="lazy">
+                        <a href="https://www.instagram.com/balldediablesdelprat/" target="_blank"
+                            rel="noopener noreferrer" class="targeta-xarxa"
+                            aria-label="Instagram Ball de Diables del Prat">
+                            <img src="../media/igball.jpg" alt="Perfil de Instagram del Ball de Diables del Prat"
+                                loading="lazy">
                         </a>
-                        <a href="https://www.instagram.com/federacioelnus/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Federació El Nus">
-                            <img src="../media/ignus.jpg" alt="Perfil de Instagram de la Federació El Nus" loading="lazy">
+                        <a href="https://www.instagram.com/federacioelnus/" target="_blank" rel="noopener noreferrer"
+                            class="targeta-xarxa" aria-label="Instagram Federació El Nus">
+                            <img src="../media/ignus.jpg" alt="Perfil de Instagram de la Federació El Nus"
+                                loading="lazy">
                         </a>
-                        <a href="https://www.instagram.com/ballsdediables/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Xarxa de Balls de Diables">
-                            <img src="../media/igxarxa.jpg" alt="Perfil de Instagram de la Xarxa de Balls de Diables de Catalunya" loading="lazy">
+                        <a href="https://www.instagram.com/ballsdediables/" target="_blank" rel="noopener noreferrer"
+                            class="targeta-xarxa" aria-label="Instagram Xarxa de Balls de Diables">
+                            <img src="../media/igxarxa.jpg"
+                                alt="Perfil de Instagram de la Xarxa de Balls de Diables de Catalunya" loading="lazy">
                         </a>
-                        <a href="https://www.instagram.com/estelaenglishacademy/" target="_blank" rel="noopener noreferrer" class="targeta-xarxa" aria-label="Instagram Estela English Academy">
-                            <img src="../media/igeea.jpg" alt="Perfil de Instagram de Estela English Academy" loading="lazy">
+                        <a href="https://www.instagram.com/estelaenglishacademy/" target="_blank"
+                            rel="noopener noreferrer" class="targeta-xarxa"
+                            aria-label="Instagram Estela English Academy">
+                            <img src="../media/igeea.jpg" alt="Perfil de Instagram de Estela English Academy"
+                                loading="lazy">
                         </a>
                     </div>
                 </div>
@@ -324,36 +480,41 @@
                     <div class="categoria-projecte">Redes Sociales</div>
                     <h3 class="titol-projecte">Gestión de Redes Sociales</h3>
                     <p class="descripcio-projecte">
-                        Estrategia de contenido y gestión de redes sociales para diferentes entidades culturales y educativas, 
+                        Estrategia de contenido y gestión de redes sociales para diferentes entidades culturales y
+                        educativas,
                         creando contenido visualmente atractivo y gestionando la comunidad online.
                     </p>
                 </div>
             </article>
-            
+
             <!-- Proyecto: Diseño & Branding -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte">
                     <div class="graella-disseny">
                         <div class="disseny">
-                            <img src="../media/DissenyiBranding1.jpg" alt="Diseño de lonas publicitarias para eventos culturales" loading="lazy">
+                            <img src="../media/DissenyiBranding1.jpg"
+                                alt="Diseño de lonas publicitarias para eventos culturales" loading="lazy">
                             <div class="capa-disseny">
                                 <span class="etiqueta-disseny">Lonas</span>
                             </div>
                         </div>
                         <div class="disseny">
-                            <img src="../media/DissenyiBranding2.jpg" alt="Diseño de globos aerostáticos promocionales personalizados" loading="lazy">
+                            <img src="../media/DissenyiBranding2.jpg"
+                                alt="Diseño de globos aerostáticos promocionales personalizados" loading="lazy">
                             <div class="capa-disseny">
                                 <span class="etiqueta-disseny">Globos</span>
                             </div>
                         </div>
                         <div class="disseny">
-                            <img src="../media/DissenyiBranding3.jpg" alt="Roll-up publicitario con diseño corporativo moderno" loading="lazy">
+                            <img src="../media/DissenyiBranding3.jpg"
+                                alt="Roll-up publicitario con diseño corporativo moderno" loading="lazy">
                             <div class="capa-disseny">
                                 <span class="etiqueta-disseny">Roll-up</span>
                             </div>
                         </div>
                         <div class="disseny">
-                            <img src="../media/DissenyiBranding4.jpg" alt="Figura promocional de goma de gran formato" loading="lazy">
+                            <img src="../media/DissenyiBranding4.jpg" alt="Figura promocional de goma de gran formato"
+                                loading="lazy">
                             <div class="capa-disseny">
                                 <span class="etiqueta-disseny">Figura</span>
                             </div>
@@ -364,32 +525,32 @@
                     <div class="categoria-projecte">Diseño Gráfico</div>
                     <h3 class="titol-projecte">Diseño & Branding</h3>
                     <p class="descripcio-projecte">
-                        Diseño y creación de materiales gráficos para eventos y entidades culturales: lonas, roll-ups, 
+                        Diseño y creación de materiales gráficos para eventos y entidades culturales: lonas, roll-ups,
                         globos y elementos de comunicación visual que reflejan la identidad de cada proyecto.
                     </p>
                 </div>
             </article>
         </div>
     </section>
-    
+
     <!-- Sección Sobre Mí -->
     <section id="sobre-mi">
         <div class="cap-seccio">
             <div class="numero-seccio">02 — SOBRE MÍ</div>
             <h2 class="titol-seccio">Marc García-Cuevas de Paz</h2>
         </div>
-        
+
         <div class="contingut-sobre-mi">
             <p class="text-sobre-mi">
-                Soy un creador multidisciplinar apasionado por fusionar <strong>arte y tecnología</strong>. 
-                Trabajo con diseño, fotografía, programación y música, siempre buscando 
+                Soy un creador multidisciplinar apasionado por fusionar <strong>arte y tecnología</strong>.
+                Trabajo con diseño, fotografía, programación y música, siempre buscando
                 la belleza en la simplicidad y la autenticidad en cada proyecto.
             </p>
             <p class="text-sobre-mi">
-                <strong>"Mi trabajo nace de la necesidad de expresar, de sentir y de 
-                conectar con aquello que hago. Sin eso, no tiene sentido."</strong>
+                <strong>"Mi trabajo nace de la necesidad de expresar, de sentir y de
+                    conectar con aquello que hago. Sin eso, no tiene sentido."</strong>
             </p>
-            
+
             <div class="llista-habilitats">
                 <span class="etiqueta-habilitat">Programación</span>
                 <span class="etiqueta-habilitat">HTML/CSS/JS</span>
@@ -405,7 +566,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Sección Contacto -->
     <section id="contacte">
         <div class="cap-seccio">
@@ -415,23 +576,25 @@
                 ¿Tienes un proyecto en mente o quieres colaborar? ¡Escríbeme!
             </p>
         </div>
-        
+
         <div class="contingut-contacte">
             <a href="mailto:marcg-c20@hotmail.es" class="email-contacte">marcg-c20@hotmail.es</a>
-            
+
             <div class="links-xarxes">
-                <a href="https://www.instagram.com/marccgarciia/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.linkedin.com/in/marccgarciia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/marccgarciia/" target="_blank"
+                    rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/marccgarciia/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/marccgarciia" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <p>© 2025 Marc García-Cuevas de Paz</p>
     </footer>
-    
+
     <!-- JavaScript Files -->
     <script src="../js/cursor.js"></script>
     <script src="../js/navegacio.js"></script>
@@ -439,4 +602,5 @@
     <script src="../js/videos.js"></script>
     <script src="../js/smooth-scroll.js"></script>
 </body>
+
 </html>

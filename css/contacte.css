@@ -52,3 +52,37 @@ footer {
     border-top: 1px solid #f0f0f0;
     font-weight: 300;
 }
+
+/* ============================================
+   RESPONSIVE MÓVIL - CONTACTO
+   ============================================ */
+@media (max-width: 768px) {
+    #contacte {
+        padding: 60px 30px;
+        min-height: 70vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .contingut-contacte {
+        margin-top: 40px;
+    }
+    
+    .email-contacte {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin: 30px 0;
+        line-height: 1.2;
+        word-break: break-all;
+    }
+    
+    .links-xarxes {
+        gap: 30px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .links-xarxes a {
+        font-size: 0.95rem;
+    }
+}
