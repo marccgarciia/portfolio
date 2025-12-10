@@ -4,35 +4,35 @@
   
   <!-- Página principal en catalán -->
   <url>
-    <loc>https://tudominio.com/</loc>
+    <loc>https://marccgarciia.com/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/"/>
   </url>
   
   <!-- Página en castellano -->
   <url>
-    <loc>https://tudominio.com/es/</loc>
+    <loc>https://marccgarciia.com/es/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/"/>
   </url>
   
   <!-- Página en inglés -->
   <url>
-    <loc>https://tudominio.com/en/</loc>
+    <loc>https://marccgarciia.com/en/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://tudominio.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://tudominio.com/es/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://tudominio.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/"/>
   </url>
 
 </urlset>

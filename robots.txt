@@ -8,4 +8,4 @@ Disallow: /css/
 Disallow: /js/
 
 # Sitemap
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://marccgarciia.com/sitemap.xml
