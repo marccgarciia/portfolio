@@ -59,7 +59,7 @@ section {
     direction: rtl;
 }
 
-.projecte:nth-child(even) > * {
+.projecte:nth-child(even)>* {
     direction: ltr;
 }
 
@@ -371,4 +371,21 @@ section {
 
 .link-projecte:hover {
     gap: 15px;
+}
+
+/* Aspect ratio específic per l'app Finances */
+.contenidor-finances {
+    aspect-ratio: 21/9;
+}
+
+/* Aspect ratio específic per projectes panoràmics */
+.contenidor-finances,
+.contenidor-eea {
+    aspect-ratio: 21/9;
+}
+
+/* Projectes privats */
+.link-projecte-privat {
+    opacity: 0.6;
+    cursor: default;
 }
