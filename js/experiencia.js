@@ -16,6 +16,16 @@
     /* ── Mòbil: no scroll horitzontal per JS ── */
     if (window.innerWidth <= 768) {
         cards.forEach(c => c.classList.add('visible'));
+
+        const trackWrapper = document.querySelector('.cards-track-wrapper');
+        if (trackWrapper) {
+            trackWrapper.addEventListener('scroll', () => {
+                const scrollLeft = trackWrapper.scrollLeft;
+                const cardWidth = cards[0].offsetWidth + 20;
+                const activeI = Math.round(scrollLeft / cardWidth);
+                dots.forEach((dot, i) => dot.classList.toggle('actiu', i === activeI));
+            });
+        }
         return;
     }
 
