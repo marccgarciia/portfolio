@@ -2,8 +2,8 @@
    SECCIÓ SOBRE MI
    ============================================ */
 #sobre-mi {
-    background: 
-#fafafa;
+    background:
+        #fafafa;
 }
 
 .contingut-sobre-mi {
@@ -33,8 +33,7 @@
 
 .etiqueta-habilitat {
     padding: 12px 28px;
-    border: 1px solid 
-#e0e0e0;
+    border: 1px solid #e0e0e0;
     border-radius: 30px;
     font-size: 0.95rem;
     color: var(--fosc);
@@ -45,4 +44,95 @@
 .etiqueta-habilitat:hover {
     border-color: var(--fosc);
     background: rgba(26, 26, 26, 0.05);
+}
+
+/* ============================================
+   SECCIÓ EXPERIÈNCIA
+   ============================================ */
+#experiencia {
+    background: #ffffff;
+}
+
+.contingut-experiencia {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.columna-experiencia h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--fosc);
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.item-timeline {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 40px;
+}
+
+.item-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    background: var(--fosc);
+    border-radius: 50%;
+}
+
+.item-timeline::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 18px;
+    width: 1px;
+    height: calc(100% + 10px);
+    background: #e8e8e8;
+}
+
+.item-timeline:last-child::after {
+    display: none;
+}
+
+.item-timeline .dates {
+    font-size: 0.8rem;
+    color: var(--gris-clar);
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.item-timeline .titol {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--fosc);
+    margin-bottom: 4px;
+}
+
+.item-timeline .empresa {
+    font-size: 0.9rem;
+    color: var(--gris);
+    font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contingut-experiencia {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contingut-experiencia {
+        gap: 40px;
+    }
 }
