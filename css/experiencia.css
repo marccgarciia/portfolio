@@ -27,7 +27,6 @@
 
 /* ── HEADER ── */
 .cap-seccio-experiencia {
-    padding: 0 8vw;
     margin-bottom: 1.5vh;
     flex-shrink: 0;
     position: relative;
@@ -72,7 +71,8 @@
 .card-experiencia {
     flex-shrink: 0;
     width: min(460px, 80vw);
-    height: min(580px, 75vh);
+    min-height: min(580px, 75vh);
+    height: auto;
     border-radius: 24px;
     padding: 3rem 2.8rem 5rem 2.8rem;
     display: flex;
