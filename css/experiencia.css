@@ -1,0 +1,393 @@
+/* ============================================
+   SECCIÓ EXPERIÈNCIA — SCROLL HORITZONTAL
+   Estil liquid glass
+   ============================================ */
+
+#experiencia {
+    position: relative;
+    background: linear-gradient(135deg, #f0f4ff 0%, #faf8f5 40%, #f0f7f4 100%);
+    overflow: visible;
+}
+
+/* ── STICKY WRAPPER ── */
+.experiencia-sticky-wrapper {
+    position: relative;
+    height: 400vh;
+}
+
+.experiencia-sticky-inner {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ── HEADER ── */
+.cap-seccio-experiencia {
+    padding: 0 8vw;
+    margin-bottom: 1.5vh;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.cap-seccio-experiencia .numero-seccio {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: var(--gris);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.cap-seccio-experiencia .titol-seccio {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    color: var(--fosc);
+    margin-bottom: 20px;
+}
+
+/* ── CARDS TRACK ── */
+.cards-track-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-1 * ((100vw - 100%) / 2));
+}
+
+.cards-track {
+    display: flex;
+    gap: 3vw;
+    will-change: transform;
+    padding: 0;
+}
+
+/* ── CARD LIQUID GLASS ── */
+.card-experiencia {
+    flex-shrink: 0;
+    width: min(460px, 80vw);
+    height: min(580px, 75vh);
+    border-radius: 24px;
+    padding: 3rem 2.8rem 5rem 2.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+
+    background: rgba(255, 255, 255, 0.45);
+    color: var(--fosc);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 0 0 0.5px rgba(255, 255, 255, 0.8) inset,
+        0 8px 16px rgba(0, 0, 0, 0.06),
+        0 24px 48px rgba(0, 0, 0, 0.12),
+        0 48px 96px rgba(0, 0, 0, 0.06);
+
+    /* Entrada animada */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.card-experiencia.visible {
+    opacity: 1;
+}
+
+/* Glare interior */
+.card-experiencia::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+/* Número decoratiu gran */
+.card-numero {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 11rem;
+    font-weight: 700;
+    opacity: 0.04;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ── CAPÇALERA DE CARD ── */
+.card-cap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.card-num-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    opacity: 0.4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-tag {
+    display: inline-block;
+    border: 1px solid currentColor;
+    padding: 0.2em 0.7em;
+    border-radius: 2px;
+    opacity: 0.4;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    width: fit-content;
+}
+
+/* ── TIMELINE ITEMS ── */
+.timeline-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 18px;
+    padding-bottom: 14px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 14px;
+    width: 1px;
+    height: calc(100% - 6px);
+    background: currentColor;
+    opacity: 0.12;
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+.item-dates {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    opacity: 0.4;
+    font-weight: 400;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+}
+
+.item-titol {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1.3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.item-empresa {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ── FOOTER DE CARD ── */
+.card-footer-exp {
+    position: absolute;
+    bottom: 2.8rem;
+    left: 2.8rem;
+    right: 2.8rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    opacity: 0.3;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 0.5rem;
+    border-top: 1px solid currentColor;
+}
+
+/* ── PROGRESS DOTS ── */
+.progress-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 2vh 0 1.5vh;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.actiu {
+    background: var(--fosc);
+    width: 20px;
+    border-radius: 3px;
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint {
+    position: absolute;
+    bottom: 2.5vh;
+    right: 8vw;
+    font-size: 0.65rem;
+    color: var(--gris-clar);
+    letter-spacing: 0.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.scroll-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-hint::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gris-clar);
+    animation: hintExtend 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes hintExtend {
+    from {
+        width: 20px;
+        opacity: 0.4;
+    }
+
+    to {
+        width: 60px;
+        opacity: 1;
+    }
+}
+
+.experiencia-sticky-inner::before,
+.experiencia-sticky-inner::after {
+    display: none;
+}
+
+/* ── RESPONSIVE MÒBIL ── */
+@media (max-width: 768px) {
+    .experiencia-sticky-wrapper {
+        height: auto;
+    }
+
+    .experiencia-sticky-inner {
+        position: relative;
+        height: auto;
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .cap-seccio-experiencia {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .cards-track-wrapper {
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 20px;
+        width: 100vw;
+        margin-left: calc(-1 * ((100vw - 100%) / 2));
+    }
+
+    .cards-track-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .card-experiencia:first-child {
+        margin-left: 30px;
+    }
+
+    .card-experiencia:last-child {
+        margin-right: 30px;
+    }
+
+    .cards-track {
+        transform: none !important;
+        gap: 20px;
+    }
+
+    #experiencia {
+        background: #f8f8f8;
+    }
+
+    .card-experiencia {
+        width: 78vw;
+        height: auto;
+        min-height: 420px;
+        padding: 2.2rem 2rem 4.5rem 2rem;
+        border-radius: 20px;
+        box-shadow:
+            0 0 0 0.5px rgba(255, 255, 255, 0.8) inset,
+            0 4px 12px rgba(0, 0, 0, 0.06),
+            0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-numero {
+        font-size: 8rem;
+    }
+
+    .progress-dots {
+        padding: 15px 0 10px;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+}

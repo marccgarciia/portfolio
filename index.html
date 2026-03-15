@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        // Forzar scroll al top en cada carga/recarga
         if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';
         }
@@ -14,7 +13,7 @@
 
     <!-- SEO Bàsic -->
     <title>Marc García-Cuevas | Portfolio</title>
-    <meta name="description" content="Portfolio de Marc García-Cuevas - Programador, Dissenyador, Fotògraf i Músic">
+    <meta name="description" content="Portfolio de Marc García-Cuevas - Programador, Dissenyador, Fotògraf i Filmmaker">
     <meta name="keywords"
         content="Marc García-Cuevas, portfolio, programador, dissenyador, fotògraf, músic, desenvolupament web, disseny gràfic">
     <meta name="author" content="Marc García-Cuevas de Paz">
@@ -24,7 +23,7 @@
     <meta property="og:url" content="https://marccgarciia.com/">
     <meta property="og:title" content="Marc García-Cuevas — Portfolio">
     <meta property="og:description"
-        content="Programador · Dissenyador · Fotògraf · Músic. Projectes de desenvolupament web, fotografia creativa i experiències digitals.">
+        content="Programador · Dissenyador · Fotògraf · Filmmaker. Projectes de desenvolupament web, fotografia creativa i experiències digitals.">
     <meta property="og:image" content="https://marccgarciia.com/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -47,15 +46,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-    <!-- DNS Prefetch para dominios externos -->
+    <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-    <!-- Preconnect para Google Fonts (mejora velocidad de carga) -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload CSS crítico (above the fold) -->
+    <!-- Preload CSS crític -->
     <link rel="preload" href="css/variables.css" as="style">
     <link rel="preload" href="css/reset.css" as="style">
     <link rel="preload" href="css/cursor.css" as="style">
@@ -78,6 +77,7 @@
     <link rel="stylesheet" href="css/sobre-mi.css">
     <link rel="stylesheet" href="css/contacte.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/experiencia.css">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
@@ -89,7 +89,6 @@
     </script>
 
     <style>
-        /* Selector de Idioma */
         .selector-idioma {
             position: fixed;
             top: 20px;
@@ -139,13 +138,20 @@
     <!-- Loader -->
     <div id="loader">
         <div class="loader-content">
-            <!-- Spinner circular -->
             <div class="spinner"></div>
-            <!-- M pequeña en el centro -->
-            <svg class="loader-m" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <path class="m-path" d="M 20 80 L 20 20 L 50 60 L 80 20 L 80 80" fill="none" stroke="#1a1a1a"
-                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="loader-m" viewBox="13 -178 251 181" xmlns="http://www.w3.org/2000/svg">
+                <path class="m-path"
+                    d="M 138.53125 3 C 128.351562 3 119.054688 0.75 110.640625 -3.75 C 102.222656 -8.25 95.554688 -14.5 90.640625 -22.5 C 85.722656 -30.5 83.265625 -40.003906 83.265625 -51.015625 L 83.265625 -127.28125 C 83.265625 -129.945312 82.597656 -132.363281 81.265625 -134.53125 C 79.929688 -136.695312 78.179688 -138.445312 76.015625 -139.78125 C 73.847656 -141.113281 71.429688 -141.78125 68.765625 -141.78125 C 66.097656 -141.78125 63.679688 -141.113281 61.515625 -139.78125 C 59.347656 -138.445312 57.640625 -136.695312 56.390625 -134.53125 C 55.140625 -132.363281 54.515625 -129.945312 54.515625 -127.28125 L 54.515625 0 L 13.5 0 L 13.5 -124.265625 C 13.5 -134.773438 15.875 -144.03125 20.625 -152.03125 C 25.375 -160.03125 31.957031 -166.363281 40.375 -171.03125 C 48.800781 -175.695312 58.265625 -178.03125 68.765625 -178.03125 C 79.429688 -178.03125 88.929688 -175.695312 97.265625 -171.03125 C 105.597656 -166.363281 112.179688 -160.03125 117.015625 -152.03125 C 121.847656 -144.03125 124.265625 -134.773438 124.265625 -124.265625 L 124.265625 -48.015625 C 124.265625 -45.179688 124.929688 -42.675781 126.265625 -40.5 C 127.609375 -38.332031 129.320312 -36.625 131.40625 -35.375 C 133.488281 -34.125 135.78125 -33.5 138.28125 -33.5 C 140.945312 -33.5 143.40625 -34.125 145.65625 -35.375 C 147.90625 -36.625 149.695312 -38.332031 151.03125 -40.5 C 152.363281 -42.675781 153.03125 -45.179688 153.03125 -48.015625 L 153.03125 -124.265625 C 153.03125 -134.773438 155.445312 -144.03125 160.28125 -152.03125 C 165.113281 -160.03125 171.738281 -166.363281 180.15625 -171.03125 C 188.570312 -175.695312 197.953125 -178.03125 208.296875 -178.03125 C 218.960938 -178.03125 228.421875 -175.695312 236.671875 -171.03125 C 244.921875 -166.363281 251.460938 -160.03125 256.296875 -152.03125 C 261.128906 -144.03125 263.546875 -134.773438 263.546875 -124.265625 L 263.546875 0 L 222.546875 0 L 222.546875 -127.53125 C 222.546875 -130.195312 221.921875 -132.570312 220.671875 -134.65625 C 219.421875 -136.738281 217.710938 -138.445312 215.546875 -139.78125 C 213.378906 -141.113281 210.960938 -141.78125 208.296875 -141.78125 C 205.785156 -141.78125 203.40625 -141.113281 201.15625 -139.78125 C 198.90625 -138.445312 197.113281 -136.738281 195.78125 -134.65625 C 194.445312 -132.570312 193.78125 -130.195312 193.78125 -127.53125 L 193.78125 -51.015625 C 193.78125 -40.003906 191.28125 -30.5 186.28125 -22.5 C 181.28125 -14.5 174.613281 -8.25 166.28125 -3.75 C 157.945312 0.75 148.695312 3 138.53125 3 Z"
+                    fill="#1a1a1a" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" />
             </svg>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const mPath = document.querySelector('.m-path');
+                    const length = mPath.getTotalLength();
+                    mPath.style.strokeDasharray = length;
+                    mPath.style.strokeDashoffset = length;
+                });
+            </script>
         </div>
     </div>
 
@@ -179,7 +185,6 @@
             justify-content: center;
         }
 
-        /* Spinner circular */
         .spinner {
             position: absolute;
             width: 100%;
@@ -196,7 +201,6 @@
             }
         }
 
-        /* M pequeña en el centro */
         .loader-m {
             width: 40px;
             height: 40px;
@@ -205,9 +209,12 @@
         }
 
         .m-path {
-            stroke-dasharray: 300;
-            stroke-dashoffset: 300;
-            animation: drawM 2s ease-out forwards;
+            fill: transparent;
+            stroke: #1a1a1a;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: drawM 2s ease-out forwards, fillM 0.3s ease forwards 1.8s;
         }
 
         @keyframes drawM {
@@ -216,7 +223,16 @@
             }
         }
 
-        /* Responsive móvil */
+        @keyframes fillM {
+            from {
+                fill: transparent;
+            }
+
+            to {
+                fill: #1a1a1a;
+            }
+        }
+
         @media (max-width: 768px) {
             .loader-content {
                 width: 80px;
@@ -227,42 +243,26 @@
                 width: 32px;
                 height: 32px;
             }
-
-            .m-path {
-                stroke-width: 5;
-            }
         }
     </style>
 
     <script>
-        // Verificar si ya se mostró el loader en esta sesión
         const yaVioLoader = sessionStorage.getItem('loaderMostrado');
-
         if (yaVioLoader) {
-            // Si ya lo vio, quitar el loader inmediatamente
             document.getElementById('loader').remove();
             document.body.style.overflow = '';
         } else {
-            // Primera vez: mostrar loader
             document.body.style.overflow = 'hidden';
-
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.classList.add('hide');
-
-                // Restaurar scroll
                 document.body.style.overflow = '';
-
-                // Marcar que ya vio el loader
                 sessionStorage.setItem('loaderMostrado', 'true');
-
-                // Eliminar loader
-                setTimeout(() => {
-                    loader.remove();
-                }, 300);
+                setTimeout(() => { loader.remove(); }, 300);
             }, 2000);
         }
     </script>
+
     <!-- Cursor Personalitzat -->
     <div class="cursor"></div>
     <div class="cursor-seguidor"></div>
@@ -278,6 +278,7 @@
 
     <!-- Nom Fix -->
     <a href="#" class="nom-fix" style="text-decoration: none; color: inherit; cursor: pointer;">MARC GARCÍA-CUEVAS</a>
+
     <!-- Fons Liquid Glass -->
     <nav></nav>
 
@@ -301,8 +302,6 @@
         <a href="#projectes">Projectes</a>
         <a href="#sobre-mi">Sobre Mi</a>
         <a href="#contacte">Contacte</a>
-
-        <!-- Selector de Idioma Móvil -->
         <div class="selector-idioma selector-idioma-mobil">
             <a href="index.html" class="actiu">CA</a>
             <span class="separador">/</span>
@@ -318,7 +317,7 @@
             Design <span class="light">&</span><br>Creativity
         </h1>
         <p class="hero-subtitol">
-            Programador · Dissenyador · Fotògraf · Músic
+            Programador · Dissenyador · Fotògraf · Filmmaker
         </p>
         <a href="#projectes" class="indicador-scroll" aria-label="Desplaça't a projectes">
             <div class="fletxa-scroll"></div>
@@ -342,7 +341,6 @@
                     <video id="video-webball" loop muted playsinline preload="none" poster="media/webball-poster.jpg"
                         style="width: 100%; height: 100%; object-fit: cover;">
                         <source src="media/WebBall.mp4" type="video/mp4">
-                        El teu navegador no suporta vídeos HTML5.
                     </video>
                 </div>
                 <div class="info-projecte">
@@ -358,13 +356,13 @@
                     </a>
                 </div>
             </article>
+
             <!-- Projecte: Estela English Academy -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte contenidor-eea">
                     <video id="video-webeea" loop muted playsinline preload="none" poster="media/webEEA.jpg"
                         style="width: 100%; height: 100%; object-fit: cover;">
                         <source src="media/webEEA.mp4" type="video/mp4">
-                        El teu navegador no suporta vídeos HTML5.
                     </video>
                 </div>
                 <div class="info-projecte">
@@ -391,7 +389,6 @@
                     <video id="video-webfinances" loop muted playsinline preload="none" poster="media/webFINANCES.jpg"
                         style="width: 100%; height: 100%; object-fit: cover;">
                         <source src="media/webFINANCES.mp4" type="video/mp4">
-                        El teu navegador no suporta vídeos HTML5.
                     </video>
                 </div>
                 <div class="info-projecte">
@@ -411,45 +408,34 @@
                     </span>
                 </div>
             </article>
+
             <!-- Projecte: Fotografia -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte">
                     <div class="graella-fotos">
                         <div class="foto">
                             <img src="media/Foto7.jpg" alt="Vista del Big Ben a Londres" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Arquitectura</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Arquitectura</span></div>
                         </div>
                         <div class="foto">
                             <img src="media/Foto3.jpg" alt="Paisatge dels Pics d'Europa" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Paisatge</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Paisatge</span></div>
                         </div>
                         <div class="foto">
                             <img src="media/Foto5.jpg" alt="Carretilles" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Tradició</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Tradició</span></div>
                         </div>
                         <div class="foto">
                             <img src="media/Foto1.jpg" alt="Actuació del Ball de Diables del Prat" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Cultura</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Cultura</span></div>
                         </div>
                         <div class="foto">
                             <img src="media/Foto6.jpg" alt="Retrat artístic" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Retrat</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Retrat</span></div>
                         </div>
                         <div class="foto">
                             <img src="media/Foto9.jpg" alt="Costa de Menorca" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Natura</span>
-                            </div>
+                            <div class="capa-foto"><span class="etiqueta-foto">Natura</span></div>
                         </div>
                     </div>
                 </div>
@@ -466,14 +452,12 @@
             <!-- Projectes Vídeos Verticals Duals -->
             <div class="projecte-vertical-dual">
                 <div class="graella-vertical-dual">
-                    <!-- Festa Major 2024 -->
                     <div class="targeta-projecte-vertical">
                         <div class="contenidor-imatge-projecte">
                             <video id="video-festa2024" loop muted playsinline preload="none"
                                 poster="media/festa2024-poster.jpg"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                                 <source src="media/FestaMajor2024.mp4" type="video/mp4">
-                                El teu navegador no suporta vídeos HTML5.
                             </video>
                         </div>
                         <div class="info-projecte">
@@ -489,15 +473,12 @@
                             </a>
                         </div>
                     </div>
-
-                    <!-- Festa Major 2025 -->
                     <div class="targeta-projecte-vertical">
                         <div class="contenidor-imatge-projecte">
                             <video id="video-festa2025" loop muted playsinline preload="none"
                                 poster="media/festa2025-poster.jpg"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                                 <source src="media/FestaMajor2025.mp4" type="video/mp4">
-                                El teu navegador no suporta vídeos HTML5.
                             </video>
                         </div>
                         <div class="info-projecte">
@@ -560,30 +541,22 @@
                         <div class="disseny">
                             <img src="media/DissenyiBranding1.jpg"
                                 alt="Disseny de lones publicitàries per a esdeveniments culturals" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Lones</span>
-                            </div>
+                            <div class="capa-disseny"><span class="etiqueta-disseny">Lones</span></div>
                         </div>
                         <div class="disseny">
                             <img src="media/DissenyiBranding2.jpg"
                                 alt="Disseny de globus aerostàtics promocionals personalitzats" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Globus</span>
-                            </div>
+                            <div class="capa-disseny"><span class="etiqueta-disseny">Globus</span></div>
                         </div>
                         <div class="disseny">
                             <img src="media/DissenyiBranding3.jpg"
                                 alt="Roll-up publicitari amb disseny corporatiu modern" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Roll-up</span>
-                            </div>
+                            <div class="capa-disseny"><span class="etiqueta-disseny">Roll-up</span></div>
                         </div>
                         <div class="disseny">
                             <img src="media/DissenyiBranding4.jpg" alt="Figura promocional de goma de gran format"
                                 loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Figura</span>
-                            </div>
+                            <div class="capa-disseny"><span class="etiqueta-disseny">Figura</span></div>
                         </div>
                     </div>
                 </div>
@@ -606,7 +579,6 @@
             <div class="numero-seccio">02 — SOBRE MI</div>
             <h2 class="titol-seccio">Marc García-Cuevas de Paz</h2>
         </div>
-
         <div class="contingut-sobre-mi">
             <p class="text-sobre-mi">
                 Soc un creador multidisciplinari apassionat per fusionar <strong>art i tecnologia</strong>.
@@ -617,7 +589,6 @@
                 <strong>"El meu treball neix de la necessitat d'expressar, de sentir i de
                     connectar amb allò que faig. Sense això, no té sentit."</strong>
             </p>
-
             <div class="llista-habilitats">
                 <span class="etiqueta-habilitat">Programació</span>
                 <span class="etiqueta-habilitat">HTML/CSS/JS</span>
@@ -634,19 +605,144 @@
         </div>
     </section>
 
+    <!-- Secció Experiència -->
+    <section id="experiencia">
+        <div class="experiencia-sticky-wrapper">
+            <div class="experiencia-sticky-inner">
+                <div class="cap-seccio-experiencia">
+                    <div class="numero-seccio">03 — EXPERIÈNCIA</div>
+                    <h2 class="titol-seccio">Trajectòria</h2>
+                </div>
+                <div class="cards-track-wrapper">
+                    <div class="cards-track" id="cardsTrack">
+
+                        <div class="card-experiencia">
+                            <div class="card-cap">
+                                <div class="card-num-label">01 / 03</div>
+                                <div class="card-tag">Experiència Professional</div>
+                            </div>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="item-dates">OCT 2024 — Actualitat</div>
+                                    <div class="item-titol">Technical Analyst & Software Engineer</div>
+                                    <div class="item-empresa">Iterem · Barcelona · Híbrid</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">MAR 2024 — JUN 2024</div>
+                                    <div class="item-titol">Web Designer & Developer</div>
+                                    <div class="item-empresa">USACD · Barcelona · Remot</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">DIC 2022 — OCT 2023</div>
+                                    <div class="item-titol">Web Developer & Systems Administrator</div>
+                                    <div class="item-empresa">Anytic Business Solutions · Barcelona · Híbrid</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">SET 2021 — FEB 2022</div>
+                                    <div class="item-titol">Systems & Network Administration (Pràctiques)</div>
+                                    <div class="item-empresa">Escola Enric D'ossó · Barcelona</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">MAI 2019 — NOV 2019</div>
+                                    <div class="item-titol">Microcomputer Systems & Networking (Pràctiques)</div>
+                                    <div class="item-empresa">Indra · Barcelona</div>
+                                </div>
+                            </div>
+                            <div class="card-footer-exp">Experiència</div>
+                            <div class="card-numero">01</div>
+                        </div>
+
+                        <div class="card-experiencia">
+                            <div class="card-cap">
+                                <div class="card-num-label">02 / 03</div>
+                                <div class="card-tag">Formació</div>
+                            </div>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="item-dates">SET 2023 — MAI 2024</div>
+                                    <div class="item-titol">Grau en Enginyeria Informàtica</div>
+                                    <div class="item-empresa">Universitat Oberta de Catalunya</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">SET 2022 — MAI 2023</div>
+                                    <div class="item-titol">CFGS Desenvolupament d'Aplicacions Web (DAW)</div>
+                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">SET 2020 — MAI 2022</div>
+                                    <div class="item-titol">CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)
+                                    </div>
+                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">SET 2018 — MAI 2020</div>
+                                    <div class="item-titol">CFGM Sistemes Microinformàtics i Xarxes (SMX)</div>
+                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
+                                </div>
+                            </div>
+                            <div class="card-footer-exp">Formació</div>
+                            <div class="card-numero">02</div>
+                        </div>
+
+                        <div class="card-experiencia">
+                            <div class="card-cap">
+                                <div class="card-num-label">03 / 03</div>
+                                <div class="card-tag">Certificacions</div>
+                            </div>
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="item-dates">JUL 2024</div>
+                                    <div class="item-titol">Certified Kubernetes Administrator (CKA)</div>
+                                    <div class="item-empresa">Kubernetes Official</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">JUL 2024</div>
+                                    <div class="item-titol">Certified AWS</div>
+                                    <div class="item-empresa">Amazon Web Services</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">MAR 2024</div>
+                                    <div class="item-titol">Veeva Vault Certified Administrator</div>
+                                    <div class="item-empresa">Veeva Systems</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">GEN 2024</div>
+                                    <div class="item-titol">ReactJS & AngularJS</div>
+                                    <div class="item-empresa">LinkedIn Learning</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">GEN 2023</div>
+                                    <div class="item-titol">CCNP · CCNA</div>
+                                    <div class="item-empresa">Cisco</div>
+                                </div>
+                            </div>
+                            <div class="card-footer-exp">Certificacions</div>
+                            <div class="card-numero">03</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="progress-dots">
+                    <div class="dot actiu" id="dot-0"></div>
+                    <div class="dot" id="dot-1"></div>
+                    <div class="dot" id="dot-2"></div>
+                </div>
+                <div class="scroll-hint" id="scrollHint">Scroll</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Secció Contacte -->
     <section id="contacte">
         <div class="cap-seccio">
-            <div class="numero-seccio">03 — CONTACTE</div>
+            <div class="numero-seccio">04 — CONTACTE</div>
             <h2 class="titol-seccio">Parlem</h2>
             <p class="descripcio-seccio">
                 Tens un projecte en ment o vols col·laborar? Escriu-me!
             </p>
         </div>
-
         <div class="contingut-contacte">
             <a href="mailto:marcg-c20@hotmail.es" class="email-contacte">marcg-c20@hotmail.es</a>
-
             <div class="links-xarxes">
                 <a href="https://www.instagram.com/marccgarciia/" target="_blank"
                     rel="noopener noreferrer">Instagram</a>
@@ -659,7 +755,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Marc García-Cuevas de Paz</p>
+        <p>© 2026 Marc García-Cuevas de Paz</p>
     </footer>
 
     <!-- JavaScript Files -->
@@ -668,6 +764,8 @@
     <script src="js/animacions.js"></script>
     <script src="js/videos.js"></script>
     <script src="js/smooth-scroll.js"></script>
+    <script src="js/experiencia.js"></script>
+
 </body>
 
 </html>

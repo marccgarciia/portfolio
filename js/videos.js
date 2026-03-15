@@ -55,7 +55,10 @@ const observadorVideos = new IntersectionObserver((entries) => {
 
         if (video && videosEstat[videoId].autoReproduint) {
             if (entry.isIntersecting) {
-                video.play();
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => { });
+                }
             } else {
                 video.pause();
             }
