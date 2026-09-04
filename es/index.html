@@ -152,6 +152,7 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const mPath = document.querySelector('.m-path');
+                    if (!mPath) return;
                     const length = mPath.getTotalLength();
                     mPath.style.strokeDasharray = length;
                     mPath.style.strokeDashoffset = length;
@@ -411,7 +412,56 @@
                 </div>
             </article>
 
-            <!-- Proyecto: Finances -->
+            <!-- Proyecto: Joan Avilés -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <video id="video-joan" loop muted playsinline preload="none" poster="../media/webJOAN.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="../media/webJOAN.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Desarrollo Web</div>
+                    <h3 class="titol-projecte">Joan Avilés · Estudio de Imaginería</h3>
+                    <p class="descripcio-projecte">
+                        Desarrollo web para el estudio de Joan Avilés, escultor del Prat de Llobregat
+                        especializado en imaginería festiva y religiosa. Un espacio para presentar su obra,
+                        la creación de figuras y su labor de restauración y conservación del patrimonio.
+                    </p>
+                    <a href="https://joanaviles.art/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>Ver proyecto</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Proyecto: Finances — Landing -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <video id="video-finances-landing" loop muted playsinline preload="none"
+                        poster="../media/webFINANCES-landing.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="../media/webFINANCES-landing.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Desarrollo Web</div>
+                    <h3 class="titol-projecte">Finances · Landing</h3>
+                    <p class="descripcio-projecte">
+                        Landing de presentación y venta de una aplicación propia de gestión de finanzas
+                        personales. Muestra las funcionalidades de la app, los planes de suscripción y permite
+                        a los usuarios descubrirla y adquirirla.
+                    </p>
+                    <a href="https://financesapp.es/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>Ver proyecto</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Proyecto: Finances — App -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte contenidor-finances">
                     <video id="video-webfinances" loop muted playsinline preload="none"
@@ -422,10 +472,32 @@
                 </div>
                 <div class="info-projecte">
                     <div class="categoria-projecte">Desarrollo de App</div>
-                    <h3 class="titol-projecte">Finances</h3>
+                    <h3 class="titol-projecte">Finances · App</h3>
                     <p class="descripcio-projecte">
                         Aplicación de gestión de finanzas personales con estadísticas,
                         categorías personalizadas, gastos recurrentes y objetivos de ahorro.
+                    </p>
+                    <a href="https://app.financesapp.es/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>Ver proyecto</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Proyecto: Estela — Panel de Gestión -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte contenidor-panell">
+                    <img src="../media/webPANELL.png"
+                        alt="Panel de gestión interno de la academia Estela con datos de ejemplo" loading="lazy"
+                        style="width: 100%; height: auto; display: block;">
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Desarrollo de App</div>
+                    <h3 class="titol-projecte">Estela English Academy · Panel de Gestión</h3>
+                    <p class="descripcio-projecte">
+                        Panel interno de gestión para la academia de inglés: control de alumnos, pagos
+                        recurrentes, devoluciones y profesorado, centralizando toda la administración en una
+                        única plataforma.
                     </p>
                     <span class="link-projecte link-projecte-privat">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -641,8 +713,8 @@
                 la belleza en la simplicidad y la autenticidad en cada proyecto.
             </p>
             <p class="text-sobre-mi">
-                <strong>"Mi trabajo nace de la necesidad de expresar, de sentir y de
-                    conectar con aquello que hago. Sin eso, no tiene sentido."</strong>
+                <strong>«Para hacer las cosas bien hace falta: primero, el amor a ellas; segundo, la técnica.»</strong><br>
+                <span style="font-weight: 400; opacity: 0.7;">— Antoni Gaudí</span>
             </p>
 
             <div class="marquee-habilitats">
@@ -711,8 +783,13 @@
                             </div>
                             <div class="timeline-items">
                                 <div class="timeline-item">
-                                    <div class="item-dates">OCT 2024 — Actualidad</div>
+                                    <div class="item-dates">NOV 2025 — Actualidad</div>
                                     <div class="item-titol">Technical Analyst & Software Engineer</div>
+                                    <div class="item-empresa">Iterem · Barcelona · Híbrido</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">OCT 2024 — NOV 2025</div>
+                                    <div class="item-titol">Helpdesk & Frontend Developer</div>
                                     <div class="item-empresa">Iterem · Barcelona · Híbrido</div>
                                 </div>
                                 <div class="timeline-item">
@@ -726,12 +803,12 @@
                                     <div class="item-empresa">Anytic Business Solutions · Barcelona · Híbrido</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">SET 2021 — FEB 2022</div>
+                                    <div class="item-dates">SEP 2021 — FEB 2022</div>
                                     <div class="item-titol">Systems & Network Administration (Prácticas)</div>
                                     <div class="item-empresa">Escola Enric D'ossó · Barcelona</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">MAI 2019 — NOV 2019</div>
+                                    <div class="item-dates">MAY 2019 — NOV 2019</div>
                                     <div class="item-titol">Microcomputer Systems & Networking (Prácticas)</div>
                                     <div class="item-empresa">Indra · Barcelona</div>
                                 </div>
@@ -746,23 +823,23 @@
                             </div>
                             <div class="timeline-items">
                                 <div class="timeline-item">
-                                    <div class="item-dates">SET 2023 — MAI 2024</div>
-                                    <div class="item-titol">Grado en Ingeniería Informática</div>
-                                    <div class="item-empresa">Universitat Oberta de Catalunya</div>
+                                    <div class="item-dates">SEP 2023 — MAY 2024</div>
+                                    <div class="item-titol">Créditos convalidados de Ingeniería Informática (UOC)</div>
+                                    <div class="item-empresa">Certificado por examen</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">SET 2022 — MAI 2023</div>
+                                    <div class="item-dates">SEP 2022 — MAY 2023</div>
                                     <div class="item-titol">CFGS Desarrollo de Aplicaciones Web (DAW)</div>
                                     <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">SET 2020 — MAI 2022</div>
+                                    <div class="item-dates">SEP 2020 — MAY 2022</div>
                                     <div class="item-titol">CFGS Administración de Sistemas Informáticos en Red (ASIX)
                                     </div>
                                     <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">SET 2018 — MAI 2020</div>
+                                    <div class="item-dates">SEP 2018 — MAY 2020</div>
                                     <div class="item-titol">CFGM Sistemas Microinformáticos y Redes (SMX)</div>
                                     <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
                                 </div>
@@ -776,6 +853,16 @@
                                 <div class="card-tag">Certificaciones</div>
                             </div>
                             <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="item-dates">MAR 2026</div>
+                                    <div class="item-titol">Desarrollo con IA</div>
+                                    <div class="item-empresa">BIG School</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">JUL 2025</div>
+                                    <div class="item-titol">Cybersecurity for Everyday</div>
+                                    <div class="item-empresa">UPC School</div>
+                                </div>
                                 <div class="timeline-item">
                                     <div class="item-dates">JUL 2024</div>
                                     <div class="item-titol">Certified Kubernetes Administrator (CKA)</div>
@@ -792,13 +879,18 @@
                                     <div class="item-empresa">Veeva Systems</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">GEN 2024</div>
+                                    <div class="item-dates">ENE 2024</div>
                                     <div class="item-titol">ReactJS & AngularJS</div>
                                     <div class="item-empresa">LinkedIn Learning</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">GEN 2023</div>
-                                    <div class="item-titol">CCNP · CCNA</div>
+                                    <div class="item-dates">2023</div>
+                                    <div class="item-titol">CCNP (Cisco Certified Network Professional)</div>
+                                    <div class="item-empresa">Cisco</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">2021</div>
+                                    <div class="item-titol">CCNA (Cisco Certified Network Associate)</div>
                                     <div class="item-empresa">Cisco</div>
                                 </div>
                             </div>
