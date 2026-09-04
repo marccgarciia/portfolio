@@ -153,6 +153,7 @@
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     const mPath = document.querySelector('.m-path');
+                    if (!mPath) return;
                     const length = mPath.getTotalLength();
                     mPath.style.strokeDasharray = length;
                     mPath.style.strokeDashoffset = length;
@@ -411,7 +412,56 @@
                 </div>
             </article>
 
-            <!-- Project: Finances -->
+            <!-- Project: Joan Avilés -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <video id="video-joan" loop muted playsinline preload="none" poster="../media/webJOAN.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="../media/webJOAN.mp4" type="video/mp4">
+                        Your browser does not support HTML5 videos.
+                    </video>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Web Development</div>
+                    <h3 class="titol-projecte">Joan Avilés · Imagery Studio</h3>
+                    <p class="descripcio-projecte">
+                        Web development for Joan Avilés's studio, a sculptor from El Prat de Llobregat
+                        specialising in festive and religious imagery. A space to showcase his work,
+                        the creation of figures and his restoration and heritage-conservation work.
+                    </p>
+                    <a href="https://joanaviles.art/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>View project</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project: Finances — Landing -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte">
+                    <video id="video-finances-landing" loop muted playsinline preload="none"
+                        poster="../media/webFINANCES-landing.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                        <source src="../media/webFINANCES-landing.mp4" type="video/mp4">
+                        Your browser does not support HTML5 videos.
+                    </video>
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">Web Development</div>
+                    <h3 class="titol-projecte">Finances · Landing</h3>
+                    <p class="descripcio-projecte">
+                        Landing page to present and sell a proprietary personal-finance management app.
+                        It showcases the app's features, the subscription plans and lets users discover
+                        and purchase it.
+                    </p>
+                    <a href="https://financesapp.es/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>View project</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project: Finances — App -->
             <article class="projecte">
                 <div class="contenidor-imatge-projecte contenidor-finances">
                     <video id="video-webfinances" loop muted playsinline preload="none"
@@ -422,10 +472,32 @@
                 </div>
                 <div class="info-projecte">
                     <div class="categoria-projecte">App Development</div>
-                    <h3 class="titol-projecte">Finances</h3>
+                    <h3 class="titol-projecte">Finances · App</h3>
                     <p class="descripcio-projecte">
                         Personal finance management app with statistics,
                         custom categories, recurring expenses and savings goals.
+                    </p>
+                    <a href="https://app.financesapp.es/" target="_blank" rel="noopener noreferrer"
+                        class="link-projecte">
+                        <span>View project</span><span>→</span>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project: Estela — Management Panel -->
+            <article class="projecte">
+                <div class="contenidor-imatge-projecte contenidor-panell">
+                    <img src="../media/webPANELL.png"
+                        alt="Internal management panel of Estela academy with sample data" loading="lazy"
+                        style="width: 100%; height: auto; display: block;">
+                </div>
+                <div class="info-projecte">
+                    <div class="categoria-projecte">App Development</div>
+                    <h3 class="titol-projecte">Estela English Academy · Management Panel</h3>
+                    <p class="descripcio-projecte">
+                        Internal management panel for the English academy: student records, recurring
+                        payments, refunds and teaching staff, centralising all administration on a single
+                        platform.
                     </p>
                     <span class="link-projecte link-projecte-privat">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -641,8 +713,8 @@
                 beauty in simplicity and authenticity in every project.
             </p>
             <p class="text-sobre-mi">
-                <strong>"My work is born from the need to express, to feel and to
-                    connect with what I do. Without that, it has no meaning."</strong>
+                <strong>“To do things well you need: first, love for them; second, technique.”</strong><br>
+                <span style="font-weight: 400; opacity: 0.7;">— Antoni Gaudí</span>
             </p>
 
             <div class="marquee-habilitats">
@@ -710,8 +782,13 @@
                             </div>
                             <div class="timeline-items">
                                 <div class="timeline-item">
-                                    <div class="item-dates">OCT 2024 — Present</div>
+                                    <div class="item-dates">NOV 2025 — Present</div>
                                     <div class="item-titol">Technical Analyst & Software Engineer</div>
+                                    <div class="item-empresa">Iterem · Barcelona · Hybrid</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">OCT 2024 — NOV 2025</div>
+                                    <div class="item-titol">Helpdesk & Frontend Developer</div>
                                     <div class="item-empresa">Iterem · Barcelona · Hybrid</div>
                                 </div>
                                 <div class="timeline-item">
@@ -746,8 +823,8 @@
                             <div class="timeline-items">
                                 <div class="timeline-item">
                                     <div class="item-dates">SEP 2023 — MAY 2024</div>
-                                    <div class="item-titol">Degree in Computer Engineering</div>
-                                    <div class="item-empresa">Universitat Oberta de Catalunya</div>
+                                    <div class="item-titol">Validated credits in Computer Engineering (UOC)</div>
+                                    <div class="item-empresa">Certified by examination</div>
                                 </div>
                                 <div class="timeline-item">
                                     <div class="item-dates">SEP 2022 — MAY 2023</div>
@@ -775,6 +852,16 @@
                             </div>
                             <div class="timeline-items">
                                 <div class="timeline-item">
+                                    <div class="item-dates">MAR 2026</div>
+                                    <div class="item-titol">AI Development</div>
+                                    <div class="item-empresa">BIG School</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">JUL 2025</div>
+                                    <div class="item-titol">Cybersecurity for Everyday</div>
+                                    <div class="item-empresa">UPC School</div>
+                                </div>
+                                <div class="timeline-item">
                                     <div class="item-dates">JUL 2024</div>
                                     <div class="item-titol">Certified Kubernetes Administrator (CKA)</div>
                                     <div class="item-empresa">Kubernetes Official</div>
@@ -795,8 +882,13 @@
                                     <div class="item-empresa">LinkedIn Learning</div>
                                 </div>
                                 <div class="timeline-item">
-                                    <div class="item-dates">JAN 2023</div>
-                                    <div class="item-titol">CCNP · CCNA</div>
+                                    <div class="item-dates">2023</div>
+                                    <div class="item-titol">CCNP (Cisco Certified Network Professional)</div>
+                                    <div class="item-empresa">Cisco</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="item-dates">2021</div>
+                                    <div class="item-titol">CCNA (Cisco Certified Network Associate)</div>
                                     <div class="item-empresa">Cisco</div>
                                 </div>
                             </div>

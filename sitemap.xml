@@ -5,7 +5,7 @@
   <!-- Página principal en catalán -->
   <url>
     <loc>https://marccgarciia.com/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>
@@ -16,7 +16,7 @@
   <!-- Página en castellano -->
   <url>
     <loc>https://marccgarciia.com/es/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>
@@ -27,7 +27,7 @@
   <!-- Página en inglés -->
   <url>
     <loc>https://marccgarciia.com/en/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-09-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/"/>

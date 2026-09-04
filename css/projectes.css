@@ -90,6 +90,12 @@ section {
     margin: 0 auto;
 }
 
+/* Panell de gestió: imatge panoràmica, mostra-la sencera sense retallar */
+.contenidor-imatge-projecte.contenidor-panell {
+    aspect-ratio: auto;
+    height: auto;
+}
+
 /* ============================================
    LAYOUT VÍDEOS VERTICALS DUALS
    ============================================ */
