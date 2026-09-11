@@ -74,7 +74,7 @@ section {
 
 /* Aspect ratio per graella de fotos */
 .contenidor-imatge-projecte:has(.graella-fotos) {
-    aspect-ratio: 3/2;
+    aspect-ratio: 2/1;
 }
 
 /* Aspect ratio per graella de disseny */
@@ -88,6 +88,32 @@ section {
     aspect-ratio: 9/16;
     max-width: 100%;
     margin: 0 auto;
+}
+
+/* Projecte destacat centrat: vídeo gran a dalt, text centrat a sota */
+.projecte.projecte-centrat {
+    display: block;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    direction: ltr;
+}
+
+.projecte.projecte-centrat .contenidor-imatge-projecte {
+    aspect-ratio: 16/9;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.projecte.projecte-centrat .info-projecte {
+    padding: 0;
+}
+
+.projecte.projecte-centrat .descripcio-projecte {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Panell de gestió: imatge panoràmica, mostra-la sencera sense retallar */
@@ -153,7 +179,7 @@ section {
    ============================================ */
 .graella-fotos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
     padding: 0;

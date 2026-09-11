@@ -285,6 +285,17 @@
 
     /* ===== GALERIA DE FOTOS ===== */
 
+    /* Galeria a 2 columnes a mòbil, cel·les quadrades */
+    .graella-fotos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .graella-fotos .foto {
+        aspect-ratio: 1;
+        height: auto;
+    }
+
     /* Animació secuencial de fotos */
     .foto .capa-foto {
         background: rgba(0, 0, 0, 0);
