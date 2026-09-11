@@ -3,7 +3,7 @@
    ============================================ */
 
 // Array amb tots els IDs dels vídeos
-const videosIds = ['video-webball', 'video-webeea', 'video-joan', 'video-finances-landing', 'video-webfinances', 'video-festa2024', 'video-festa2025'];
+const videosIds = ['video-webball', 'video-webeea', 'video-joan', 'video-alyseu', 'video-finances-landing', 'video-webfinances', 'video-festa2024', 'video-festa2025', 'video-festa2026'];
 
 // Objecte per guardar l'estat de cada vídeo
 const videosEstat = {};
