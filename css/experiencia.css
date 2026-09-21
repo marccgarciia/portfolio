@@ -322,6 +322,91 @@
     display: none;
 }
 
+/* ── FINESTRES BAIXES (portàtil sense pantalla completa) ──
+   Escala les targetes perquè càpiguen dins de 100vh amb marge,
+   evitant que la targeta de 8 items es desbordi i se solapi amb la secció de dalt. */
+@media (min-width: 769px) and (max-height: 940px) {
+    .cap-seccio-experiencia {
+        margin-bottom: 0.4vh;
+    }
+
+    .cap-seccio-experiencia .titol-seccio {
+        font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+        margin-bottom: 4px;
+    }
+
+    .cap-seccio-experiencia .numero-seccio {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .card-experiencia {
+        width: min(400px, 40vw);
+        min-height: 0;
+        padding: 1.4rem 1.7rem 1.6rem;
+        border-radius: 18px;
+    }
+
+    .card-cap {
+        gap: 0.4rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .card-tag {
+        font-size: 0.55rem;
+    }
+
+    .timeline-items {
+        padding: 0.2rem 0;
+    }
+
+    .timeline-item {
+        padding-bottom: 8px;
+    }
+
+    .item-dates {
+        font-size: 0.6rem;
+        margin-bottom: 2px;
+    }
+
+    .item-titol {
+        font-size: 0.8rem;
+    }
+
+    .item-empresa {
+        font-size: 0.7rem;
+    }
+
+    .card-footer-exp {
+        display: none;
+    }
+
+    .card-numero {
+        font-size: 6rem;
+        bottom: -1rem;
+    }
+
+    .progress-dots {
+        padding: 1vh 0 0.8vh;
+    }
+}
+
+/* Encara més baixes */
+@media (min-width: 769px) and (max-height: 720px) {
+    .card-experiencia {
+        width: min(370px, 38vw);
+        padding: 1.1rem 1.5rem 1.3rem;
+    }
+
+    .item-titol {
+        font-size: 0.76rem;
+    }
+
+    .timeline-item {
+        padding-bottom: 6px;
+    }
+}
+
 /* ── RESPONSIVE MÒBIL ── */
 @media (max-width: 768px) {
     .experiencia-sticky-wrapper {
