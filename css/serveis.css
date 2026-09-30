@@ -1,0 +1,453 @@
+/* ============================================
+   PÀGINA SERVEIS — estil liquid glass
+   ============================================ */
+
+body.pagina-serveis {
+    background: linear-gradient(150deg, #eef2ff 0%, #faf8f5 46%, #eef7f2 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* Blobs decoratius de fons */
+.serveis-blobs {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.serveis-blobs span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+}
+
+.serveis-blobs .sb1 {
+    width: 500px;
+    height: 500px;
+    background: #c9d6ff;
+    top: -160px;
+    left: -120px;
+}
+
+.serveis-blobs .sb2 {
+    width: 420px;
+    height: 420px;
+    background: #ffe0cf;
+    top: 40%;
+    right: -140px;
+}
+
+.serveis-blobs .sb3 {
+    width: 460px;
+    height: 460px;
+    background: #c7f0dd;
+    bottom: -180px;
+    left: 30%;
+}
+
+/* Assegurar que el contingut va per sobre dels blobs */
+.pagina-serveis main,
+.pagina-serveis footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── HERO / INTRO ── */
+#serveis-intro {
+    padding-top: 200px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+#serveis-intro .cap-seccio {
+    margin-bottom: 0;
+}
+
+#serveis-intro .descripcio-seccio {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: var(--gris);
+}
+
+/* ── GRAELLA DE SERVEIS ── */
+#serveis-blocs {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.serveis-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.servei-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    padding: 2.6rem 2.6rem 2.8rem;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+        0 10px 24px rgba(30, 40, 80, 0.06),
+        0 24px 48px rgba(30, 40, 80, 0.08);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.servei-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.7) inset,
+        0 16px 32px rgba(30, 40, 80, 0.1),
+        0 32px 64px rgba(30, 40, 80, 0.12);
+}
+
+.servei-num {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--fosc);
+    opacity: 0.06;
+    line-height: 1;
+    user-select: none;
+}
+
+.servei-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--fosc);
+    margin-bottom: 0.7rem;
+}
+
+.servei-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gris);
+    font-weight: 300;
+    margin-bottom: 1.4rem;
+}
+
+.servei-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.servei-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--fosc);
+    font-weight: 400;
+}
+
+.servei-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--fosc);
+    opacity: 0.55;
+}
+
+/* ── DIFERENCIACIÓ ── */
+#diferenciacio {
+    padding: 40px 60px 80px;
+}
+
+.diferenciacio-box {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 28px;
+    padding: 3.4rem 3rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(26px) saturate(180%);
+    -webkit-backdrop-filter: blur(26px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+        0 20px 44px rgba(30, 40, 80, 0.1);
+}
+
+.diferenciacio-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    font-weight: 600;
+    color: var(--fosc);
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+}
+
+.diferenciacio-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gris);
+    font-weight: 300;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ── PROCÉS ── */
+#proces {
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.proces-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+.proces-step {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.proces-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--fosc);
+    opacity: 0.18;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+}
+
+.proces-step h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--fosc);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.proces-step p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--gris);
+    font-weight: 300;
+}
+
+/* ── FORMULARI ── */
+#contacte-serveis {
+    padding-top: 20px;
+    padding-bottom: 120px;
+}
+
+.form-box {
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 28px;
+    padding: 3rem 3rem 3.2rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(26px) saturate(180%);
+    -webkit-backdrop-filter: blur(26px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+        0 20px 44px rgba(30, 40, 80, 0.1);
+}
+
+.form-camp {
+    margin-bottom: 1.4rem;
+}
+
+.form-camp label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fosc);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+
+.form-camp input[type="text"],
+.form-camp input[type="email"],
+.form-camp select,
+.form-camp textarea {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: var(--fosc);
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.7);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-camp textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-camp input:focus,
+.form-camp select:focus,
+.form-camp textarea:focus {
+    outline: none;
+    border-color: var(--fosc);
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.06);
+}
+
+.form-camp input::placeholder,
+.form-camp textarea::placeholder {
+    color: var(--gris-clar);
+}
+
+/* Checkboxes serveis */
+.form-checks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.55);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: var(--fosc);
+}
+
+.check-item:hover {
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.check-item input {
+    accent-color: var(--fosc);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.form-btn {
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--fosc);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.form-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.form-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+    transform: none;
+}
+
+.form-nota {
+    font-size: 0.8rem;
+    color: var(--gris-clar);
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 300;
+}
+
+.form-resultat {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    display: none;
+}
+
+.form-resultat.ok {
+    display: block;
+    background: rgba(40, 200, 100, 0.12);
+    color: #1a7a45;
+}
+
+.form-resultat.error {
+    display: block;
+    background: rgba(255, 90, 80, 0.12);
+    color: #b02a1f;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .proces-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    #serveis-intro {
+        padding-top: 150px;
+        padding-bottom: 30px;
+    }
+
+    #serveis-intro .descripcio-seccio {
+        font-size: 1.1rem;
+    }
+
+    .serveis-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servei-card {
+        padding: 2rem 1.8rem 2.2rem;
+    }
+
+    #diferenciacio {
+        padding: 20px 24px 50px;
+    }
+
+    .diferenciacio-box {
+        padding: 2.4rem 1.8rem;
+    }
+
+    .proces-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .form-box {
+        padding: 2rem 1.6rem 2.2rem;
+    }
+
+    .form-checks {
+        grid-template-columns: 1fr;
+    }
+}

@@ -35,4 +35,37 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/"/>
   </url>
 
+  <!-- Serveis (CA) -->
+  <url>
+    <loc>https://marccgarciia.com/serveis.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/serveis.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/services.html"/>
+  </url>
+
+  <!-- Servicios (ES) -->
+  <url>
+    <loc>https://marccgarciia.com/es/servicios.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/serveis.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/services.html"/>
+  </url>
+
+  <!-- Services (EN) -->
+  <url>
+    <loc>https://marccgarciia.com/en/services.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://marccgarciia.com/serveis.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/services.html"/>
+  </url>
+
 </urlset>

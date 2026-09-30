@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic SEO -->
+    <title>Services | Marc García-Cuevas</title>
+    <meta name="description"
+        content="Web development, internal tools, automation & AI, and digital design services — tailor-made for businesses and organisations.">
+    <meta name="keywords"
+        content="services, web development, internal tools, automation, artificial intelligence, digital design, Marc García-Cuevas">
+    <meta name="author" content="Marc García-Cuevas de Paz">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marccgarciia.com/en/services.html">
+    <meta property="og:title" content="Services — Marc García-Cuevas">
+    <meta property="og:description"
+        content="Tailor-made digital solutions: websites, internal tools, automation & AI, and digital design.">
+    <meta property="og:image" content="https://marccgarciia.com/media/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="canonical" href="https://marccgarciia.com/en/services.html">
+    <link rel="alternate" hreflang="ca" href="https://marccgarciia.com/serveis.html">
+    <link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/servicios.html">
+    <link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://marccgarciia.com/serveis.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/scrollbar.css">
+    <link rel="stylesheet" href="../css/cursor.css">
+    <link rel="stylesheet" href="../css/navegacio.css">
+    <link rel="stylesheet" href="../css/projectes.css">
+    <link rel="stylesheet" href="../css/serveis.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0TK3TQG1Q7');
+    </script>
+
+    <style>
+        .selector-idioma { position: fixed; top: 20px; right: 40px; z-index: 1003; display: flex; gap: 8px; align-items: center; font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; }
+        .selector-idioma a { color: var(--gris); text-decoration: none; transition: color 0.3s ease; padding: 5px 8px; }
+        .selector-idioma a:hover { color: var(--fosc); }
+        .selector-idioma a.actiu { color: var(--fosc); font-weight: 600; }
+        .selector-idioma .separador { color: var(--gris-clar); user-select: none; }
+        @media (max-width: 768px) { .selector-idioma { top: 15px; right: 20px; font-size: 0.7rem; gap: 6px; } }
+
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #FFFFFF; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; overflow: hidden; }
+        #loader.hide { opacity: 0; pointer-events: none; }
+        .loader-content { position: relative; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; }
+        .spinner { position: absolute; width: 100%; height: 100%; border: 3px solid #f0f0f0; border-top: 3px solid #1a1a1a; border-radius: 50%; animation: spin 1.2s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-m { width: 40px; height: 40px; position: relative; z-index: 1; }
+        .m-path { stroke-dasharray: 300; stroke-dashoffset: 300; animation: drawM 2s ease-out forwards; }
+        @keyframes drawM { to { stroke-dashoffset: 0; } }
+    </style>
+</head>
+
+<body class="pagina-serveis">
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <svg class="loader-m" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="m-path" d="M 20 80 L 20 20 L 50 60 L 80 20 L 80 80" fill="none" stroke="#1a1a1a"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <script>
+        const yaVioLoader = sessionStorage.getItem('loaderMostrado');
+        if (yaVioLoader) {
+            document.getElementById('loader').remove();
+            document.body.style.overflow = '';
+        } else {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('hide');
+                document.body.style.overflow = '';
+                sessionStorage.setItem('loaderMostrado', 'true');
+                setTimeout(() => { loader.remove(); }, 300);
+            }, 1400);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const mPath = document.querySelector('.m-path');
+            if (!mPath) return;
+            const length = mPath.getTotalLength();
+            mPath.style.strokeDasharray = length;
+            mPath.style.strokeDashoffset = length;
+        });
+    </script>
+
+    <div class="cursor"></div>
+    <div class="cursor-seguidor"></div>
+
+    <div class="serveis-blobs"><span class="sb1"></span><span class="sb2"></span><span class="sb3"></span></div>
+
+    <div class="selector-idioma selector-idioma-desktop">
+        <a href="../serveis.html">CA</a>
+        <span class="separador">/</span>
+        <a href="../es/servicios.html">ES</a>
+        <span class="separador">/</span>
+        <a href="services.html" class="actiu">EN</a>
+    </div>
+
+    <a href="../index.html" class="nom-fix" style="text-decoration: none; color: inherit; cursor: pointer;">MARC
+        GARCÍA-CUEVAS</a>
+
+    <nav></nav>
+
+    <div class="contenidor-links-nav">
+        <a href="../index.html#projectes">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="../index.html#sobre-mi">About</a>
+        <a href="../index.html#contacte">Contact</a>
+    </div>
+
+    <div class="boto-menu">
+        <div class="linia-menu"></div>
+    </div>
+
+    <div class="capa-menu"></div>
+
+    <div class="menu-mobil">
+        <a href="../index.html#projectes">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="../index.html#sobre-mi">About</a>
+        <a href="../index.html#contacte">Contact</a>
+        <div class="selector-idioma selector-idioma-mobil">
+            <a href="../serveis.html">CA</a>
+            <span class="separador">/</span>
+            <a href="../es/servicios.html">ES</a>
+            <span class="separador">/</span>
+            <a href="services.html" class="actiu">EN</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="serveis-intro">
+            <div class="cap-seccio">
+                <div class="numero-seccio">WHAT I OFFER</div>
+                <h2 class="titol-seccio">Services</h2>
+                <p class="descripcio-seccio">
+                    I build tailor-made digital solutions for businesses and organisations. From a professional
+                    website to internal tools that save time and improve processes.
+                </p>
+            </div>
+        </section>
+
+        <section id="serveis-blocs">
+            <div class="serveis-grid">
+                <article class="servei-card">
+                    <div class="servei-num">01</div>
+                    <h3>Custom websites</h3>
+                    <p class="servei-desc">Corporate websites, landing pages and online presence designed to turn
+                        visitors into clients.</p>
+                    <ul>
+                        <li>Custom design, not generic templates</li>
+                        <li>Optimised for mobile and loading speed</li>
+                        <li>Technical SEO built in from the ground up</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">02</div>
+                    <h3>Internal tools</h3>
+                    <p class="servei-desc">Management panels, bookings, clients, students or custom processes for
+                        your business or organisation.</p>
+                    <ul>
+                        <li>Backoffice adapted to your real workflow</li>
+                        <li>Ecommerce and payment gateways when you need to sell online</li>
+                        <li>Fewer scattered spreadsheets, more control</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">03</div>
+                    <h3>Automation &amp; AI</h3>
+                    <p class="servei-desc">Automation of repetitive tasks and AI integration where it adds real
+                        value, not as a trend.</p>
+                    <ul>
+                        <li>Connection between your systems (CRM, ERP, ecommerce)</li>
+                        <li>Automation of manual processes</li>
+                        <li>AI integration into existing workflows</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">04</div>
+                    <h3>Design &amp; digital content</h3>
+                    <p class="servei-desc">Design, photography, video and visual resources to strengthen your
+                        online presence.</p>
+                    <ul>
+                        <li>Visual identity and graphic materials</li>
+                        <li>Content management for social media and web</li>
+                        <li>Audiovisual production</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="diferenciacio">
+            <div class="diferenciacio-box">
+                <h2>Not every problem is solved with an off-the-shelf tool</h2>
+                <p>Many businesses and organisations end up adapting to generic software that doesn't fit the way
+                    they work. My approach is to understand the problem first and build (or adapt) a solution that
+                    fits you, not the other way around.</p>
+            </div>
+        </section>
+
+        <section id="proces">
+            <div class="cap-seccio">
+                <div class="numero-seccio">HOW I WORK</div>
+                <h2 class="titol-seccio">The process</h2>
+            </div>
+            <div class="proces-grid">
+                <div class="proces-step">
+                    <div class="proces-num">01</div>
+                    <h4>Tell me what you need</h4>
+                    <p>Fill in the form or write to me directly.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">02</div>
+                    <h4>First no-commitment conversation</h4>
+                    <p>We talk about your project and goals.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">03</div>
+                    <h4>Clear proposal and quote</h4>
+                    <p>You know exactly what you'll get and how much it costs, no surprises.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">04</div>
+                    <h4>Development and delivery</h4>
+                    <p>Constant communication until the result is ready (and afterwards, if you need it).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacte-serveis">
+            <div class="cap-seccio">
+                <div class="numero-seccio">CONTACT</div>
+                <h2 class="titol-seccio">Let's talk</h2>
+                <p class="descripcio-seccio">Tell me what you need and I'll reply with a clear proposal.</p>
+            </div>
+            <div class="form-box">
+                <form id="form-serveis" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New services enquiry — marccgarciia.com">
+                    <input type="hidden" name="from_name" value="Services website · marccgarciia.com">
+                    <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1"
+                        autocomplete="off">
+
+                    <div class="form-camp">
+                        <label for="nom">Name *</label>
+                        <input type="text" id="nom" name="Name" required>
+                    </div>
+                    <div class="form-camp">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                    <div class="form-camp">
+                        <label for="empresa">Company or business (optional)</label>
+                        <input type="text" id="empresa" name="Company">
+                    </div>
+                    <div class="form-camp">
+                        <label>What do you need?</label>
+                        <div class="form-checks">
+                            <label class="check-item"><input type="checkbox" value="Custom websites"> Custom
+                                websites</label>
+                            <label class="check-item"><input type="checkbox" value="Internal tools"> Internal
+                                tools</label>
+                            <label class="check-item"><input type="checkbox" value="Automation & AI"> Automation
+                                &amp; AI</label>
+                            <label class="check-item"><input type="checkbox" value="Design & content"> Design
+                                &amp; content</label>
+                        </div>
+                    </div>
+                    <div class="form-camp">
+                        <label for="idea">Tell me your idea</label>
+                        <textarea id="idea" name="Message"
+                            placeholder="Briefly describe your project or what you need"></textarea>
+                    </div>
+                    <div class="form-camp">
+                        <label for="pressupost">Budget estimate (optional)</label>
+                        <select id="pressupost" name="Budget">
+                            <option value="I'm not sure yet">I'm not sure yet</option>
+                            <option value="< €1,000">&lt; €1,000</option>
+                            <option value="€1,000 - 3,000">€1,000 - 3,000</option>
+                            <option value="€3,000 - 10,000">€3,000 - 10,000</option>
+                            <option value="+ €10,000">+ €10,000</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-btn">Send</button>
+                    <p class="form-nota">I'll reply personally. No spam.</p>
+                    <div class="form-resultat" id="form-resultat"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Marc García-Cuevas de Paz
+    </footer>
+
+    <script src="../js/cursor.js"></script>
+    <script src="../js/navegacio.js"></script>
+    <script>
+        (function () {
+            const form = document.getElementById('form-serveis');
+            const resultat = document.getElementById('form-resultat');
+            const btn = form.querySelector('.form-btn');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                resultat.className = 'form-resultat';
+                const serveis = [...form.querySelectorAll('.form-checks input:checked')].map(c => c.value).join(', ');
+                const formData = new FormData(form);
+                formData.set('Services of interest', serveis || '—');
+                btn.disabled = true;
+                const textOriginal = btn.textContent;
+                btn.textContent = 'Sending...';
+                try {
+                    const res = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        form.reset();
+                        resultat.textContent = 'Thanks! I\'ve received your message and I\'ll get back to you soon.';
+                        resultat.classList.add('ok');
+                    } else {
+                        resultat.textContent = 'Something went wrong. Please try again or email me at marcg-c20@hotmail.es';
+                        resultat.classList.add('error');
+                    }
+                } catch (err) {
+                    resultat.textContent = 'Connection error. Please try again or email me at marcg-c20@hotmail.es';
+                    resultat.classList.add('error');
+                }
+                btn.disabled = false;
+                btn.textContent = textOriginal;
+            });
+        })();
+    </script>
+</body>
+
+</html>
