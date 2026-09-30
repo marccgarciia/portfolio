@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Bàsic -->
+    <title>Serveis | Marc García-Cuevas</title>
+    <meta name="description"
+        content="Serveis de desenvolupament web, eines internes, automatització i IA, i disseny digital a mida per a negocis i entitats.">
+    <meta name="keywords"
+        content="serveis, desenvolupament web, eines internes, automatització, intel·ligència artificial, disseny digital, Marc García-Cuevas">
+    <meta name="author" content="Marc García-Cuevas de Paz">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marccgarciia.com/serveis.html">
+    <meta property="og:title" content="Serveis — Marc García-Cuevas">
+    <meta property="og:description"
+        content="Solucions digitals a mida: webs, eines internes, automatització i IA, i disseny digital.">
+    <meta property="og:image" content="https://marccgarciia.com/media/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link rel="canonical" href="https://marccgarciia.com/serveis.html">
+    <link rel="alternate" hreflang="ca" href="https://marccgarciia.com/serveis.html">
+    <link rel="alternate" hreflang="es" href="https://marccgarciia.com/es/servicios.html">
+    <link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://marccgarciia.com/serveis.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/navegacio.css">
+    <link rel="stylesheet" href="css/projectes.css">
+    <link rel="stylesheet" href="css/serveis.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0TK3TQG1Q7');
+    </script>
+
+    <style>
+        .selector-idioma { position: fixed; top: 20px; right: 40px; z-index: 1003; display: flex; gap: 8px; align-items: center; font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; }
+        .selector-idioma a { color: var(--gris); text-decoration: none; transition: color 0.3s ease; padding: 5px 8px; }
+        .selector-idioma a:hover { color: var(--fosc); }
+        .selector-idioma a.actiu { color: var(--fosc); font-weight: 600; }
+        .selector-idioma .separador { color: var(--gris-clar); user-select: none; }
+        @media (max-width: 768px) { .selector-idioma { top: 15px; right: 20px; font-size: 0.7rem; gap: 6px; } }
+
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #FFFFFF; z-index: 10000; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s ease; overflow: hidden; }
+        #loader.hide { opacity: 0; pointer-events: none; }
+        .loader-content { position: relative; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; }
+        .spinner { position: absolute; width: 100%; height: 100%; border: 3px solid #f0f0f0; border-top: 3px solid #1a1a1a; border-radius: 50%; animation: spin 1.2s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-m { width: 40px; height: 40px; position: relative; z-index: 1; }
+        .m-path { stroke-dasharray: 300; stroke-dashoffset: 300; animation: drawM 2s ease-out forwards; }
+        @keyframes drawM { to { stroke-dashoffset: 0; } }
+    </style>
+</head>
+
+<body class="pagina-serveis">
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <svg class="loader-m" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path class="m-path" d="M 20 80 L 20 20 L 50 60 L 80 20 L 80 80" fill="none" stroke="#1a1a1a"
+                    stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+    </div>
+    <script>
+        const yaVioLoader = sessionStorage.getItem('loaderMostrado');
+        if (yaVioLoader) {
+            document.getElementById('loader').remove();
+            document.body.style.overflow = '';
+        } else {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.classList.add('hide');
+                document.body.style.overflow = '';
+                sessionStorage.setItem('loaderMostrado', 'true');
+                setTimeout(() => { loader.remove(); }, 300);
+            }, 1400);
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const mPath = document.querySelector('.m-path');
+            if (!mPath) return;
+            const length = mPath.getTotalLength();
+            mPath.style.strokeDasharray = length;
+            mPath.style.strokeDashoffset = length;
+        });
+    </script>
+
+    <!-- Cursor Personalitzat -->
+    <div class="cursor"></div>
+    <div class="cursor-seguidor"></div>
+
+    <!-- Blobs de fons -->
+    <div class="serveis-blobs"><span class="sb1"></span><span class="sb2"></span><span class="sb3"></span></div>
+
+    <!-- Selector de Idioma -->
+    <div class="selector-idioma selector-idioma-desktop">
+        <a href="serveis.html" class="actiu">CA</a>
+        <span class="separador">/</span>
+        <a href="es/servicios.html">ES</a>
+        <span class="separador">/</span>
+        <a href="en/services.html">EN</a>
+    </div>
+
+    <!-- Nom Fix -->
+    <a href="index.html" class="nom-fix" style="text-decoration: none; color: inherit; cursor: pointer;">MARC
+        GARCÍA-CUEVAS</a>
+
+    <!-- Fons Liquid Glass -->
+    <nav></nav>
+
+    <!-- Links de Navegació Desktop -->
+    <div class="contenidor-links-nav">
+        <a href="index.html#projectes">Projectes</a>
+        <a href="serveis.html">Serveis</a>
+        <a href="index.html#sobre-mi">Sobre Mi</a>
+        <a href="index.html#contacte">Contacte</a>
+    </div>
+
+    <!-- Botó Menú Mòbil -->
+    <div class="boto-menu">
+        <div class="linia-menu"></div>
+    </div>
+
+    <!-- Overlay Menú -->
+    <div class="capa-menu"></div>
+
+    <!-- Menú Mòbil -->
+    <div class="menu-mobil">
+        <a href="index.html#projectes">Projectes</a>
+        <a href="serveis.html">Serveis</a>
+        <a href="index.html#sobre-mi">Sobre Mi</a>
+        <a href="index.html#contacte">Contacte</a>
+        <div class="selector-idioma selector-idioma-mobil">
+            <a href="serveis.html" class="actiu">CA</a>
+            <span class="separador">/</span>
+            <a href="es/servicios.html">ES</a>
+            <span class="separador">/</span>
+            <a href="en/services.html">EN</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Intro -->
+        <section id="serveis-intro">
+            <div class="cap-seccio">
+                <div class="numero-seccio">QUÈ OFEREIXO</div>
+                <h2 class="titol-seccio">Serveis</h2>
+                <p class="descripcio-seccio">
+                    Desenvolupo solucions digitals a mida per a negocis i entitats. Des d'una web professional
+                    fins a eines internes que estalvien temps i milloren processos.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blocs de servei -->
+        <section id="serveis-blocs">
+            <div class="serveis-grid">
+                <article class="servei-card">
+                    <div class="servei-num">01</div>
+                    <h3>Webs a mida</h3>
+                    <p class="servei-desc">Webs corporatives, landing pages i presència online pensades per
+                        convertir visites en clients.</p>
+                    <ul>
+                        <li>Disseny a mida, no plantilles genèriques</li>
+                        <li>Optimitzada per a mòbil i velocitat de càrrega</li>
+                        <li>SEO tècnic inclòs des de la base</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">02</div>
+                    <h3>Eines internes</h3>
+                    <p class="servei-desc">Panells de gestió, reserves, clients, alumnes o processos
+                        personalitzats per al teu negoci o entitat.</p>
+                    <ul>
+                        <li>Backoffice adaptat al teu flux de treball real</li>
+                        <li>Ecommerce i passarel·les de pagament quan cal vendre online</li>
+                        <li>Menys Excels solts, més control</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">03</div>
+                    <h3>Automatització i IA</h3>
+                    <p class="servei-desc">Automatització de tasques repetitives i integració d'intel·ligència
+                        artificial on aporti valor real, no com a moda.</p>
+                    <ul>
+                        <li>Connexió entre els teus sistemes (CRM, ERP, ecommerce)</li>
+                        <li>Automatització de processos manuals</li>
+                        <li>Integració d'IA en fluxos de treball existents</li>
+                    </ul>
+                </article>
+
+                <article class="servei-card">
+                    <div class="servei-num">04</div>
+                    <h3>Disseny i contingut digital</h3>
+                    <p class="servei-desc">Disseny, fotografia, vídeo i recursos visuals per reforçar la teva
+                        presència online.</p>
+                    <ul>
+                        <li>Identitat visual i materials gràfics</li>
+                        <li>Gestió de contingut per a xarxes i web</li>
+                        <li>Producció audiovisual</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Diferenciació -->
+        <section id="diferenciacio">
+            <div class="diferenciacio-box">
+                <h2>No tots els problemes es resolen amb una eina estàndard</h2>
+                <p>Molts negocis i entitats acaben adaptant-se a programes genèrics que no encaixen amb la seva
+                    manera de treballar. El meu enfocament consisteix a entendre primer el problema i construir
+                    (o adaptar) una solució que s'ajusti a tu, no al revés.</p>
+            </div>
+        </section>
+
+        <!-- Procés -->
+        <section id="proces">
+            <div class="cap-seccio">
+                <div class="numero-seccio">COM TREBALLO</div>
+                <h2 class="titol-seccio">El procés</h2>
+            </div>
+            <div class="proces-grid">
+                <div class="proces-step">
+                    <div class="proces-num">01</div>
+                    <h4>Explica'm què necessites</h4>
+                    <p>Omples el formulari o m'escrius directament.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">02</div>
+                    <h4>Primera conversa sense compromís</h4>
+                    <p>Parlem del teu projecte i objectius.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">03</div>
+                    <h4>Proposta i pressupost clar</h4>
+                    <p>Saps exactament què rebràs i quant costa, sense sorpreses.</p>
+                </div>
+                <div class="proces-step">
+                    <div class="proces-num">04</div>
+                    <h4>Desenvolupament i entrega</h4>
+                    <p>Comunicació constant fins que el resultat estigui llest (i després, si ho necessites).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulari -->
+        <section id="contacte-serveis">
+            <div class="cap-seccio">
+                <div class="numero-seccio">CONTACTE</div>
+                <h2 class="titol-seccio">Parlem-ne</h2>
+                <p class="descripcio-seccio">Explica'm què necessites i et responc amb una proposta clara.</p>
+            </div>
+            <div class="form-box">
+                <form id="form-serveis" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="ba271532-a0cd-4e72-a81a-6dddaa45bf17">
+                    <input type="hidden" name="subject" value="Nova consulta de serveis — marccgarciia.com">
+                    <input type="hidden" name="from_name" value="Web Serveis · marccgarciia.com">
+                    <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1"
+                        autocomplete="off">
+
+                    <div class="form-camp">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="Nom" required>
+                    </div>
+                    <div class="form-camp">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                    <div class="form-camp">
+                        <label for="empresa">Empresa / negoci (opcional)</label>
+                        <input type="text" id="empresa" name="Empresa">
+                    </div>
+                    <div class="form-camp">
+                        <label>Què necessites?</label>
+                        <div class="form-checks">
+                            <label class="check-item"><input type="checkbox" value="Webs a mida"> Webs a mida</label>
+                            <label class="check-item"><input type="checkbox" value="Eines internes"> Eines
+                                internes</label>
+                            <label class="check-item"><input type="checkbox" value="Automatització i IA">
+                                Automatització i IA</label>
+                            <label class="check-item"><input type="checkbox" value="Disseny i contingut">
+                                Disseny i contingut</label>
+                        </div>
+                    </div>
+                    <div class="form-camp">
+                        <label for="idea">Explica'm la teva idea</label>
+                        <textarea id="idea" name="Missatge"
+                            placeholder="Descriu breument el teu projecte o el que necessites"></textarea>
+                    </div>
+                    <div class="form-camp">
+                        <label for="pressupost">Pressupost orientatiu (opcional)</label>
+                        <select id="pressupost" name="Pressupost">
+                            <option value="Encara no ho sé">Encara no ho sé</option>
+                            <option value="< 1.000 €">&lt; 1.000 €</option>
+                            <option value="1.000 - 3.000 €">1.000 - 3.000 €</option>
+                            <option value="3.000 - 10.000 €">3.000 - 10.000 €</option>
+                            <option value="+ 10.000 €">+ 10.000 €</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-btn">Enviar</button>
+                    <p class="form-nota">Et respondré personalment. Sense spam.</p>
+                    <div class="form-resultat" id="form-resultat"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Marc García-Cuevas de Paz
+    </footer>
+
+    <script src="js/cursor.js"></script>
+    <script src="js/navegacio.js"></script>
+    <script>
+        (function () {
+            const form = document.getElementById('form-serveis');
+            const resultat = document.getElementById('form-resultat');
+            const btn = form.querySelector('.form-btn');
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                resultat.className = 'form-resultat';
+                const serveis = [...form.querySelectorAll('.form-checks input:checked')].map(c => c.value).join(', ');
+                const formData = new FormData(form);
+                formData.set("Serveis d'interès", serveis || '—');
+                btn.disabled = true;
+                const textOriginal = btn.textContent;
+                btn.textContent = 'Enviant...';
+                try {
+                    const res = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        form.reset();
+                        resultat.textContent = 'Gràcies! He rebut el teu missatge i et respondré aviat.';
+                        resultat.classList.add('ok');
+                    } else {
+                        resultat.textContent = 'Hi ha hagut un problema. Prova de nou o escriu-me a marcg-c20@hotmail.es';
+                        resultat.classList.add('error');
+                    }
+                } catch (err) {
+                    resultat.textContent = 'Error de connexió. Prova de nou o escriu-me a marcg-c20@hotmail.es';
+                    resultat.classList.add('error');
+                }
+                btn.disabled = false;
+                btn.textContent = textOriginal;
+            });
+        })();
+    </script>
+</body>
+
+</html>
