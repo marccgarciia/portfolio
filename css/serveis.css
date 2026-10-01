@@ -451,3 +451,143 @@ body.pagina-serveis {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================
+   ESCENARIS — Què necessites resoldre?
+   ============================================ */
+#escenaris {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.escenaris-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.escenari {
+    position: relative;
+    padding: 1.3rem 1.5rem 1.3rem 2.7rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 6px 16px rgba(30, 40, 80, 0.05);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--fosc);
+    font-weight: 400;
+}
+
+.escenari::before {
+    content: '\201C';
+    position: absolute;
+    left: 0.95rem;
+    top: 0.65rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--fosc);
+    opacity: 0.22;
+}
+
+.escenaris-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.escenaris-cta p {
+    font-size: 1.15rem;
+    color: var(--fosc);
+    margin-bottom: 22px;
+    font-weight: 400;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 0.95rem 2.1rem;
+    border-radius: 100px;
+    background: var(--fosc);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+/* ============================================
+   QUÈ HE CONSTRUÏT — experiència real
+   ============================================ */
+#construit {
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.construit-box {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.construit-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 34px;
+    margin-top: 6px;
+}
+
+.construit-list li {
+    position: relative;
+    padding-left: 1.9rem;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: var(--fosc);
+    font-weight: 400;
+}
+
+.construit-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.35em;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid var(--fosc);
+    border-bottom: 2px solid var(--fosc);
+    transform: rotate(-45deg);
+    opacity: 0.55;
+}
+
+.construit-nota {
+    margin-top: 30px;
+    font-size: 1.05rem;
+    color: var(--gris);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    #escenaris {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .escenaris-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .construit-list {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
