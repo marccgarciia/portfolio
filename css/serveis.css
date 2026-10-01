@@ -591,3 +591,178 @@ body.pagina-serveis {
         gap: 14px;
     }
 }
+
+/* ============================================================
+   TEMA FOSC — pàgina de Serveis (reskin)
+   Canvia només aquí el color d'accent: --acc
+   ============================================================ */
+body.pagina-serveis {
+    --acc: #e0a43b;
+    --acc-dark: #1a1206;
+    --text: #f2f1ee;
+    --text-soft: rgba(242, 241, 238, 0.62);
+    background: #0c0c0e;
+    color: var(--text);
+}
+
+/* Blobs subtils sobre negre */
+.pagina-serveis .serveis-blobs span { opacity: 0.13; filter: blur(110px); }
+.pagina-serveis .serveis-blobs .sb1 { background: #3a4cff; }
+.pagina-serveis .serveis-blobs .sb2 { background: var(--acc); }
+.pagina-serveis .serveis-blobs .sb3 { background: #1f6f5a; }
+
+/* Cursor */
+.pagina-serveis .cursor { background: var(--text); }
+.pagina-serveis .cursor-seguidor { border-color: rgba(242, 241, 238, 0.5); }
+
+/* Capçaleres compartides */
+.pagina-serveis .titol-seccio { color: var(--text); }
+.pagina-serveis .numero-seccio { color: var(--acc); }
+.pagina-serveis .descripcio-seccio { color: var(--text-soft); }
+
+/* Nom fix + nav */
+.pagina-serveis .nom-fix { color: var(--text); }
+.pagina-serveis nav {
+    background: rgba(255, 255, 255, 0.06);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+.pagina-serveis nav:hover { background: rgba(255, 255, 255, 0.1); }
+.pagina-serveis .contenidor-links-nav a { color: var(--text-soft); }
+.pagina-serveis .contenidor-links-nav a:hover,
+.pagina-serveis .contenidor-links-nav a.actiu { color: var(--text); }
+
+/* Selector idioma (sobreescriu l'estil inline) */
+.pagina-serveis .selector-idioma a { color: var(--text-soft); }
+.pagina-serveis .selector-idioma a:hover,
+.pagina-serveis .selector-idioma a.actiu { color: var(--text); }
+.pagina-serveis .selector-idioma .separador { color: rgba(255, 255, 255, 0.3); }
+
+/* Loader fosc */
+.pagina-serveis #loader { background: #0c0c0e; }
+.pagina-serveis .spinner { border-color: rgba(255, 255, 255, 0.12); border-top-color: var(--text); }
+.pagina-serveis .m-path { stroke: var(--text); }
+
+/* Menú mòbil fosc */
+.pagina-serveis .boto-menu { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.1); }
+.pagina-serveis .boto-menu:hover { background: rgba(255, 255, 255, 0.14); }
+.pagina-serveis .linia-menu { background: var(--text); }
+.pagina-serveis .menu-mobil { background: rgba(16, 16, 20, 0.94); border-left-color: rgba(255, 255, 255, 0.08); }
+.pagina-serveis .menu-mobil a { color: var(--text-soft); }
+.pagina-serveis .menu-mobil a:hover { color: var(--text); }
+
+/* Marquesina de tecnologies */
+.tech-marquee {
+    overflow: hidden;
+    padding: 24px 0;
+    margin: 10px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.tech-track {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: techscroll 34s linear infinite;
+}
+.tech-track span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text);
+    opacity: 0.82;
+    padding: 0 1.5rem;
+}
+.tech-track span.sep { color: var(--acc); opacity: 0.75; font-size: 1.1rem; }
+@keyframes techscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Targetes de servei */
+.pagina-serveis .servei-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.pagina-serveis .servei-card:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.45);
+}
+.pagina-serveis .servei-num { color: var(--text); opacity: 0.08; }
+.pagina-serveis .servei-card h3 { color: var(--text); }
+.pagina-serveis .servei-desc { color: var(--text-soft); }
+.pagina-serveis .servei-card li { color: rgba(242, 241, 238, 0.85); }
+.pagina-serveis .servei-card li::before { background: var(--acc); opacity: 1; }
+
+/* Escenaris */
+.pagina-serveis .escenari {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: rgba(242, 241, 238, 0.9);
+}
+.pagina-serveis .escenari::before { color: var(--acc); opacity: 0.6; }
+.pagina-serveis .escenaris-cta p { color: var(--text); }
+.pagina-serveis .btn-principal { background: var(--acc); color: var(--acc-dark); }
+.pagina-serveis .btn-principal:hover { opacity: 1; filter: brightness(1.08); }
+
+/* Què he construït */
+.pagina-serveis .construit-list li { color: rgba(242, 241, 238, 0.9); }
+.pagina-serveis .construit-list li::before { border-color: var(--acc); opacity: 1; }
+.pagina-serveis .construit-nota { color: var(--text-soft); }
+
+/* Diferenciació */
+.pagina-serveis .diferenciacio-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+}
+.pagina-serveis .diferenciacio-box h2 { color: var(--text); }
+.pagina-serveis .diferenciacio-box p { color: var(--text-soft); }
+
+/* Procés */
+.pagina-serveis .proces-num { color: var(--acc); opacity: 0.55; }
+.pagina-serveis .proces-step h4 { color: var(--text); }
+.pagina-serveis .proces-step p { color: var(--text-soft); }
+
+/* Formulari */
+.pagina-serveis .form-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3);
+}
+.pagina-serveis .form-camp label { color: var(--text); }
+.pagina-serveis .form-camp input[type="text"],
+.pagina-serveis .form-camp input[type="email"],
+.pagina-serveis .form-camp select,
+.pagina-serveis .form-camp textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: var(--text);
+}
+.pagina-serveis .form-camp select option { color: #1a1a1a; }
+.pagina-serveis .form-camp input::placeholder,
+.pagina-serveis .form-camp textarea::placeholder { color: rgba(242, 241, 238, 0.38); }
+.pagina-serveis .form-camp input:focus,
+.pagina-serveis .form-camp select:focus,
+.pagina-serveis .form-camp textarea:focus {
+    border-color: var(--acc);
+    box-shadow: 0 0 0 3px rgba(224, 164, 59, 0.15);
+}
+.pagina-serveis .check-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+}
+.pagina-serveis .check-item:hover { border-color: rgba(255, 255, 255, 0.3); }
+.pagina-serveis .check-item input { accent-color: var(--acc); }
+.pagina-serveis .form-btn { background: var(--acc); color: var(--acc-dark); }
+.pagina-serveis .form-btn:hover { filter: brightness(1.08); opacity: 1; }
+.pagina-serveis .form-nota { color: rgba(242, 241, 238, 0.4); }
+.pagina-serveis .form-resultat.ok { background: rgba(224, 164, 59, 0.14); color: var(--acc); }
+.pagina-serveis .form-resultat.error { background: rgba(255, 90, 80, 0.15); color: #ff9a90; }
+
+/* Footer */
+.pagina-serveis footer { color: var(--text-soft); border-top-color: rgba(255, 255, 255, 0.08); }
+
+@media (max-width: 768px) {
+    .tech-track span { font-size: 1.2rem; padding: 0 1rem; }
+}
