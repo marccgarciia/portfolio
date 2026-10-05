@@ -13,7 +13,7 @@
 
     add([...document.querySelectorAll(
         '#escenaris .cap-seccio, #escenaris .escenaris-cta, ' +
-        '#construit .cap-seccio, #construit .construit-box, ' +
+        '#construit .cap-seccio, #construit .construit-nota, ' +
         '#diferenciacio .diferenciacio-box, ' +
         '#proces .cap-seccio, ' +
         '#contacte-serveis .cap-seccio, #contacte-serveis .form-box, ' +
@@ -22,6 +22,7 @@
 
     add([...document.querySelectorAll('#serveis-blocs .servei-card')], true);
     add([...document.querySelectorAll('#escenaris .escenari')], true);
+    add([...document.querySelectorAll('#construit .cas-card')], true);
     add([...document.querySelectorAll('#proces .proces-step')], true);
 
     const all = [...document.querySelectorAll('.reveal')];
@@ -35,20 +36,45 @@
         }
     };
 
+    // ── Vídeos dels casos: reproduir només els visibles, càrrega diferida ──
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const vids = [...document.querySelectorAll('#construit .cas-media video')];
+
+    const handleVideos = () => {
+        if (reduceMotion) return;
+        const h = window.innerHeight;
+        for (const v of vids) {
+            const r = v.getBoundingClientRect();
+            const inView = r.top < h && r.bottom > 0;
+            if (inView) {
+                if (v.getAttribute('preload') === 'none') {
+                    v.setAttribute('preload', 'auto');
+                    v.load();
+                }
+                v.muted = true;
+                const p = v.play();
+                if (p && p.catch) p.catch(() => {});
+            } else if (!v.paused) {
+                v.pause();
+            }
+        }
+    };
+
     let ticking = false;
     const onScroll = () => {
         if (!ticking) {
             ticking = true;
-            requestAnimationFrame(() => { reveal(); ticking = false; });
+            requestAnimationFrame(() => { reveal(); handleVideos(); ticking = false; });
         }
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
-    window.addEventListener('load', reveal);
+    window.addEventListener('load', () => { reveal(); handleVideos(); });
     reveal();
+    handleVideos();
 
     // Re-comprova posicions quan les fonts/layout acaben d'assentar-se
-    setTimeout(reveal, 300);
-    setTimeout(reveal, 1200);
+    setTimeout(() => { reveal(); handleVideos(); }, 300);
+    setTimeout(() => { reveal(); handleVideos(); }, 1200);
 })();
