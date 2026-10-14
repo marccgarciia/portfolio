@@ -421,3 +421,41 @@ section {
     opacity: 0.6;
     cursor: default;
 }
+/* ============================================
+   XIFRES DE XARXES SOCIALS (targeta de gestió)
+   ============================================ */
+.xarxes-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 28px;
+    margin-top: 26px;
+    max-width: 420px;
+}
+
+.xarxa-stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--fosc);
+    line-height: 1;
+    display: block;
+}
+
+.xarxa-stat .lbl {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--gris);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .xarxes-stats {
+        gap: 16px 22px;
+        margin-top: 22px;
+    }
+
+    .xarxa-stat .num {
+        font-size: 1.7rem;
+    }
+}
