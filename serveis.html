@@ -203,6 +203,47 @@
             </div>
         </div>
 
+        <!-- En xifres: bento de mètriques -->
+        <section id="metrics">
+            <div class="cap-seccio">
+                <div class="numero-seccio">EN XIFRES</div>
+                <h2 class="titol-seccio">Treball real, dades reals</h2>
+            </div>
+            <div class="metrics-bento">
+                <article class="metric-card metric-chart reveal">
+                    <div class="chart-stage">
+                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="mcGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="rgba(242,241,238,0.22)" />
+                                    <stop offset="100%" stop-color="rgba(242,241,238,0)" />
+                                </linearGradient>
+                            </defs>
+                            <path class="mc-area" d="M0,150 C30,148 55,146 80,138 C100,132 115,120 140,92 C155,78 165,74 185,74 C205,74 215,80 235,78 C255,76 270,70 300,55 C325,43 350,35 400,22 L400,180 L0,180 Z" />
+                            <path class="mc-line" d="M0,150 C30,148 55,146 80,138 C100,132 115,120 140,92 C155,78 165,74 185,74 C205,74 215,80 235,78 C255,76 270,70 300,55 C325,43 350,35 400,22" />
+                            <circle class="mc-dot-pulse" cx="185" cy="74" r="5" />
+                            <circle class="mc-dot" cx="185" cy="74" r="5.5" />
+                        </svg>
+                    </div>
+                    <div class="chart-axis"><span>Mes 1</span><span>Mes 2</span><span>Mes 3</span></div>
+                    <div class="chart-foot">
+                        <div class="metric-num" data-to="180" data-prefix="+" data-suffix="K">+180K</div>
+                        <p class="metric-label">Reproduccions generades en un compte de xarxes que gestiono.</p>
+                    </div>
+                </article>
+
+                <article class="metric-card reveal">
+                    <div class="metric-num" data-to="100" data-suffix="%">100%</div>
+                    <p class="metric-label">A mida. Sense plantilles ni maquetadors.</p>
+                </article>
+
+                <article class="metric-card reveal">
+                    <div class="metric-num" data-to="24" data-prefix="&lt;" data-suffix="h">&lt;24h</div>
+                    <p class="metric-label">Et responc jo, en persona. Sense intermediaris.</p>
+                </article>
+            </div>
+        </section>
+
         <!-- Escenaris: Què necessites resoldre? -->
         <section id="escenaris">
             <div class="cap-seccio">
@@ -273,6 +314,44 @@
                         <li>Producció audiovisual</li>
                     </ul>
                 </article>
+            </div>
+        </section>
+
+        <!-- Integracions: bloc destacat amb globus -->
+        <section id="integracions">
+            <div class="feature-integra">
+                <div class="integra-left">
+                    <div class="numero-seccio">INTEGRACIONS</div>
+                    <h2>Desenvolupament i APIs a mida</h2>
+                    <p class="integra-desc">Connecto la teva web amb el teu CRM, ERP, pagaments, reserves o
+                        mapes. Dades sincronitzades i zero feina manual duplicada.</p>
+                    <div class="integra-tags">
+                        <span class="itag">Mapbox</span>
+                        <span class="itag">Reserves</span>
+                        <span class="itag">Webhooks</span>
+                        <span class="itag">APIs a mida</span>
+                        <span class="itag">CRM i ERP</span>
+                        <span class="itag">Stripe</span>
+                        <span class="itag">Automatitzacions</span>
+                    </div>
+                    <a href="#contacte-serveis" class="btn-principal">Parlem-ne</a>
+                </div>
+                <div class="integra-right">
+                    <div class="globe-stage">
+                        <span class="globe-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M2 12h20" />
+                                <path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20" />
+                            </svg>
+                            Xarxa global
+                        </span>
+                        <svg class="globe-svg" viewBox="0 0 520 520" aria-hidden="true">
+                            <g class="globe-dots"></g>
+                            <g class="globe-nodes"></g>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </section>
 
