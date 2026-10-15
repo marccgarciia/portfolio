@@ -120,14 +120,17 @@
             nodesG.appendChild(c);
             return { lat, lon, el: c };
         });
-        const project = (lat, lon, rot) => {
+        let rot = 0, tilt = 0.42, globeVisible = false; // tilt per defecte = perspectiva humana
+        const project = (lat, lon) => {
             const phi = lat * Math.PI / 180, lam = (lon + rot) * Math.PI / 180, cphi = Math.cos(phi);
-            return { x: CX + R * cphi * Math.sin(lam), y: CY - R * Math.sin(phi), z: cphi * Math.cos(lam) };
+            const X = cphi * Math.sin(lam), Y = Math.sin(phi), Z = cphi * Math.cos(lam);
+            const ct = Math.cos(tilt), st = Math.sin(tilt);
+            const Y2 = Y * ct - Z * st, Z2 = Y * st + Z * ct;
+            return { x: CX + R * X, y: CY - R * Y2, z: Z2 };
         };
-        let rot = 0, globeVisible = false;
         const draw = (time) => {
             for (const d of dots) {
-                const p = project(d.lat, d.lon, rot);
+                const p = project(d.lat, d.lon);
                 if (p.z < -0.05) { d.el.setAttribute('opacity', '0'); continue; }
                 const depth = (p.z + 1) / 2;
                 d.el.setAttribute('cx', p.x.toFixed(1));
@@ -136,7 +139,7 @@
                 d.el.setAttribute('opacity', (0.1 + depth * 0.6).toFixed(2));
             }
             for (const n of nodes) {
-                const p = project(n.lat, n.lon, rot);
+                const p = project(n.lat, n.lon);
                 if (p.z < 0.02) { n.el.setAttribute('opacity', '0'); continue; }
                 n.el.setAttribute('cx', p.x.toFixed(1));
                 n.el.setAttribute('cy', p.y.toFixed(1));
@@ -147,15 +150,17 @@
         draw(0);
 
         // Arrossegar per girar el globus
-        let dragging = false, lastX = 0;
+        let dragging = false, lastX = 0, lastY = 0;
         const stage = globeSvg.closest('.globe-stage') || globeSvg;
         stage.addEventListener('pointerdown', (e) => {
-            dragging = true; lastX = e.clientX; stage.classList.add('dragging');
+            dragging = true; lastX = e.clientX; lastY = e.clientY; stage.classList.add('dragging');
             if (stage.setPointerCapture) { try { stage.setPointerCapture(e.pointerId); } catch (_) {} }
         });
         window.addEventListener('pointermove', (e) => {
             if (!dragging) return;
-            rot += (e.clientX - lastX) * 0.4; lastX = e.clientX;
+            rot += (e.clientX - lastX) * 0.4;
+            tilt = Math.max(-0.5, Math.min(1.05, tilt + (e.clientY - lastY) * 0.006));
+            lastX = e.clientX; lastY = e.clientY;
             draw(performance.now());
         });
         const endDrag = () => { if (dragging) { dragging = false; stage.classList.remove('dragging'); } };

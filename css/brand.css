@@ -640,3 +640,22 @@ html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar { width: 0; height: 0; display: none; }
 body.brand { scrollbar-width: none; -ms-overflow-style: none; }
 body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+/* ============================================================
+   MOCKUPS "QUÈ FAIG": vores difuminades + sagnat cap a fora
+   (no caixes dures; sensació que són més grans del que es veu)
+   ============================================================ */
+.proj.cap .proj-grid { overflow: visible; }
+.proj.cap .proj-media > .mock,
+.proj.cap .proj-media > .frame,
+.proj.cap .proj-media > .globe-stage {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 6%, #000 86%, transparent 100%);
+}
+/* Sagnat cap a fora segons el costat on surt el mockup */
+.proj.cap:not(.alt) .proj-media { margin-right: calc(-1 * var(--gutter)); }
+.proj.cap.alt .proj-media { margin-left: calc(-1 * var(--gutter)); }
+@media (max-width: 860px) {
+    .proj.cap:not(.alt) .proj-media,
+    .proj.cap.alt .proj-media { margin-left: 0; margin-right: 0; }
+}
