@@ -579,17 +579,16 @@ body.brand::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 480px;
-    height: 150px;
-    max-width: 72vw;
-    /* Negre a la línia superior que baixa (vertical) i es dilueix cap a la dreta */
-    background: linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0) 100%);
-    -webkit-mask-image: linear-gradient(to right, #000 52%, transparent 100%);
-    mask-image: linear-gradient(to right, #000 52%, transparent 100%);
-    filter: blur(5px);
+    right: 0;
+    height: 46vh;
+    max-height: 440px;
+    /* Negre a tota l'amplada que baixa fins a transparent (com el degradat de Canva) */
+    background: linear-gradient(to bottom,
+        rgba(0,0,0,0.92) 0%,
+        rgba(0,0,0,0.72) 20%,
+        rgba(0,0,0,0.4) 48%,
+        rgba(0,0,0,0.12) 75%,
+        rgba(0,0,0,0) 100%);
     z-index: 50;
     pointer-events: none;
-}
-@media (max-width: 760px) {
-    body.brand::after { width: 320px; height: 120px; }
 }
