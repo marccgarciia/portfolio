@@ -579,14 +579,17 @@ body.brand::after {
     position: fixed;
     top: 0;
     left: 0;
-    width: 360px;
-    height: 210px;
-    max-width: 58vw;
-    background: radial-gradient(ellipse 90% 90% at top left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 34%, rgba(0,0,0,0) 72%);
-    filter: blur(22px);
+    width: 480px;
+    height: 150px;
+    max-width: 72vw;
+    /* Negre a la línia superior que baixa (vertical) i es dilueix cap a la dreta */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 52%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 52%, transparent 100%);
+    filter: blur(5px);
     z-index: 50;
     pointer-events: none;
 }
 @media (max-width: 760px) {
-    body.brand::after { width: 240px; height: 150px; filter: blur(16px); }
+    body.brand::after { width: 320px; height: 120px; }
 }
