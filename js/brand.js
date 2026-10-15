@@ -27,11 +27,13 @@
         const pre = el.dataset.pre || '';
         const suf = el.dataset.suf || '';
         if (isNaN(to)) return;
-        if (reduce) { el.textContent = pre + to + suf; return; }
+        const dec = to % 1 !== 0;
+        const fmt = (v) => dec ? v.toFixed(1) : Math.round(v);
+        if (reduce) { el.textContent = pre + fmt(to) + suf; return; }
         const dur = 1300, t0 = performance.now();
         const step = (now) => {
             const p = Math.min(1, (now - t0) / dur);
-            el.textContent = pre + Math.round(to * easeOut(p)) + suf;
+            el.textContent = pre + fmt(to * easeOut(p)) + suf;
             if (p < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);

@@ -596,3 +596,41 @@ body.brand::after {
     z-index: 50;
     pointer-events: none;
 }
+
+/* ============================================================
+   MOCKUP SEO / ANALYTICS (capacitat 05)
+   ============================================================ */
+.mock-seo .mock-top { margin-bottom: 16px; }
+.seo-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 14px; }
+.seo-stat .l { display: block; font-size: 0.72rem; color: var(--muted-2); margin-bottom: 6px; }
+.seo-stat .n { font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1; }
+.seo-chart { position: relative; width: 100%; height: 130px; }
+.seo-chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.seo-area { opacity: 0; transition: opacity 1s ease 0.5s; }
+.mock-seo.drawn .seo-area { opacity: 1; }
+.seo-line { fill: none; stroke-width: 2; stroke-dasharray: 760; stroke-dashoffset: 760; transition: stroke-dashoffset 1.7s cubic-bezier(0.4,0,0.2,1); }
+.mock-seo.drawn .seo-line { stroke-dashoffset: 0; }
+.seo-line.l1 { stroke: #a78bfa; }
+.seo-line.l2 { stroke: #5b8cff; }
+
+/* ============================================================
+   MOCKUP MANTENIMENT / LIGHTHOUSE (capacitat 06)
+   ============================================================ */
+.mock-maint .mock-top { margin-bottom: 16px; }
+.gauges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 18px; }
+.gauge { text-align: center; }
+.gwrap { position: relative; width: 64px; height: 64px; margin: 0 auto; }
+.gwrap svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+.gwrap .track { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 5; }
+.gwrap .ring { fill: none; stroke: var(--acc); stroke-width: 5; stroke-linecap: round; stroke-dasharray: 163.4; stroke-dashoffset: 163.4; transition: stroke-dashoffset 1.2s cubic-bezier(0.2,0.7,0.2,1); }
+.mock-maint.drawn .gwrap .ring { stroke-dashoffset: var(--off, 0); }
+.gwrap .gn { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text); }
+.gauge .gl { display: block; margin-top: 8px; font-size: 0.7rem; color: var(--muted-2); }
+
+.cwv { display: flex; flex-direction: column; gap: 12px; }
+.cwv-row .top { display: flex; align-items: baseline; justify-content: space-between; font-size: 0.82rem; }
+.cwv-row .top .k { color: var(--text); }
+.cwv-row .top .k span { color: var(--muted-2); font-size: 0.74rem; margin-left: 6px; }
+.cwv-row .top .v { color: var(--acc); font-weight: 500; }
+.cwv-bar { position: relative; height: 5px; border-radius: 3px; margin-top: 7px; overflow: hidden; background: linear-gradient(90deg, #4ade80 0 45%, #d6a43b 45% 72%, #e5604d 72% 100%); }
+.cwv-bar::after { content: ""; position: absolute; top: -2px; width: 9px; height: 9px; border-radius: 50%; background: #fff; left: var(--p, 20%); transform: translateX(-50%); box-shadow: 0 0 0 2px rgba(0,0,0,0.5); }
