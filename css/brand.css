@@ -760,3 +760,44 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
 .s-card .n { font-size: 1.55rem; line-height: 1; letter-spacing: -0.02em; display: block; }
 .s-card.green .n { color: var(--acc); }
 .s-card .l { display: block; margin-top: 6px; font-size: 0.78rem; color: var(--muted-2); }
+
+/* ============================================================
+   MOCKUP AUTOMATITZACIÓ v3 — canvas amb graf de nodes i camins animats
+   ============================================================ */
+.mock-auto .mock-top { margin-bottom: 14px; }
+.auto-canvas {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 14px;
+    background-color: var(--surface);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
+    border: 1px solid var(--line-soft);
+    overflow: hidden;
+}
+.auto-wires { position: absolute; inset: 0; width: 100%; height: 100%; }
+.auto-wires .flow-path {
+    fill: none; stroke: var(--acc); stroke-width: 1.5px;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 4 6; opacity: 0.85;
+    animation: dashflow 0.9s linear infinite;
+}
+.anode {
+    position: absolute;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    padding: 10px 13px;
+    font-size: 0.82rem; color: var(--text);
+    white-space: nowrap;
+}
+.anode span { display: block; font-size: 0.68rem; color: var(--muted-2); margin-top: 3px; }
+.anode.a-ai { border-color: rgba(74,222,128,0.45); box-shadow: 0 0 0 4px rgba(74,222,128,0.07); }
+.a-pills { display: flex; gap: 6px; margin-top: 9px; }
+.a-pills i { font-style: normal; font-size: 0.64rem; color: var(--acc); background: var(--acc-soft); border-radius: 7px; padding: 4px 8px; }
+.a-msg { left: 2%; top: 38%; }
+.a-ai { left: 36%; top: 26%; }
+.a-resp { left: 76%; top: 8%; }
+.a-crm { left: 76%; top: 62%; }
+@media (prefers-reduced-motion: reduce) { .auto-wires .flow-path { animation: none; } }
