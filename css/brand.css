@@ -498,11 +498,24 @@ body.brand {
 .proj.cap .proj-head {
     position: sticky;
     top: 70px;
-    z-index: 6;
+    z-index: 51;
     background: var(--bg);
     margin: 0;
     padding: 16px 0 16px;
     border-bottom: 1px solid var(--line-soft);
+}
+/* Màscara negra a la franja superior: amaga tot el que puja per sobre
+   del títol sticky (tags, botó, globus...) perquè quedi net i negre */
+body.brand::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: var(--bg);
+    z-index: 50;
+    pointer-events: none;
 }
 .proj.cap .proj-grid { padding-top: clamp(28px, 5vh, 56px); }
 .proj.cap { padding-top: clamp(50px, 7vh, 90px); }
