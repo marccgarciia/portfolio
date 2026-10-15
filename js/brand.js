@@ -196,31 +196,44 @@
     /* ---------- Frases centrades amb omplerta al scroll (gris -> blanc, vora blava) ---------- */
     const fillEls = [...document.querySelectorAll('[data-fill]')];
     if (fillEls.length && !reduce) {
+        const charMap = new Map();
         fillEls.forEach((el) => {
-            const tokens = el.textContent.split(/(\s+)/);
+            const words = el.textContent.split(/(\s+)/);
             el.textContent = '';
-            tokens.forEach((tok) => {
-                if (tok.trim() === '') { el.appendChild(document.createTextNode(tok)); }
-                else { const s = document.createElement('span'); s.className = 'w'; s.textContent = tok; el.appendChild(s); }
+            const chars = [];
+            words.forEach((tok) => {
+                if (tok.trim() === '') { el.appendChild(document.createTextNode(tok)); return; }
+                const wd = document.createElement('span'); wd.className = 'wd';
+                for (const ch of tok) {
+                    const c = document.createElement('span'); c.className = 'c'; c.textContent = ch;
+                    wd.appendChild(c); chars.push(c);
+                }
+                el.appendChild(wd);
             });
+            charMap.set(el, chars);
         });
         const clampF = (v, a, b) => Math.max(a, Math.min(b, v));
-        let fillTick = false;
+        let fillTick = false, lastY = window.scrollY, dir = 1;
         const updateFill = () => {
             const vh = window.innerHeight;
             const start = vh * 0.85, end = vh * 0.4;
             for (const el of fillEls) {
-                const ws = el.getElementsByClassName('w');
+                const cs = charMap.get(el);
                 const p = clampF((start - el.getBoundingClientRect().top) / (start - end), 0, 1);
-                const edge = p * (ws.length + 1);
-                for (let i = 0; i < ws.length; i++) {
+                const edge = p * (cs.length + 2);
+                for (let i = 0; i < cs.length; i++) {
                     const d = edge - i;
-                    ws[i].classList.toggle('on', d >= 1);
-                    ws[i].classList.toggle('blue', d >= 0 && d < 1);
+                    const on = d >= 1;
+                    cs[i].classList.toggle('on', on);
+                    cs[i].classList.toggle('blue', !on && d >= 0 && dir === 1);
                 }
             }
         };
-        const onFill = () => { if (!fillTick) { fillTick = true; requestAnimationFrame(() => { updateFill(); fillTick = false; }); } };
+        const onFill = () => {
+            const y = window.scrollY;
+            if (y !== lastY) { dir = y > lastY ? 1 : -1; lastY = y; }
+            if (!fillTick) { fillTick = true; requestAnimationFrame(() => { updateFill(); fillTick = false; }); }
+        };
         window.addEventListener('scroll', onFill, { passive: true });
         window.addEventListener('resize', onFill, { passive: true });
         updateFill();

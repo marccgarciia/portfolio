@@ -691,7 +691,7 @@
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let phi = 0, theta = 0.25, dragging = false, lastX = 0, lastY = 0;
             const dpr = Math.min(2, window.devicePixelRatio || 1);
-            const size = () => Math.max(1, Math.round(stage.getBoundingClientRect().width));
+            const size = () => Math.max(1, Math.round(canvas.getBoundingClientRect().width));
             const w0 = size();
             createGlobe(canvas, {
                 devicePixelRatio: dpr,
@@ -720,8 +720,8 @@
             canvas.addEventListener('pointerdown', (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.style.cursor = 'grabbing'; });
             window.addEventListener('pointermove', (e) => {
                 if (!dragging) return;
-                phi += (e.clientX - lastX) * 0.01;
-                theta = Math.max(-0.6, Math.min(0.8, theta - (e.clientY - lastY) * 0.01));
+                phi -= (e.clientX - lastX) * 0.01;
+                theta = Math.max(-0.6, Math.min(0.8, theta + (e.clientY - lastY) * 0.01));
                 lastX = e.clientX; lastY = e.clientY;
             });
             window.addEventListener('pointerup', () => { dragging = false; canvas.style.cursor = 'grab'; });

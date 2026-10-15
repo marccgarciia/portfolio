@@ -486,12 +486,12 @@ body.brand {
 .flow-line { margin-left: 31px; width: 1px; height: 16px; background: var(--line); }
 
 /* Globus (integracions) — portat del treball de serveis, accent verd */
-.globe-stage { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 660px; margin-left: auto; margin-right: 0; border: 0; background: transparent; overflow: visible; }
-.globe-canvas { width: 100%; height: 100%; display: block; }
-/* El globus només es difumina per sota (gran, com si no hi cabés tot) */
+.globe-stage { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 560px; margin-left: auto; margin-right: 0; border: 1px solid var(--line); border-radius: 20px; background: #070709; overflow: hidden; }
+.globe-canvas { position: absolute; left: -7%; top: -3%; width: 114%; height: 114%; display: block; }
+/* El globus es difumina per sota (es veuen ~3/4 de la Terra) */
 .proj.cap:not(.alt) .proj-media > .globe-stage {
-    -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 58%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
     -webkit-mask-composite: source-over;
     mask-composite: add;
 }
@@ -705,12 +705,13 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
     max-width: 42ch;
     margin: 22px auto 0;
 }
-.fill-head .w, .fill-sub .w {
+.fill-head .wd, .fill-sub .wd { display: inline-block; }
+.fill-head .c, .fill-sub .c {
     color: #4a4a4e;
-    transition: color 0.45s ease;
+    transition: color 0.4s ease;
 }
-.fill-head .w.blue, .fill-sub .w.blue { color: #5b8cff; }
-.fill-head .w.on, .fill-sub .w.on { color: var(--text); }
+.fill-head .c.blue, .fill-sub .c.blue { color: #5b8cff; }
+.fill-head .c.on, .fill-sub .c.on { color: var(--text); }
 @media (prefers-reduced-motion: reduce) {
-    .fill-head .w, .fill-sub .w { color: var(--text) !important; }
+    .fill-head .c, .fill-sub .c { color: var(--text) !important; }
 }
