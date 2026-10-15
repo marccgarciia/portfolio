@@ -563,3 +563,7 @@ body.brand::before {
 /* Globus arrossegable */
 .globe-stage { cursor: grab; touch-action: pan-y; }
 .globe-stage.dragging { cursor: grabbing; }
+
+/* Fix: botons blancs (enllaços) necessiten text negre — .brand a els pisava */
+.brand a.brand-cta,
+.brand a.proj-cta:not(.privat) { color: #000; }
