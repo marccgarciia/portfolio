@@ -143,13 +143,27 @@
             }
         };
         draw(0);
-        if (!reduce) {
-            const loop = (t) => { if (globeVisible) { rot += 0.18; draw(t); } requestAnimationFrame(loop); };
-            requestAnimationFrame(loop);
-            if ('IntersectionObserver' in window) {
-                new IntersectionObserver((e) => { globeVisible = e[0].isIntersecting; })
-                    .observe(globeSvg);
-            } else { globeVisible = true; }
-        }
+
+        // Arrossegar per girar el globus
+        let dragging = false, lastX = 0;
+        const stage = globeSvg.closest('.globe-stage') || globeSvg;
+        stage.addEventListener('pointerdown', (e) => {
+            dragging = true; lastX = e.clientX; stage.classList.add('dragging');
+            if (stage.setPointerCapture) { try { stage.setPointerCapture(e.pointerId); } catch (_) {} }
+        });
+        window.addEventListener('pointermove', (e) => {
+            if (!dragging) return;
+            rot += (e.clientX - lastX) * 0.4; lastX = e.clientX;
+            draw(performance.now());
+        });
+        const endDrag = () => { if (dragging) { dragging = false; stage.classList.remove('dragging'); } };
+        window.addEventListener('pointerup', endDrag);
+        window.addEventListener('pointercancel', endDrag);
+
+        const loop = (t) => { if (globeVisible && !dragging) { rot += 0.18; draw(t); } requestAnimationFrame(loop); };
+        if (!reduce) requestAnimationFrame(loop);
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((e) => { globeVisible = e[0].isIntersecting; }).observe(globeSvg);
+        } else { globeVisible = true; }
     }
 })();

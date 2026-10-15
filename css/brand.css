@@ -490,3 +490,62 @@ body.brand {
 .globe-chip { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 9px; font-size: 0.84rem; color: var(--text); background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; backdrop-filter: blur(6px); }
 .globe-chip svg { width: 14px; height: 14px; opacity: 0.85; }
 .globe-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ============================================================
+   "QUÈ FAIG" v2 — títol sticky, marquesina de tags, flux animat
+   ============================================================ */
+/* Capçalera de capacitat que es queda fixa en fer scroll */
+.proj.cap .proj-head {
+    position: sticky;
+    top: 70px;
+    z-index: 6;
+    background: var(--bg);
+    margin: 0;
+    padding: 16px 0 16px;
+    border-bottom: 1px solid var(--line-soft);
+}
+.proj.cap .proj-grid { padding-top: clamp(28px, 5vh, 56px); }
+.proj.cap { padding-top: clamp(50px, 7vh, 90px); }
+
+/* Marquesina petita de tags + botó */
+.tag-marquee {
+    overflow: hidden;
+    max-width: 440px;
+    margin-bottom: 28px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 85%, transparent);
+}
+.tag-marquee .tt { display: inline-flex; gap: 10px; white-space: nowrap; animation: brandscroll 24s linear infinite; }
+.tag-marquee .tp {
+    font-size: 0.8rem; color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 999px; padding: 7px 14px;
+}
+.tag-marquee:hover .tt { animation-play-state: paused; }
+
+/* ============================================================
+   MOCKUP AUTOMATITZACIÓ v2 — xat + pipeline amb camins animats
+   ============================================================ */
+.mock-auto .mock-top { margin-bottom: 14px; }
+.auto-chat { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.bub { max-width: 82%; padding: 9px 13px; border-radius: 13px; font-size: 0.82rem; line-height: 1.45; }
+.bub.me { align-self: flex-end; background: var(--surface-2); color: var(--text); border-bottom-right-radius: 4px; }
+.bub.ai { align-self: flex-start; background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); color: var(--text); border-bottom-left-radius: 4px; }
+
+.pipe { display: flex; align-items: center; gap: 6px; }
+.pnode {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: 10px; padding: 9px 12px; font-size: 0.78rem; color: var(--text);
+    white-space: nowrap; flex: none;
+}
+.pnode .ps { display: block; font-size: 0.68rem; color: var(--muted-2); margin-top: 2px; }
+.pnode.ai { border-color: rgba(74,222,128,0.4); }
+.pnode.ai .pd { color: var(--acc); }
+.pconn { flex: 1; min-width: 20px; height: 14px; }
+.flow-path { stroke: var(--acc); stroke-width: 2; fill: none; stroke-dasharray: 4 6; opacity: 0.8; animation: dashflow 0.9s linear infinite; }
+@keyframes dashflow { to { stroke-dashoffset: -20; } }
+@media (prefers-reduced-motion: reduce) { .flow-path { animation: none; } }
+
+/* Globus arrossegable */
+.globe-stage { cursor: grab; touch-action: pan-y; }
+.globe-stage.dragging { cursor: grabbing; }
