@@ -445,7 +445,7 @@ body.brand {
    ZONA "QUÈ FAIG" — capacitats amb mockups animats
    (reaprofita .proj / .proj-grid / .proj-title / .pill)
    ============================================================ */
-.cap-intro { max-width: var(--maxw); margin: 0 auto; padding: clamp(70px,10vh,130px) var(--gutter) 0; }
+.cap-intro { max-width: var(--maxw); margin: 0 auto; padding: clamp(70px,10vh,130px) var(--gutter) clamp(30px,5vh,56px); }
 
 /* Mockup CMS (desenvolupament web) */
 .mock-cms { display: grid; grid-template-columns: 136px 1fr; min-height: 300px; }
@@ -498,7 +498,7 @@ body.brand {
 .proj.cap .proj-head {
     position: sticky;
     top: 70px;
-    z-index: 51;
+    z-index: 49;
     background: var(--bg);
     margin: 0;
     padding: 16px 0 16px;
@@ -517,8 +517,9 @@ body.brand::before {
     z-index: 50;
     pointer-events: none;
 }
-.proj.cap .proj-grid { padding-top: clamp(28px, 5vh, 56px); }
-.proj.cap { padding-top: clamp(50px, 7vh, 90px); }
+/* Seccions enganxades: el títol següent puja, toca l'anterior i l'empeny */
+.proj.cap { padding-top: 0; padding-bottom: 0; border-top: 0; }
+.proj.cap .proj-grid { padding-top: clamp(24px, 4vh, 44px); padding-bottom: clamp(40px, 7vh, 90px); }
 
 /* Marquesina petita de tags + botó */
 .tag-marquee {
