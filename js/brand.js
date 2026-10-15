@@ -166,4 +166,23 @@
             new IntersectionObserver((e) => { globeVisible = e[0].isIntersecting; }).observe(globeSvg);
         } else { globeVisible = true; }
     }
+
+    /* ---------- Fons negre superior només quan hi ha títols sticky ---------- */
+    const capSecs = [...document.querySelectorAll('.proj.cap')];
+    if (capSecs.length) {
+        const first = capSecs[0], last = capSecs[capSecs.length - 1];
+        const LINE = 71;
+        let maskTick = false;
+        const updateMask = () => {
+            const top = first.getBoundingClientRect().top;
+            const bottom = last.getBoundingClientRect().bottom;
+            document.body.classList.toggle('titles-on', top <= LINE && bottom > LINE);
+        };
+        const onScrollMask = () => {
+            if (!maskTick) { maskTick = true; requestAnimationFrame(() => { updateMask(); maskTick = false; }); }
+        };
+        window.addEventListener('scroll', onScrollMask, { passive: true });
+        window.addEventListener('resize', onScrollMask, { passive: true });
+        updateMask();
+    }
 })();

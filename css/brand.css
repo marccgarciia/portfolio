@@ -516,7 +516,11 @@ body.brand::before {
     background: var(--bg);
     z-index: 50;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
 }
+/* Només quan hi ha títols sticky enganxant-se apareix el fons negre */
+body.brand.titles-on::before { opacity: 1; }
 /* Seccions enganxades: el títol següent puja, toca l'anterior i l'empeny */
 .proj.cap { padding-top: 0; padding-bottom: 0; border-top: 0; }
 .proj.cap .proj-grid { padding-top: clamp(24px, 4vh, 44px); padding-bottom: clamp(40px, 7vh, 90px); }
