@@ -729,3 +729,8 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
 /* Mockups de "Què faig": entren lliscant des de la dreta en baixar */
 .anim-ready .proj.cap .proj-media[data-reveal]:not(.in) { transform: translateX(54px); }
+
+/* Intros de secció/col·lecció centrades (com la de Projectes) */
+.coll-head, .cap-intro { text-align: center; }
+.coll-head { max-width: 900px; margin-left: auto; margin-right: auto; }
+.coll-head .coll-desc, .cap-intro .coll-desc { margin-left: auto; margin-right: auto; }
