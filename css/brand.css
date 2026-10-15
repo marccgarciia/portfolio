@@ -738,7 +738,8 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
 /* ============================================================
    MOCKUP SOCIAL v2 — mòbil amb Reel + targetes de creixement
    ============================================================ */
-.mock-social { display: flex; gap: 22px; align-items: center; }
+.mock-social .mock-top { margin-bottom: 16px; }
+.mock-social .social-row { display: flex; gap: 22px; align-items: center; }
 .phone {
     width: 168px; flex: none; position: relative;
     border-radius: 26px; border: 1px solid rgba(255,255,255,0.14);
