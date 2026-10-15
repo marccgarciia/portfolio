@@ -192,4 +192,37 @@
         window.addEventListener('resize', onScrollMask, { passive: true });
         updateMask();
     }
+
+    /* ---------- Frases centrades amb omplerta al scroll (gris -> blanc, vora blava) ---------- */
+    const fillEls = [...document.querySelectorAll('[data-fill]')];
+    if (fillEls.length && !reduce) {
+        fillEls.forEach((el) => {
+            const tokens = el.textContent.split(/(\s+)/);
+            el.textContent = '';
+            tokens.forEach((tok) => {
+                if (tok.trim() === '') { el.appendChild(document.createTextNode(tok)); }
+                else { const s = document.createElement('span'); s.className = 'w'; s.textContent = tok; el.appendChild(s); }
+            });
+        });
+        const clampF = (v, a, b) => Math.max(a, Math.min(b, v));
+        let fillTick = false;
+        const updateFill = () => {
+            const vh = window.innerHeight;
+            const start = vh * 0.85, end = vh * 0.4;
+            for (const el of fillEls) {
+                const ws = el.getElementsByClassName('w');
+                const p = clampF((start - el.getBoundingClientRect().top) / (start - end), 0, 1);
+                const edge = p * (ws.length + 1);
+                for (let i = 0; i < ws.length; i++) {
+                    const d = edge - i;
+                    ws[i].classList.toggle('on', d >= 1);
+                    ws[i].classList.toggle('blue', d >= 0 && d < 1);
+                }
+            }
+        };
+        const onFill = () => { if (!fillTick) { fillTick = true; requestAnimationFrame(() => { updateFill(); fillTick = false; }); } };
+        window.addEventListener('scroll', onFill, { passive: true });
+        window.addEventListener('resize', onFill, { passive: true });
+        updateFill();
+    }
 })();
