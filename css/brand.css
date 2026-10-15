@@ -634,3 +634,9 @@ body.brand::after {
 .cwv-row .top .v { color: var(--acc); font-weight: 500; }
 .cwv-bar { position: relative; height: 5px; border-radius: 3px; margin-top: 7px; overflow: hidden; background: linear-gradient(90deg, #4ade80 0 45%, #d6a43b 45% 72%, #e5604d 72% 100%); }
 .cwv-bar::after { content: ""; position: absolute; top: -2px; width: 9px; height: 9px; border-radius: 50%; background: #fff; left: var(--p, 20%); transform: translateX(-50%); box-shadow: 0 0 0 2px rgba(0,0,0,0.5); }
+
+/* Amaga la barra de scroll (Lenis ja gestiona el scroll suau) */
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { width: 0; height: 0; display: none; }
+body.brand { scrollbar-width: none; -ms-overflow-style: none; }
+body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
