@@ -705,15 +705,15 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
     max-width: 42ch;
     margin: 22px auto 0;
 }
-.fill-head .wd, .fill-sub .wd { display: inline-block; }
-.fill-head .c, .fill-sub .c {
+[data-fill] .wd { display: inline-block; }
+[data-fill] .c {
     color: #4a4a4e;
     transition: color 0.4s ease;
 }
-.fill-head .c.blue, .fill-sub .c.blue { color: #5b8cff; }
-.fill-head .c.on, .fill-sub .c.on { color: var(--text); }
+[data-fill] .c.blue { color: #5b8cff; }
+[data-fill] .c.on { color: var(--text); }
 @media (prefers-reduced-motion: reduce) {
-    .fill-head .c, .fill-sub .c { color: var(--text) !important; }
+    [data-fill] .c { color: var(--text) !important; }
 }
 
 /* ============================================================
@@ -726,3 +726,6 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
     height: 390px;
     overflow: hidden;
 }
+
+/* Mockups de "Què faig": entren lliscant des de la dreta en baixar */
+.anim-ready .proj.cap .proj-media[data-reveal]:not(.in) { transform: translateX(54px); }
