@@ -440,3 +440,53 @@ body.brand {
 .festa-top .v-info { margin-top: 12px; }
 .vert-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 760px; }
 @media (max-width: 860px) { .vert-grid.two { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+
+/* ============================================================
+   ZONA "QUÈ FAIG" — capacitats amb mockups animats
+   (reaprofita .proj / .proj-grid / .proj-title / .pill)
+   ============================================================ */
+.cap-intro { max-width: var(--maxw); margin: 0 auto; padding: clamp(70px,10vh,130px) var(--gutter) 0; }
+
+/* Mockup CMS (desenvolupament web) */
+.mock-cms { display: grid; grid-template-columns: 136px 1fr; min-height: 300px; }
+.cms-side { border-right: 1px solid var(--line-soft); padding: 14px 10px; }
+.cms-side .ci { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 10px; border-radius: 8px; font-size: 0.82rem; color: var(--muted); }
+.cms-side .ci.on { background: var(--surface-2); color: var(--text); }
+.cms-side .ci .c { font-size: 0.72rem; color: var(--muted-2); }
+.cms-main { padding: 14px 16px; }
+.cms-h { display: flex; gap: 10px; margin-bottom: 12px; }
+.cms-h .b { width: 26px; height: 26px; border-radius: 7px; background: var(--surface-2); }
+.cms-h .b.g { background: var(--acc-soft); }
+.cms-rw { display: flex; align-items: center; gap: 10px; padding: 11px 6px; border-top: 1px solid var(--line-soft); font-size: 0.85rem; }
+.cms-rw:first-child { border-top: 0; }
+.cms-rw .sq { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--line); flex: none; }
+.cms-rw .t { color: var(--text); }
+.cms-rw .tag { margin-left: auto; font-size: 0.72rem; color: var(--muted-2); }
+
+/* Mockup Dashboard (panells) amb gràfic de barres */
+.mock-dash .mock-top { margin-bottom: 14px; }
+.dash-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 16px; }
+.dash-stat { background: var(--surface); border: 1px solid var(--line-soft); border-radius: 12px; padding: 13px; }
+.dash-stat .n { font-size: 1.5rem; line-height: 1; letter-spacing: -0.02em; }
+.dash-stat .n.green { color: var(--acc); }
+.dash-stat .l { display: block; margin-top: 6px; font-size: 0.72rem; color: var(--muted-2); }
+.dash-chart { display: flex; align-items: flex-end; gap: 10px; height: 130px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line-soft); border-radius: 12px; }
+.dash-bar { flex: 1; border-radius: 6px 6px 0 0; background: rgba(255,255,255,0.14); height: 0; transition: height 0.9s cubic-bezier(0.2,0.7,0.2,1); }
+.dash-bar.hi { background: var(--acc); }
+.mock-dash.drawn .dash-bar { height: var(--h); }
+
+/* Mockup Flux (automatització i IA) */
+.mock-flow { padding: 6px 4px; }
+.flow-step { display: flex; align-items: center; gap: 14px; padding: 14px 14px; position: relative; }
+.flow-step .ic { width: 34px; height: 34px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; flex: none; color: var(--acc); font-size: 0.9rem; }
+.flow-step .tx { display: flex; flex-direction: column; }
+.flow-step .tx .t { font-size: 0.92rem; color: var(--text); }
+.flow-step .tx .s { font-size: 0.76rem; color: var(--muted-2); margin-top: 2px; }
+.flow-step .chk { margin-left: auto; color: var(--acc); font-size: 0.95rem; }
+.flow-line { margin-left: 31px; width: 1px; height: 16px; background: var(--line); }
+
+/* Globus (integracions) — portat del treball de serveis, accent verd */
+.globe-stage { position: relative; width: 100%; aspect-ratio: 1/1; max-width: 480px; margin: 0 auto; border: 1px solid var(--line); border-radius: 20px; background: radial-gradient(120% 120% at 70% 20%, rgba(74,222,128,0.12), transparent 55%), rgba(255,255,255,0.02); overflow: hidden; }
+.globe-chip { position: absolute; top: 16px; left: 16px; z-index: 2; display: inline-flex; align-items: center; gap: 9px; font-size: 0.84rem; color: var(--text); background: rgba(255,255,255,0.06); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; backdrop-filter: blur(6px); }
+.globe-chip svg { width: 14px; height: 14px; opacity: 0.85; }
+.globe-svg { position: absolute; inset: 0; width: 100%; height: 100%; }

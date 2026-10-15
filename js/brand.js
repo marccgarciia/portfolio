@@ -54,6 +54,7 @@
             el.classList.add('in');
         }
         if (el.hasAttribute('data-mockup')) {
+            el.classList.add('drawn');
             el.querySelectorAll('[data-count]').forEach(countUp);
         }
     };
@@ -92,5 +93,63 @@
             }
         }, { threshold: 0.25 });
         vids.forEach(v => vio.observe(v));
+    }
+
+    /* ---------- Globus de punts (integracions) ---------- */
+    const globeSvg = document.querySelector('.globe-svg');
+    if (globeSvg) {
+        const NS = 'http://www.w3.org/2000/svg';
+        const CX = 260, CY = 260, R = 192;
+        const dotsG = globeSvg.querySelector('.globe-dots');
+        const nodesG = globeSvg.querySelector('.globe-nodes');
+        const dots = [];
+        for (let lat = -78; lat <= 78; lat += 13) {
+            const ring = Math.max(1, Math.round(Math.cos(lat * Math.PI / 180) * 26));
+            for (let k = 0; k < ring; k++) {
+                const c = document.createElementNS(NS, 'circle');
+                c.setAttribute('fill', '#ffffff');
+                dotsG.appendChild(c);
+                dots.push({ lat, lon: (k / ring) * 360, el: c });
+            }
+        }
+        const nodes = [[22, -15], [41, 32], [-12, 58], [33, -52], [-28, 22], [8, 95]].map(([lat, lon]) => {
+            const c = document.createElementNS(NS, 'circle');
+            c.setAttribute('fill', '#4ade80');
+            nodesG.appendChild(c);
+            return { lat, lon, el: c };
+        });
+        const project = (lat, lon, rot) => {
+            const phi = lat * Math.PI / 180, lam = (lon + rot) * Math.PI / 180, cphi = Math.cos(phi);
+            return { x: CX + R * cphi * Math.sin(lam), y: CY - R * Math.sin(phi), z: cphi * Math.cos(lam) };
+        };
+        let rot = 0, globeVisible = false;
+        const draw = (time) => {
+            for (const d of dots) {
+                const p = project(d.lat, d.lon, rot);
+                if (p.z < -0.05) { d.el.setAttribute('opacity', '0'); continue; }
+                const depth = (p.z + 1) / 2;
+                d.el.setAttribute('cx', p.x.toFixed(1));
+                d.el.setAttribute('cy', p.y.toFixed(1));
+                d.el.setAttribute('r', (0.9 + depth * 1.5).toFixed(2));
+                d.el.setAttribute('opacity', (0.1 + depth * 0.6).toFixed(2));
+            }
+            for (const n of nodes) {
+                const p = project(n.lat, n.lon, rot);
+                if (p.z < 0.02) { n.el.setAttribute('opacity', '0'); continue; }
+                n.el.setAttribute('cx', p.x.toFixed(1));
+                n.el.setAttribute('cy', p.y.toFixed(1));
+                n.el.setAttribute('r', (3.2 + Math.sin(time / 500 + n.lon) * 1.6).toFixed(2));
+                n.el.setAttribute('opacity', (0.5 + p.z * 0.5).toFixed(2));
+            }
+        };
+        draw(0);
+        if (!reduce) {
+            const loop = (t) => { if (globeVisible) { rot += 0.18; draw(t); } requestAnimationFrame(loop); };
+            requestAnimationFrame(loop);
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver((e) => { globeVisible = e[0].isIntersecting; })
+                    .observe(globeSvg);
+            } else { globeVisible = true; }
+        }
     }
 })();
