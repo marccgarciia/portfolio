@@ -474,7 +474,7 @@ body.brand {
     font-size: clamp(2rem, 6vw, 5rem); color: var(--text);
     margin: 10px 0 34px; transition: color 0.3s ease;
 }
-.contacte-email:hover { color: var(--acc); }
+.contacte-email:hover .c.on { color: var(--acc); }
 .contacte-links { display: flex; flex-wrap: wrap; gap: 14px; }
 
 .brand-footer {

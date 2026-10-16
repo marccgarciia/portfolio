@@ -216,10 +216,14 @@
         let fillTick = false, lastY = window.scrollY, dir = 1;
         const updateFill = () => {
             const vh = window.innerHeight;
-            const start = vh * 0.85, end = vh * 0.4;
+            const start = vh * 0.85;
+            const remaining = Math.max(0, document.documentElement.scrollHeight - vh - window.scrollY);
             for (const el of fillEls) {
                 const cs = charMap.get(el);
-                const p = clampF((start - el.getBoundingClientRect().top) / (start - end), 0, 1);
+                const top = el.getBoundingClientRect().top;
+                // si l'element és al final de la pàgina, ha d'acabar d'omplir-se abans d'arribar al fons
+                const end = Math.max(vh * 0.4, top - remaining + 30);
+                const p = clampF((start - top) / Math.max(1, start - end), 0, 1);
                 const edge = p * (cs.length + 2);
                 for (let i = 0; i < cs.length; i++) {
                     const d = edge - i;
