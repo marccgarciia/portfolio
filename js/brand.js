@@ -345,4 +345,29 @@
             hero.addEventListener('pointerleave', () => { mouse.kt = 0; wake(); });
         }
     }
+    /* ---------- Cursor personalitzat: punt blanc + cercle en passar per sobre d'elements clicables ---------- */
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cur = document.createElement('div');
+        cur.className = 'cursor';
+        cur.innerHTML = '<span class="cursor-in"></span>';
+        document.body.appendChild(cur);
+        document.documentElement.classList.add('has-cursor');
+        const LINKS = 'a, button, [role="button"], input, textarea, select, summary, label';
+        let tx = -100, ty = -100, cx = -100, cy = -100, shown = false, raf = 0;
+        const loop = () => {
+            cx += (tx - cx) * (reduce ? 1 : 0.34);
+            cy += (ty - cy) * (reduce ? 1 : 0.34);
+            cur.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
+            raf = (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) ? requestAnimationFrame(loop) : 0;
+        };
+        window.addEventListener('pointermove', (e) => {
+            tx = e.clientX; ty = e.clientY;
+            if (!shown) { shown = true; cx = tx; cy = ty; cur.classList.add('on'); }
+            cur.classList.toggle('is-link', !!(e.target.closest && e.target.closest(LINKS)));
+            if (!raf) raf = requestAnimationFrame(loop);
+        }, { passive: true });
+        window.addEventListener('pointerdown', () => cur.classList.add('down'));
+        window.addEventListener('pointerup', () => cur.classList.remove('down'));
+        document.documentElement.addEventListener('pointerleave', () => { shown = false; cur.classList.remove('on'); });
+    }
 })();
