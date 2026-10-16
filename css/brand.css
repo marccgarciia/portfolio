@@ -440,9 +440,7 @@ body.brand {
 .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
 .about-quote { font-size: 1.05rem; line-height: 1.6; color: var(--muted); border-left: 2px solid var(--acc); padding-left: 20px; }
 .about-quote .who { display: block; margin-top: 10px; color: var(--muted-2); font-size: 0.9rem; }
-.skills { margin-top: clamp(40px, 6vh, 70px); display: flex; flex-direction: column; gap: 22px; }
-.skill-group { display: flex; flex-direction: column; gap: 8px; }
-.skill-lab { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-2); padding: 0 var(--gutter); }
+.skills { margin-top: clamp(40px, 6vh, 70px); display: flex; flex-direction: column; gap: 14px; }
 .skills .row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .skills .track { display: inline-flex; white-space: nowrap; animation: brandscroll 42s linear infinite; }
 .skills .row.rev .track { animation-direction: reverse; }
