@@ -454,11 +454,11 @@ body.brand {
 .traj-card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; }
 .traj-card .t-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px; }
 .traj-card .t-tag { font-size: 1.05rem; }
-.traj-card .t-num { font-size: 0.78rem; color: var(--muted-2); letter-spacing: 0.1em; }
+.traj-card .t-num { font-size: 0.78rem; color: var(--acc); letter-spacing: 0.1em; }
 .traj-item { padding: 14px 0; border-top: 1px solid var(--line-soft); }
 .traj-item:first-of-type { border-top: 0; }
 .traj-item .d { font-size: 0.74rem; letter-spacing: 0.08em; color: var(--muted); }
-.traj-item .t { font-size: 0.98rem; color: var(--acc); margin: 5px 0 3px; line-height: 1.3; }
+.traj-item .t { font-size: 0.98rem; color: var(--text); margin: 5px 0 3px; line-height: 1.3; }
 .traj-item .e { font-size: 0.85rem; color: var(--muted-2); }
 
 /* ============================================================
