@@ -289,4 +289,60 @@
     setMarqueeSpeed();
     window.addEventListener('load', setMarqueeSpeed);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(setMarqueeSpeed);
+    /* ---------- Quadrícula de punts del hero que reacciona al ratolí ---------- */
+    const gridCv = document.querySelector('.hero-grid');
+    if (gridCv && gridCv.getContext) {
+        const hero = gridCv.parentElement;
+        const ctx = gridCv.getContext('2d');
+        const GAP = 32, RADIUS = 250;
+        let W = 0, H = 0, dpr = 1, running = false;
+        const mouse = { x: -9999, y: -9999, sx: -9999, sy: -9999, k: 0, kt: 0 };
+        const resize = () => {
+            dpr = Math.min(2, window.devicePixelRatio || 1);
+            const r = gridCv.getBoundingClientRect();
+            W = r.width; H = r.height;
+            gridCv.width = Math.round(W * dpr); gridCv.height = Math.round(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            draw();
+        };
+        const draw = () => {
+            ctx.clearRect(0, 0, W, H);
+            const cols = Math.ceil(W / GAP) + 1, rows = Math.ceil(H / GAP) + 1;
+            const ox = (W % GAP) / 2;
+            for (let i = 0; i < cols; i++) {
+                const x = ox + i * GAP;
+                for (let j = 0; j < rows; j++) {
+                    const y = j * GAP + GAP / 2;
+                    const d = Math.hypot(x - mouse.sx, y - mouse.sy);
+                    const f = Math.max(0, 1 - d / RADIUS) * mouse.k;
+                    const e = f * f * (3 - 2 * f);
+                    const a = 0.16 + e * 0.8;
+                    const r = 1 + e * 1.3;
+                    // gris -> blau segons la proximitat
+                    const rr = Math.round(150 - e * 59), gg = Math.round(150 - e * 10), bb = Math.round(160 + e * 95);
+                    ctx.fillStyle = 'rgba(' + rr + ',' + gg + ',' + bb + ',' + a.toFixed(3) + ')';
+                    ctx.beginPath(); ctx.arc(x, y, r, 0, 6.2832); ctx.fill();
+                }
+            }
+        };
+        const tick = () => {
+            mouse.sx += (mouse.x - mouse.sx) * 0.16;
+            mouse.sy += (mouse.y - mouse.sy) * 0.16;
+            mouse.k += (mouse.kt - mouse.k) * 0.1;
+            draw();
+            if (mouse.kt > 0 || mouse.k > 0.01) requestAnimationFrame(tick); else running = false;
+        };
+        const wake = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
+        resize();
+        window.addEventListener('resize', resize, { passive: true });
+        if (!reduce && window.matchMedia('(hover: hover)').matches) {
+            hero.addEventListener('pointermove', (e) => {
+                const r = gridCv.getBoundingClientRect();
+                mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+                if (mouse.k < 0.02) { mouse.sx = mouse.x; mouse.sy = mouse.y; }
+                mouse.kt = 1; wake();
+            }, { passive: true });
+            hero.addEventListener('pointerleave', () => { mouse.kt = 0; wake(); });
+        }
+    }
 })();
