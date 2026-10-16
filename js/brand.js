@@ -238,4 +238,40 @@
         window.addEventListener('resize', onFill, { passive: true });
         updateFill();
     }
+    /* ---------- Efecte d'escriptura als càrrecs/títols de la trajectòria ---------- */
+    const twItems = [...document.querySelectorAll('.traj-item .t')];
+    if (twItems.length && !reduce && 'IntersectionObserver' in window) {
+        twItems.forEach((el) => {
+            const full = el.textContent;
+            el.textContent = '';
+            const v = document.createElement('span'); v.className = 'tw-v';
+            const h = document.createElement('span'); h.className = 'tw-h'; h.textContent = full;
+            el.setAttribute('aria-label', full);
+            el.append(v, h);
+        });
+        const typeIt = (el, delay) => {
+            const v = el.querySelector('.tw-v'), h = el.querySelector('.tw-h');
+            const full = h.textContent;
+            let i = 0;
+            setTimeout(() => {
+                v.classList.add('typing');
+                const tick = () => {
+                    i++;
+                    v.textContent = full.slice(0, i);
+                    h.textContent = full.slice(i);
+                    if (i < full.length) setTimeout(tick, 22 + Math.random() * 26);
+                    else setTimeout(() => v.classList.remove('typing'), 700);
+                };
+                tick();
+            }, delay);
+        };
+        const tio = new IntersectionObserver((entries) => {
+            for (const e of entries) {
+                if (!e.isIntersecting) continue;
+                tio.unobserve(e.target);
+                [...e.target.querySelectorAll('.traj-item .t')].forEach((el, i) => typeIt(el, 350 + i * 420));
+            }
+        }, { threshold: 0.3 });
+        document.querySelectorAll('.traj-card').forEach(c => tio.observe(c));
+    }
 })();
