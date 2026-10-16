@@ -278,4 +278,15 @@
         }, { threshold: 0.3 });
         document.querySelectorAll('.traj-card').forEach(c => tio.observe(c));
     }
+    /* ---------- Marquesines: velocitat constant (px/s) sigui quina sigui la llargada ---------- */
+    const setMarqueeSpeed = () => {
+        document.querySelectorAll('.brand-marquee .track, .skills .track').forEach((t) => {
+            const speed = t.closest('.skills') ? 42 : 52;
+            const half = t.scrollWidth / 2;
+            if (half > 0) t.style.animationDuration = (half / speed).toFixed(1) + 's';
+        });
+    };
+    setMarqueeSpeed();
+    window.addEventListener('load', setMarqueeSpeed);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setMarqueeSpeed);
 })();
