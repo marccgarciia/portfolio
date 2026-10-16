@@ -294,7 +294,7 @@
     if (gridCv && gridCv.getContext) {
         const hero = gridCv.parentElement;
         const ctx = gridCv.getContext('2d');
-        const GAP = 32, RADIUS = 250;
+        const GAP = 22, RADIUS = 210;
         let W = 0, H = 0, dpr = 1, running = false;
         const mouse = { x: -9999, y: -9999, sx: -9999, sy: -9999, k: 0, kt: 0 };
         const resize = () => {
@@ -316,8 +316,8 @@
                     const d = Math.hypot(x - mouse.sx, y - mouse.sy);
                     const f = Math.max(0, 1 - d / RADIUS) * mouse.k;
                     const e = f * f * (3 - 2 * f);
-                    const a = 0.16 + e * 0.8;
-                    const r = 1 + e * 1.3;
+                    const a = 0.13 + e * 0.5;
+                    const r = 0.7 + e * 0.75;
                     // gris -> blau segons la proximitat
                     const rr = Math.round(150 - e * 59), gg = Math.round(150 - e * 10), bb = Math.round(160 + e * 95);
                     ctx.fillStyle = 'rgba(' + rr + ',' + gg + ',' + bb + ',' + a.toFixed(3) + ')';
