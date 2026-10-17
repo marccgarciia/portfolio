@@ -368,7 +368,7 @@ body.brand {
 .vcard { display: flex; flex-direction: column; gap: 14px; }
 .vcard .frame-media { aspect-ratio: 9/16; }
 .vcard .v-info .cat { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); }
-.vcard .v-info h4 { font-size: 1.15rem; font-weight: 500; margin: 6px 0 8px; }
+.vcard .v-info h3 { font-size: 1.15rem; font-weight: 500; margin: 6px 0 8px; }
 .vcard .v-info p { font-size: 0.92rem; color: var(--muted); line-height: 1.5; margin: 0 0 10px; }
 .link-arrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--acc); transition: gap 0.25s ease; }
 .link-arrow:hover { gap: 13px; }
@@ -1044,7 +1044,7 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .vcard .frame-media { border-radius: 8px; }
     .vcard .v-info { margin-top: 10px; }
     .vcard .v-info .cat { display: none; }
-    .vcard .v-info h4 { font-size: 0.8rem; line-height: 1.25; margin: 0 0 6px; }
+    .vcard .v-info h3 { font-size: 0.8rem; line-height: 1.25; margin: 0 0 6px; }
     .vcard .v-info .link-arrow { font-size: 0.7rem; gap: 4px; line-height: 1.3; }
 }
 
@@ -1133,3 +1133,6 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
 
 /* El nom del compte del Reel no es pot sortir del mòbil */
 .reel-cap { overflow-wrap: anywhere; }
+
+/* Text només per a lectors de pantalla */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

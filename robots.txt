@@ -3,9 +3,5 @@
 User-agent: *
 Allow: /
 
-# Bloquear archivos que no necesitan indexarse
-Disallow: /css/
-Disallow: /js/
-
 # Sitemap
 Sitemap: https://marccgarciia.com/sitemap.xml
