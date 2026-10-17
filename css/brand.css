@@ -1104,3 +1104,12 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     }
     .proj-cta.privat { font-size: 0.8rem; padding: 7px 13px; }
 }
+
+/* Contacte: etiqueta a sobre del correu (no en línia) i peu de pàgina ordenat al mòbil */
+#contacte .brand-eyebrow { display: block; }
+@media (max-width: 760px) {
+    #contacte .contacte-email { margin: 4px 0 26px; }
+    .contacte-links { gap: 10px; }
+    .contacte-links .pill { font-size: 0.82rem; padding: 7px 14px; }
+    .brand-footer { padding: 26px var(--gutter) 40px; gap: 6px; font-size: 0.78rem; }
+}
