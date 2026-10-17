@@ -65,8 +65,8 @@ Serveis ⇒ Servicios ⇒ Services
 Esborrany ⇒ Borrador ⇒ Draft
 
 Eines internes ⇒ Herramientas internas ⇒ Internal tools
-Eines de gestió que ⇒ Herramientas de gestión que ⇒ Management tools that
-t'estalvien temps ⇒ te ahorran tiempo ⇒ save you time
+Eines de gestió que ⇒ Gestión que ⇒ Management that
+t'estalvien temps ⇒ te ahorra tiempo ⇒ saves you time
 Centralitzo la gestió de reserves, clients, alumnes i altres processos en un sol espai. Menys fulls de càlcul dispersos i més control. ⇒ Centralizo la gestión de reservas, clientes, alumnos y otros procesos en un solo espacio. Menos hojas de cálculo dispersas y más control. ⇒ I centralise the management of bookings, clients, students and other processes in one place. Fewer scattered spreadsheets and more control.
 Tauler ⇒ Panel ⇒ Dashboard
 Reserves ⇒ Reservas ⇒ Bookings
@@ -115,8 +115,8 @@ Visitants únics ⇒ Visitantes únicos ⇒ Unique visitors
 Pàgines vistes ⇒ Páginas vistas ⇒ Page views
 % Rebot ⇒ % Rebote ⇒ % Bounce
 
-Rendiment, seguretat i ⇒ Rendimiento, seguridad y ⇒ Performance, security and
-manteniment continu ⇒ mantenimiento continuo ⇒ ongoing maintenance
+Rendiment, seguretat i ⇒ Rendimiento y ⇒ Performance, security
+manteniment continu ⇒ seguridad continuos ⇒ and maintenance
 Còpies de seguretat, actualitzacions verificades, monitoratge i suport directe per mantenir el web actualitzat, segur i estable. ⇒ Copias de seguridad, actualizaciones verificadas, monitorización y soporte directo para mantener la web actualizada, segura y estable. ⇒ Backups, verified updates, monitoring and direct support to keep your website up to date, secure and stable.
 Còpies de seguretat ⇒ Copias de seguridad ⇒ Backups
 Actualitzacions ⇒ Actualizaciones ⇒ Updates

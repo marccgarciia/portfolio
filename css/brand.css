@@ -1130,3 +1130,6 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .lang-sw-m a { padding: 8px 10px 8px 0; }
     .lang-sw-m a + a::before { margin-left: -10px; margin-right: 12px; }
 }
+
+/* El nom del compte del Reel no es pot sortir del mòbil */
+.reel-cap { overflow-wrap: anywhere; }
