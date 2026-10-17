@@ -1061,3 +1061,11 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid var(--line); background: rgba(255, 255, 255, 0.08); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer;
 }
+
+/* Foto personal a "Sobre mi" */
+.about-photo {
+    display: block; width: 124px; height: 124px; border-radius: 50%; object-fit: cover;
+    border: 1px solid var(--line); margin: 0 0 26px; background: #111;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 760px) { .about-photo { width: 92px; height: 92px; margin-bottom: 20px; } }
