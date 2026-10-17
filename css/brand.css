@@ -1005,3 +1005,6 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .traj-item .t { font-size: 0.92rem; }
     .mm-links a { font-size: clamp(1.9rem, 9.5vw, 2.5rem); padding: 12px 0; }
 }
+
+/* Mòbil: la barra de vidre ja cobreix el nom, no cal el degradat de cantonada */
+@media (max-width: 760px) { body.brand::after { display: none; } }
