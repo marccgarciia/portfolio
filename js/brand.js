@@ -325,11 +325,19 @@
                 }
             }
         };
-        const tick = () => {
+        let autoMode = false, heroVisible = true, touchUntil = 0;
+        const tick = (now) => {
+            if (autoMode && now > touchUntil) {
+                // mòbil: llum que voreja sola per la quadrícula
+                mouse.x = W * (0.5 + 0.34 * Math.sin(now * 0.00042));
+                mouse.y = H * (0.48 + 0.2 * Math.sin(now * 0.00071 + 1.3));
+                mouse.kt = 1;
+            }
             mouse.sx += (mouse.x - mouse.sx) * 0.16;
             mouse.sy += (mouse.y - mouse.sy) * 0.16;
             mouse.k += (mouse.kt - mouse.k) * 0.1;
             draw();
+            if (autoMode && !heroVisible) { running = false; return; }
             if (mouse.kt > 0 || mouse.k > 0.01) requestAnimationFrame(tick); else running = false;
         };
         const wake = () => { if (!running) { running = true; requestAnimationFrame(tick); } };
@@ -343,6 +351,18 @@
                 mouse.kt = 1; wake();
             }, { passive: true });
             hero.addEventListener('pointerleave', () => { mouse.kt = 0; wake(); });
+        } else if (!reduce) {
+            autoMode = true;
+            mouse.sx = W * 0.5; mouse.sy = H * 0.5; mouse.k = 0;
+            hero.addEventListener('pointermove', (e) => {
+                const r = gridCv.getBoundingClientRect();
+                mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+                touchUntil = performance.now() + 2200; mouse.kt = 1; wake();
+            }, { passive: true });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver((en) => { heroVisible = en[0].isIntersecting; if (heroVisible) wake(); }).observe(hero);
+            }
+            wake();
         }
     }
     /* ---------- Cursor personalitzat: punt blanc + cercle en passar per sobre d'elements clicables ---------- */
@@ -369,5 +389,20 @@
         window.addEventListener('pointerdown', () => cur.classList.add('down'));
         window.addEventListener('pointerup', () => cur.classList.remove('down'));
         document.documentElement.addEventListener('pointerleave', () => { shown = false; cur.classList.remove('on'); });
+    }
+    /* ---------- Menú mòbil ---------- */
+    const burger = document.querySelector('.brand-burger');
+    const mmenu = document.querySelector('.mobile-menu');
+    if (burger && mmenu) {
+        const setMenu = (open) => {
+            document.body.classList.toggle('menu-open', open);
+            burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            mmenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+            if (window.__lenis) { open ? window.__lenis.stop() : window.__lenis.start(); }
+        };
+        burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+        mmenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+        window.addEventListener('resize', () => { if (window.innerWidth > 760) setMenu(false); }, { passive: true });
+        window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
     }
 })();

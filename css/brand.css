@@ -883,3 +883,104 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     background: rgba(255, 255, 255, 0.3); box-shadow: inset 0 0 0 1.5px #fff;
 }
 .cursor.down .cursor-in { transform: scale(0.88); }
+
+/* ============================================================
+   MÒBIL — mateix flow que a escriptori
+   ============================================================ */
+.brand-burger, .mobile-menu { display: none; }
+
+@media (max-width: 860px) {
+    /* Les columnes no poden créixer per sobre de l'amplada de pantalla */
+    .proj-grid, .proj.alt .proj-grid { grid-template-columns: minmax(0, 1fr); }
+    .xarxes-wrap, .about-grid, .traj-grid { grid-template-columns: minmax(0, 1fr); }
+    .proj-info, .proj-media, .xarxes-wrap > *, .about-grid > *, .traj-grid > * { min-width: 0; }
+    .tag-marquee { max-width: 100%; }
+    .proj-desc { max-width: none; }
+}
+
+@media (max-width: 760px) {
+    :root { --gutter: 20px; }
+
+    /* Navbar: barra de vidre fixa amb logo + botó de menú */
+    .brand-nav {
+        top: 0; width: 100%; max-width: none; transform: none; left: 0;
+        padding: 12px var(--gutter);
+        background: rgba(0, 0, 0, 0.62);
+        -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%);
+        border-bottom: 1px solid var(--line-soft);
+    }
+    .brand-cta { display: none; }
+    .brand-burger {
+        display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 6px;
+        width: 44px; height: 40px; margin-right: -8px; padding: 0 8px;
+        background: none; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    }
+    .brand-burger i { display: block; height: 1.5px; background: #fff; border-radius: 2px; transition: transform 0.35s cubic-bezier(0.2,0.7,0.2,1), width 0.3s ease; }
+    .brand-burger i:first-child { width: 24px; }
+    .brand-burger i:last-child { width: 16px; }
+    body.menu-open .brand-burger i:first-child { width: 24px; transform: translateY(3.75px) rotate(45deg); }
+    body.menu-open .brand-burger i:last-child { width: 24px; transform: translateY(-3.75px) rotate(-45deg); }
+
+    /* Menú a pantalla completa */
+    .mobile-menu {
+        display: flex; flex-direction: column; justify-content: space-between;
+        position: fixed; inset: 0; z-index: 90; padding: 96px var(--gutter) 34px;
+        background: rgba(0, 0, 0, 0.94);
+        -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+        opacity: 0; visibility: hidden; transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+    }
+    body.menu-open .mobile-menu { opacity: 1; visibility: visible; transition: opacity 0.35s ease; }
+    body.menu-open { overflow: hidden; }
+    .mm-links { display: flex; flex-direction: column; }
+    .mm-links a {
+        display: flex; align-items: baseline; gap: 16px; padding: 14px 0;
+        font-size: clamp(2.2rem, 11vw, 3rem); letter-spacing: -0.04em; line-height: 1.05;
+        border-bottom: 1px solid var(--line-soft);
+        opacity: 0; transform: translateY(24px);
+        transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2,0.7,0.2,1);
+    }
+    .mm-links a span { font-size: 0.78rem; letter-spacing: 0.12em; color: var(--acc); }
+    body.menu-open .mm-links a { opacity: 1; transform: none; }
+    body.menu-open .mm-links a:nth-child(1) { transition-delay: 0.08s; }
+    body.menu-open .mm-links a:nth-child(2) { transition-delay: 0.14s; }
+    body.menu-open .mm-links a:nth-child(3) { transition-delay: 0.20s; }
+    body.menu-open .mm-links a:nth-child(4) { transition-delay: 0.26s; }
+    body.menu-open .mm-links a:nth-child(5) { transition-delay: 0.32s; }
+    .mm-foot { color: var(--muted-2); font-size: 0.9rem; }
+
+    /* Titulars sticky i màscara ajustats a l'alçada de la barra mòbil */
+    .proj.cap .proj-head { top: 58px; }
+    body.brand::before { height: 58px; }
+
+    /* Hero amb més presència */
+    .brand-display { font-size: clamp(2.7rem, 13.2vw, 3.6rem); }
+    .brand-eyebrow { font-size: 0.7rem; letter-spacing: 0.13em; }
+}
+
+.proj.cap { overflow-x: clip; }
+@media (max-width: 860px) {
+    .globe-canvas { left: -6%; top: 50%; width: 112%; height: auto; transform: translateY(-52%); }
+    .anim-ready .proj.cap .proj-media[data-reveal]:not(.in) { transform: translateX(28px); }
+}
+
+@media (max-width: 860px) {
+    /* El difuminat de la vora dreta no ha de menjar-se contingut en pantalles estretes */
+    .proj.cap:not(.alt) .proj-media > .mock,
+    .proj.cap:not(.alt) .proj-media > .frame,
+    .proj.cap:not(.alt) .proj-media > .globe-stage {
+        -webkit-mask-image: linear-gradient(to right, #000 90%, transparent 100%), linear-gradient(to bottom, #000 72%, transparent 100%);
+        mask-image: linear-gradient(to right, #000 90%, transparent 100%), linear-gradient(to bottom, #000 72%, transparent 100%);
+    }
+    .proj.cap.alt .proj-media > .mock,
+    .proj.cap.alt .proj-media > .frame,
+    .proj.cap.alt .proj-media > .globe-stage {
+        -webkit-mask-image: linear-gradient(to left, #000 90%, transparent 100%), linear-gradient(to bottom, #000 84%, transparent 100%);
+        mask-image: linear-gradient(to left, #000 90%, transparent 100%), linear-gradient(to bottom, #000 84%, transparent 100%);
+    }
+    .mock-auto .anode { zoom: 0.8; }
+    .phone { width: 128px; }
+    .mock-social .social-row { gap: 14px; }
+    .s-card { padding: 11px 12px; }
+    .s-card .n { font-size: 1.3rem; }
+    .mock { padding: 14px; }
+}
