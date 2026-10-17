@@ -1095,3 +1095,12 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .skills { gap: 10px; }
     .skills .track span { font-size: 0.82rem; padding: 0 0.8rem; }
 }
+
+/* Mòbil: "Veure projecte" com a enllaç discret (no un botó que ocupi espai) */
+@media (max-width: 760px) {
+    body.brand a.proj-cta:not(.privat) {
+        background: none; color: var(--acc); padding: 0; border-radius: 0;
+        font-size: 0.9rem; font-weight: 500; gap: 8px;
+    }
+    .proj-cta.privat { font-size: 0.8rem; padding: 7px 13px; }
+}
