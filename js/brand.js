@@ -250,8 +250,9 @@
             el.textContent = '';
             const v = document.createElement('span'); v.className = 'tw-v';
             const h = document.createElement('span'); h.className = 'tw-h'; h.textContent = full;
-            el.setAttribute('aria-label', full);
-            el.append(v, h);
+            v.setAttribute('aria-hidden', 'true'); h.setAttribute('aria-hidden', 'true');
+            const sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = full;
+            el.append(sr, v, h);
         });
         const typeIt = (el, delay) => {
             const v = el.querySelector('.tw-v'), h = el.querySelector('.tw-h');

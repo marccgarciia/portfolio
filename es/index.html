@@ -21,6 +21,9 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="ca_ES">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta name="theme-color" content="#000000">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://marccgarciia.com/es/">
@@ -40,9 +43,58 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
+    <link rel="stylesheet" media="print" onload="this.media='all'"
         href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"></noscript>
     <link rel="stylesheet" href="../css/brand.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://marccgarciia.com/#marc",
+      "name": "Marc García-Cuevas",
+      "alternateName": "Marc García-Cuevas de Paz",
+      "jobTitle": "Analista técnico e ingeniero de software",
+      "url": "https://marccgarciia.com/es/",
+      "image": "https://marccgarciia.com/media/fotoperfil-web.jpg",
+      "email": "mailto:marcg-c20@hotmail.es",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "knowsAbout": [
+        "Desarrollo web",
+        "Herramientas internas",
+        "Integraciones y APIs",
+        "Automatización e IA",
+        "SEO y GEO",
+        "Diseño UI/UX",
+        "Redes sociales"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/marccgarciia/",
+        "https://www.linkedin.com/in/marccgarciia/",
+        "https://github.com/marccgarciia"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://marccgarciia.com/#website",
+      "url": "https://marccgarciia.com/",
+      "name": "Marc García-Cuevas",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://marccgarciia.com/#marc"
+      }
+    }
+  ]
+}
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
@@ -80,6 +132,7 @@
         <div class="mm-foot"><div class="lang-sw lang-sw-m" aria-label="Language"><a href="../index.html" hreflang="ca" lang="ca">CA</a><a href="index.html" hreflang="es" lang="es" class="on" aria-current="true">ES</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><span>marcg-c20@hotmail.es</span></div>
     </div>
 
+    <main id="main">
     <!-- HERO -->
     <section class="brand-hero" id="top">
         <canvas class="hero-grid" aria-hidden="true"></canvas>
@@ -692,21 +745,21 @@
                 <div class="frame"><div class="frame-media">
                     <video data-lazy muted loop playsinline preload="none" poster="../media/festa2026-poster.jpg"><source src="../media/FestaMajor2026.mp4" type="video/mp4"></video>
                 </div></div>
-                <div class="v-info"><span class="cat">2026</span><h4>Fiesta Mayor 2026</h4>
+                <div class="v-info"><span class="cat">2026</span><h3>Fiesta Mayor 2026</h3>
                     <a href="https://www.instagram.com/reel/Ddjb_zRNlw6/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
             </div>
             <div class="vcard">
                 <div class="frame"><div class="frame-media">
                     <video data-lazy muted loop playsinline preload="none" poster="../media/festa2025-poster.jpg"><source src="../media/FestaMajor2025.mp4" type="video/mp4"></video>
                 </div></div>
-                <div class="v-info"><span class="cat">2025</span><h4>Fiesta Mayor 2025</h4>
+                <div class="v-info"><span class="cat">2025</span><h3>Fiesta Mayor 2025</h3>
                     <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
             </div>
             <div class="vcard">
                 <div class="frame"><div class="frame-media">
                     <video data-lazy muted loop playsinline preload="none" poster="../media/festa2024-poster.jpg"><source src="../media/FestaMajor2024.mp4" type="video/mp4"></video>
                 </div></div>
-                <div class="v-info"><span class="cat">2024</span><h4>Fiesta Mayor 2024</h4>
+                <div class="v-info"><span class="cat">2024</span><h3>Fiesta Mayor 2024</h3>
                     <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
             </div>
         </div>
@@ -824,12 +877,14 @@
         <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(91,140,255,0.3)"/><stop offset="100%" stop-color="rgba(91,140,255,0)"/></linearGradient>
     </defs></svg>
 
+    </main>
+
     <footer class="brand-footer">
         <span>© 2026 Marc García-Cuevas de Paz</span>
         <span>Hecho a mano, sin plantillas.</span>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="../js/lenis.min.js"></script>
     <script src="../js/brand.js"></script>
 
     <!-- Globus real (continents en punts + glow de vora) amb cobe -->

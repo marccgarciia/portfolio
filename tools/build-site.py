@@ -333,6 +333,59 @@ META = {
     ),
 }
 
+OG_LOCALES = {"ca": "ca_ES", "es": "es_ES", "en": "en_GB"}
+
+def alt_locales(lang):
+    return "\n".join(
+        f'    <meta property="og:locale:alternate" content="{OG_LOCALES[l]}">' for l in LANGS if l != lang
+    )
+
+JOB = {
+    "ca": "Analista tècnic i enginyer de software",
+    "es": "Analista técnico e ingeniero de software",
+    "en": "Technical Analyst and Software Engineer",
+}
+KNOWS = {
+    "ca": ["Desenvolupament web", "Eines internes", "Integracions i APIs", "Automatització i IA", "SEO i GEO", "Disseny UI/UX", "Xarxes socials"],
+    "es": ["Desarrollo web", "Herramientas internas", "Integraciones y APIs", "Automatización e IA", "SEO y GEO", "Diseño UI/UX", "Redes sociales"],
+    "en": ["Web development", "Internal tools", "Integrations and APIs", "Automation and AI", "SEO and GEO", "UI/UX design", "Social media"],
+}
+
+def json_ld(lang):
+    import json
+    m = META[lang]
+    data = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": SITE + "/#marc",
+                "name": "Marc García-Cuevas",
+                "alternateName": "Marc García-Cuevas de Paz",
+                "jobTitle": JOB[lang],
+                "url": SITE + m["path"],
+                "image": SITE + "/media/fotoperfil-web.jpg",
+                "email": "mailto:marcg-c20@hotmail.es",
+                "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"},
+                "knowsAbout": KNOWS[lang],
+                "sameAs": [
+                    "https://www.instagram.com/marccgarciia/",
+                    "https://www.linkedin.com/in/marccgarciia/",
+                    "https://github.com/marccgarciia",
+                ],
+            },
+            {
+                "@type": "WebSite",
+                "@id": SITE + "/#website",
+                "url": SITE + "/",
+                "name": "Marc García-Cuevas",
+                "inLanguage": lang,
+                "publisher": {"@id": SITE + "/#marc"},
+            },
+        ],
+    }
+    return json.dumps(data, ensure_ascii=False, indent=2)
+
 def head(lang):
     m = META[lang]
     p = "" if lang == "ca" else "../"
@@ -360,6 +413,8 @@ def head(lang):
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="{m['locale']}">
+{alt_locales(lang)}
+    <meta name="theme-color" content="#000000">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{url}">
@@ -379,9 +434,15 @@ def head(lang):
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
+    <link rel="stylesheet" media="print" onload="this.media='all'"
         href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+    <noscript><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"></noscript>
     <link rel="stylesheet" href="{p}css/brand.css">
+
+    <script type="application/ld+json">
+{json_ld(lang)}
+    </script>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
