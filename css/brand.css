@@ -1113,3 +1113,20 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .contacte-links .pill { font-size: 0.82rem; padding: 7px 14px; }
     .brand-footer { padding: 26px var(--gutter) 40px; gap: 6px; font-size: 0.78rem; }
 }
+
+/* ============================================================
+   SELECTOR D'IDIOMA (CA / ES / EN)
+   ============================================================ */
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.lang-sw { display: flex; align-items: center; gap: 0; font-size: 0.74rem; letter-spacing: 0.1em; }
+.lang-sw a { padding: 6px 7px; color: var(--muted-2); transition: color 0.25s ease; }
+.lang-sw a:hover { color: var(--text); }
+.lang-sw a.on { color: var(--text); }
+.lang-sw a + a::before { content: "/"; color: rgba(255, 255, 255, 0.18); margin-right: 14px; margin-left: -7px; }
+@media (max-width: 760px) {
+    .nav-right { display: none; }
+    .mm-foot { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+    .lang-sw-m { font-size: 0.9rem; }
+    .lang-sw-m a { padding: 8px 10px 8px 0; }
+    .lang-sw-m a + a::before { margin-left: -10px; margin-right: 12px; }
+}

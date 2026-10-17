@@ -411,7 +411,8 @@
         const box = document.createElement('div');
         box.className = 'vbox';
         box.setAttribute('aria-hidden', 'true');
-        box.innerHTML = '<button class="vbox-x" type="button" aria-label="Tanca">×</button>';
+        const closeLbl = { es: 'Cerrar', en: 'Close' }[document.documentElement.lang] || 'Tanca';
+        box.innerHTML = '<button class="vbox-x" type="button" aria-label="' + closeLbl + '">×</button>';
         document.body.appendChild(box);
         let big = null;
         const closeBox = () => {
