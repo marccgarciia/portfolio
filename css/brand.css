@@ -1008,3 +1008,29 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
 
 /* Mòbil: la barra de vidre ja cobreix el nom, no cal el degradat de cantonada */
 @media (max-width: 760px) { body.brand::after { display: none; } }
+
+/* ============================================================
+   MÒBIL — ritme vertical regular (mateixos espais a totes les seccions)
+   ============================================================ */
+@media (max-width: 860px) {
+    /* Dins de cada bloc: text -> mitjà = 28px, sense marges "sobrants" a l'últim element */
+    .proj-grid { gap: 28px; }
+    .proj-info > :last-child { margin-bottom: 0; }
+    .proj-info .tag-marquee { margin-bottom: 0; }
+
+    /* Projectes (no "què faig"): mateix padding a dalt i a baix */
+    .proj:not(.cap) { padding-top: 60px; padding-bottom: 60px; }
+    .proj-head { margin-bottom: 26px; }
+
+    /* "Què faig": capçalera sticky -> contingut -> mockup compacte */
+    .proj.cap .proj-grid { padding-top: 22px; padding-bottom: 44px; }
+    .proj.cap .proj-media > .mock,
+    .proj.cap .proj-media > .frame,
+    .proj.cap .proj-media > .globe-stage { height: 320px; }
+
+    /* Intros i col·leccions */
+    .cap-intro { padding-top: 64px; padding-bottom: 36px; }
+    .scroll-intro { padding-top: 24px; padding-bottom: 24px; }
+    .coll { padding-top: 60px; padding-bottom: 60px; }
+    .coll-head { margin-bottom: 30px; }
+}
