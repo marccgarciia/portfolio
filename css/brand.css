@@ -1087,3 +1087,11 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     #sobre-mi.coll .about-text { grid-column: 2; grid-row: 2; align-self: start; font-size: 1.1rem; line-height: 1.25; max-width: none; margin: 0; letter-spacing: -0.02em; }
     #sobre-mi .about-quote { grid-column: 1 / -1; grid-row: 3; margin-top: 26px; }
 }
+
+/* Marquesines més compactes al mòbil (hi caben més opcions a la pantalla) */
+@media (max-width: 760px) {
+    .brand-marquee { padding: 18px 0; }
+    .brand-marquee .track span { font-size: 0.74rem; padding: 0 0.85rem; letter-spacing: 0.05em; }
+    .skills { gap: 10px; }
+    .skills .track span { font-size: 0.82rem; padding: 0 0.8rem; }
+}
