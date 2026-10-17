@@ -4,36 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        // Forzar scroll al top en cada carga/recarga
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Básico -->
-    <title>Marc García-Cuevas | Portfolio</title>
-    <meta name="description" content="Portfolio de Marc García-Cuevas - Programador, Diseñador, Fotógrafo y Filmmaker">
-    <meta name="keywords"
-        content="Marc García-Cuevas, portfolio, programador, diseñador, fotógrafo, músico, desarrollo web, diseño gráfico">
+    <title>Marc García-Cuevas | Analista técnico e ingeniero de software · Barcelona</title>
+    <meta name="description" content="Webs y herramientas digitales a medida: diseño, desarrollo, integraciones, IA y SEO. Portfolio de Marc García-Cuevas, analista técnico e ingeniero de software en Barcelona.">
     <meta name="author" content="Marc García-Cuevas de Paz">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marccgarciia.com/es/">
     <meta property="og:title" content="Marc García-Cuevas — Portfolio">
-    <meta property="og:description"
-        content="Programador · Diseñador · Fotógrafo · Filmmaker. Proyectos de desarrollo web, fotografía creativa y experiencias digitales.">
+    <meta property="og:description" content="Webs y herramientas digitales a medida: diseño, desarrollo, integraciones, IA y SEO.">
     <meta property="og:image" content="https://marccgarciia.com/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://marccgarciia.com/es/">
     <meta property="twitter:title" content="Marc García-Cuevas — Portfolio">
-    <meta property="twitter:description" content="Programador · Diseñador · Fotógrafo · Músico">
+    <meta property="twitter:description" content="Webs y herramientas digitales a medida: diseño, desarrollo, integraciones, IA y SEO.">
     <meta property="twitter:image" content="https://marccgarciia.com/media/og-image.jpg">
 
     <link rel="canonical" href="https://marccgarciia.com/es/">
@@ -42,43 +34,15 @@
     <link rel="alternate" hreflang="en" href="https://marccgarciia.com/en/">
     <link rel="alternate" hreflang="x-default" href="https://marccgarciia.com/">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
 
-    <!-- DNS Prefetch para dominios externos -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-
-    <!-- Preconnect para Google Fonts (mejora velocidad de carga) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Preload CSS crítico (above the fold) -->
-    <link rel="preload" href="../css/variables.css" as="style">
-    <link rel="preload" href="../css/reset.css" as="style">
-    <link rel="preload" href="../css/cursor.css" as="style">
-    <link rel="preload" href="../css/navegacio.css" as="style">
-    <link rel="preload" href="../css/hero.css" as="style">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/scrollbar.css">
-    <link rel="stylesheet" href="../css/cursor.css">
-    <link rel="stylesheet" href="../css/navegacio.css">
-    <link rel="stylesheet" href="../css/hero.css">
-    <link rel="stylesheet" href="../css/projectes.css">
-    <link rel="stylesheet" href="../css/sobre-mi.css">
-    <link rel="stylesheet" href="../css/contacte.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/experiencia.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap">
+    <link rel="stylesheet" href="../css/brand.css">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TK3TQG1Q7"></script>
@@ -88,931 +52,831 @@
         gtag('js', new Date());
         gtag('config', 'G-0TK3TQG1Q7');
     </script>
-
-    <style>
-        /* Selector de Idioma */
-        .selector-idioma {
-            position: fixed;
-            top: 20px;
-            right: 40px;
-            z-index: 1003;
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .selector-idioma a {
-            color: var(--gris);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 5px 8px;
-        }
-
-        .selector-idioma a:hover {
-            color: var(--fosc);
-        }
-
-        .selector-idioma a.actiu {
-            color: var(--fosc);
-            font-weight: 600;
-        }
-
-        .selector-idioma .separador {
-            color: var(--gris-clar);
-            user-select: none;
-        }
-
-        @media (max-width: 768px) {
-            .selector-idioma {
-                top: 15px;
-                right: 20px;
-                font-size: 0.7rem;
-                gap: 6px;
-            }
-        }
-    </style>
 </head>
 
-<body>
-    <!-- Loader -->
-    <div id="loader">
-        <div class="loader-content">
-            <!-- Spinner circular -->
-            <div class="spinner"></div>
-            <!-- M pequeña en el centro -->
-            <svg class="loader-m" viewBox="13 -178 251 181" xmlns="http://www.w3.org/2000/svg">
-                <path class="m-path"
-                    d="M 138.53125 3 C 128.351562 3 119.054688 0.75 110.640625 -3.75 C 102.222656 -8.25 95.554688 -14.5 90.640625 -22.5 C 85.722656 -30.5 83.265625 -40.003906 83.265625 -51.015625 L 83.265625 -127.28125 C 83.265625 -129.945312 82.597656 -132.363281 81.265625 -134.53125 C 79.929688 -136.695312 78.179688 -138.445312 76.015625 -139.78125 C 73.847656 -141.113281 71.429688 -141.78125 68.765625 -141.78125 C 66.097656 -141.78125 63.679688 -141.113281 61.515625 -139.78125 C 59.347656 -138.445312 57.640625 -136.695312 56.390625 -134.53125 C 55.140625 -132.363281 54.515625 -129.945312 54.515625 -127.28125 L 54.515625 0 L 13.5 0 L 13.5 -124.265625 C 13.5 -134.773438 15.875 -144.03125 20.625 -152.03125 C 25.375 -160.03125 31.957031 -166.363281 40.375 -171.03125 C 48.800781 -175.695312 58.265625 -178.03125 68.765625 -178.03125 C 79.429688 -178.03125 88.929688 -175.695312 97.265625 -171.03125 C 105.597656 -166.363281 112.179688 -160.03125 117.015625 -152.03125 C 121.847656 -144.03125 124.265625 -134.773438 124.265625 -124.265625 L 124.265625 -48.015625 C 124.265625 -45.179688 124.929688 -42.675781 126.265625 -40.5 C 127.609375 -38.332031 129.320312 -36.625 131.40625 -35.375 C 133.488281 -34.125 135.78125 -33.5 138.28125 -33.5 C 140.945312 -33.5 143.40625 -34.125 145.65625 -35.375 C 147.90625 -36.625 149.695312 -38.332031 151.03125 -40.5 C 152.363281 -42.675781 153.03125 -45.179688 153.03125 -48.015625 L 153.03125 -124.265625 C 153.03125 -134.773438 155.445312 -144.03125 160.28125 -152.03125 C 165.113281 -160.03125 171.738281 -166.363281 180.15625 -171.03125 C 188.570312 -175.695312 197.953125 -178.03125 208.296875 -178.03125 C 218.960938 -178.03125 228.421875 -175.695312 236.671875 -171.03125 C 244.921875 -166.363281 251.460938 -160.03125 256.296875 -152.03125 C 261.128906 -144.03125 263.546875 -134.773438 263.546875 -124.265625 L 263.546875 0 L 222.546875 0 L 222.546875 -127.53125 C 222.546875 -130.195312 221.921875 -132.570312 220.671875 -134.65625 C 219.421875 -136.738281 217.710938 -138.445312 215.546875 -139.78125 C 213.378906 -141.113281 210.960938 -141.78125 208.296875 -141.78125 C 205.785156 -141.78125 203.40625 -141.113281 201.15625 -139.78125 C 198.90625 -138.445312 197.113281 -136.738281 195.78125 -134.65625 C 194.445312 -132.570312 193.78125 -130.195312 193.78125 -127.53125 L 193.78125 -51.015625 C 193.78125 -40.003906 191.28125 -30.5 186.28125 -22.5 C 181.28125 -14.5 174.613281 -8.25 166.28125 -3.75 C 157.945312 0.75 148.695312 3 138.53125 3 Z"
-                    fill="transparent" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const mPath = document.querySelector('.m-path');
-                    if (!mPath) return;
-                    const length = mPath.getTotalLength();
-                    mPath.style.strokeDasharray = length;
-                    mPath.style.strokeDashoffset = length;
-                });
-            </script>
+<body class="brand">
+    <!-- NAVBAR -->
+    <nav class="brand-nav">
+        <a href="#top" class="brand-logo">Marc García-Cuevas</a>
+        <div class="brand-links">
+            <a href="#que-faig">Qué hago</a>
+            <a href="#projectes">Proyectos</a>
+            <a href="#trajectoria">Trayectoria</a>
+            <a href="#sobre-mi">Sobre mí</a>
         </div>
+        <div class="nav-right"><div class="lang-sw" aria-label="Language"><a href="../index.html" hreflang="ca" lang="ca">CA</a><a href="index.html" hreflang="es" lang="es" class="on" aria-current="true">ES</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><a href="#contacte" class="brand-cta">Contacto</a></div>
+        <button class="brand-burger" type="button" aria-label="Menú" aria-expanded="false" aria-controls="mobile-menu"><i></i><i></i></button>
+    </nav>
+
+    <!-- MENÚ MÒBIL -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <nav class="mm-links">
+            <a href="#que-faig"><span>01</span>Qué hago</a>
+            <a href="#projectes"><span>02</span>Proyectos</a>
+            <a href="#trajectoria"><span>03</span>Trayectoria</a>
+            <a href="#sobre-mi"><span>04</span>Sobre mí</a>
+            <a href="#contacte"><span>05</span>Contacto</a>
+        </nav>
+        <div class="mm-foot"><div class="lang-sw lang-sw-m" aria-label="Language"><a href="../index.html" hreflang="ca" lang="ca">CA</a><a href="index.html" hreflang="es" lang="es" class="on" aria-current="true">ES</a><a href="../en/index.html" hreflang="en" lang="en">EN</a></div><span>marcg-c20@hotmail.es</span></div>
     </div>
 
-    <style>
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: #FFFFFF;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-            overflow: hidden;
-        }
-
-        #loader.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-content {
-            position: relative;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Spinner circular */
-        .spinner {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 3px solid #f0f0f0;
-            border-top: 3px solid #1a1a1a;
-            border-radius: 50%;
-            animation: spin 1.2s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* M pequeña en el centro */
-        .loader-m {
-            width: 40px;
-            height: 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .m-path {
-            fill: transparent;
-            stroke: #1a1a1a;
-            stroke-width: 6;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            animation: drawM 2s ease-out forwards, fillM 0.3s ease forwards 1.8s;
-        }
-
-        @keyframes drawM {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
-        @keyframes fillM {
-            from {
-                fill: transparent;
-            }
-
-            to {
-                fill: #1a1a1a;
-            }
-        }
-
-        /* Responsive móvil */
-        @media (max-width: 768px) {
-            .loader-content {
-                width: 80px;
-                height: 80px;
-            }
-
-            .loader-m {
-                width: 32px;
-                height: 32px;
-            }
-
-            .m-path {
-                stroke-width: 5;
-            }
-        }
-    </style>
-
-    <script>
-        // Verificar si ya se mostró el loader en esta sesión
-        const yaVioLoader = sessionStorage.getItem('loaderMostrado');
-
-        if (yaVioLoader) {
-            // Si ya lo vio, quitar el loader inmediatamente
-            document.getElementById('loader').remove();
-            document.body.style.overflow = '';
-        } else {
-            // Primera vez: mostrar loader
-            document.body.style.overflow = 'hidden';
-
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.classList.add('hide');
-
-                // Restaurar scroll
-                document.body.style.overflow = '';
-
-                // Marcar que ya vio el loader
-                sessionStorage.setItem('loaderMostrado', 'true');
-
-                // Eliminar loader
-                setTimeout(() => {
-                    loader.remove();
-                }, 300);
-            }, 2000);
-        }
-    </script>
-    <!-- Cursor Personalizado -->
-    <div class="cursor"></div>
-    <div class="cursor-seguidor"></div>
-
-    <!-- Selector de Idioma -->
-    <div class="selector-idioma selector-idioma-desktop">
-        <a href="../index.html">CA</a>
-        <span class="separador">/</span>
-        <a href="index.html" class="actiu">ES</a>
-        <span class="separador">/</span>
-        <a href="../en/index.html">EN</a>
-    </div>
-
-    <!-- Nombre Fijo -->
-    <a href="#" class="nom-fix" style="text-decoration: none; color: inherit; cursor: pointer;">MARC GARCÍA-CUEVAS</a>
-
-    <!-- Fondo Liquid Glass -->
-    <nav></nav>
-
-    <!-- Links de Navegación Desktop -->
-    <div class="contenidor-links-nav">
-        <a href="#projectes">Proyectos</a>
-        <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#contacte">Contacto</a>
-    </div>
-
-    <!-- Botón Menú Móvil -->
-    <div class="boto-menu">
-        <div class="linia-menu"></div>
-    </div>
-
-    <!-- Overlay Menú -->
-    <div class="capa-menu"></div>
-
-    <!-- Menú Móvil -->
-    <div class="menu-mobil">
-        <a href="#projectes">Proyectos</a>
-        <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#contacte">Contacto</a>
-
-        <!-- Selector de Idioma Móvil -->
-        <div class="selector-idioma selector-idioma-mobil">
-            <a href="../index.html">CA</a>
-            <span class="separador">/</span>
-            <a href="index.html" class="actiu">ES</a>
-            <span class="separador">/</span>
-            <a href="../en/index.html">EN</a>
+    <!-- HERO -->
+    <section class="brand-hero" id="top">
+        <canvas class="hero-grid" aria-hidden="true"></canvas>
+        <div class="hero-inner">
+            <span class="brand-eyebrow" data-reveal>Analista técnico · Ingeniero de software · Barcelona</span>
+            <h1 class="brand-display" data-reveal-lines>
+                <span class="ln"><span>Diseño e ingeniería</span></span>
+                <span class="ln"><span class="dim">al servicio de tus ideas</span></span>
+            </h1>
+            <p class="brand-sub" data-reveal>Construyo webs y herramientas digitales a medida que combinan diseño, rendimiento y funcionalidad para dar respuesta a las necesidades de tu proyecto.</p>
         </div>
-    </div>
-
-    <!-- Sección Hero -->
-    <section class="hero">
-        <h1 class="hero-titol">
-            Design <span class="light">&</span><br>Creativity
-        </h1>
-        <p class="hero-subtitol">
-            Technical Analyst and Software Engineer
-        </p>
-        <a href="#projectes" class="indicador-scroll" aria-label="Desplazarse a proyectos">
-            <div class="fletxa-scroll"></div>
-        </a>
     </section>
 
-    <!-- Sección Proyectos -->
-    <section id="projectes">
-        <div class="cap-seccio">
-            <div class="numero-seccio">01 — PROYECTOS</div>
-            <h2 class="titol-seccio">Trabajos Seleccionados</h2>
-            <p class="descripcio-seccio">
-                Una colección de proyectos que combinan diseño web, fotografía y experiencias digitales.
-            </p>
+    <!-- MARQUESINA -->
+    <div class="brand-marquee">
+        <div class="track" style="animation-duration:200s">
+            <span>HTML</span><span class="sep">·</span><span>CSS</span><span class="sep">·</span><span>JavaScript</span><span class="sep">·</span><span>TypeScript</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>Node.js</span><span class="sep">·</span><span>Tailwind CSS</span><span class="sep">·</span><span>Python</span><span class="sep">·</span><span>.NET / C#</span><span class="sep">·</span><span>PHP / Laravel</span><span class="sep">·</span><span>WordPress</span><span class="sep">·</span><span>SQL</span><span class="sep">·</span><span>API REST</span><span class="sep">·</span><span>Postman</span><span class="sep">·</span><span>Azure</span><span class="sep">·</span><span>Linux</span><span class="sep">·</span><span>Git</span><span class="sep">·</span><span>Anthropic Claude</span><span class="sep">·</span><span>OpenAI API (ChatGPT)</span><span class="sep">·</span><span>GitHub Copilot / Microsoft Copilot</span><span class="sep">·</span><span>Automatización de procesos</span><span class="sep">·</span><span>Integración de sistemas</span><span class="sep">·</span><span>Figma</span><span class="sep">·</span><span>Adobe XD</span><span class="sep">·</span><span>Sketch</span><span class="sep">·</span><span>Framer</span><span class="sep">·</span><span>UI/UX</span><span class="sep">·</span><span>Wireframing y prototipado</span><span class="sep">·</span><span>Diseño responsive</span><span class="sep">·</span><span>Diseño de logos e identidad de marca</span><span class="sep">·</span><span>Tipografía</span><span class="sep">·</span><span>Illustrator</span><span class="sep">·</span><span>Canva</span><span class="sep">·</span><span>Photoshop</span><span class="sep">·</span><span>Lightroom</span><span class="sep">·</span><span>After Effects</span><span class="sep">·</span><span>Premiere Pro</span><span class="sep">·</span><span>CapCut</span><span class="sep">·</span><span>DaVinci Resolve</span><span class="sep">·</span><span>Motion graphics</span><span class="sep">·</span><span>Edición de foto</span><span class="sep">·</span><span>Edición de vídeo</span><span class="sep">·</span><span>Subtitulado y guion para vídeo corto</span><span class="sep">·</span><span>Contenido para TikTok e Instagram Reels</span><span class="sep">·</span><span>Redes sociales</span><span class="sep">·</span><span>Gestión de comunidad (community management)</span><span class="sep">·</span><span>Copywriting y estrategia de contenido</span><span class="sep">·</span><span>Analítica de redes (Metricool, Meta Business Suite)</span><span class="sep">·</span><span>SEO</span><span class="sep">·</span><span>Comunicación</span><span class="sep">·</span>
+            <span>HTML</span><span class="sep">·</span><span>CSS</span><span class="sep">·</span><span>JavaScript</span><span class="sep">·</span><span>TypeScript</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>Node.js</span><span class="sep">·</span><span>Tailwind CSS</span><span class="sep">·</span><span>Python</span><span class="sep">·</span><span>.NET / C#</span><span class="sep">·</span><span>PHP / Laravel</span><span class="sep">·</span><span>WordPress</span><span class="sep">·</span><span>SQL</span><span class="sep">·</span><span>API REST</span><span class="sep">·</span><span>Postman</span><span class="sep">·</span><span>Azure</span><span class="sep">·</span><span>Linux</span><span class="sep">·</span><span>Git</span><span class="sep">·</span><span>Anthropic Claude</span><span class="sep">·</span><span>OpenAI API (ChatGPT)</span><span class="sep">·</span><span>GitHub Copilot / Microsoft Copilot</span><span class="sep">·</span><span>Automatización de procesos</span><span class="sep">·</span><span>Integración de sistemas</span><span class="sep">·</span><span>Figma</span><span class="sep">·</span><span>Adobe XD</span><span class="sep">·</span><span>Sketch</span><span class="sep">·</span><span>Framer</span><span class="sep">·</span><span>UI/UX</span><span class="sep">·</span><span>Wireframing y prototipado</span><span class="sep">·</span><span>Diseño responsive</span><span class="sep">·</span><span>Diseño de logos e identidad de marca</span><span class="sep">·</span><span>Tipografía</span><span class="sep">·</span><span>Illustrator</span><span class="sep">·</span><span>Canva</span><span class="sep">·</span><span>Photoshop</span><span class="sep">·</span><span>Lightroom</span><span class="sep">·</span><span>After Effects</span><span class="sep">·</span><span>Premiere Pro</span><span class="sep">·</span><span>CapCut</span><span class="sep">·</span><span>DaVinci Resolve</span><span class="sep">·</span><span>Motion graphics</span><span class="sep">·</span><span>Edición de foto</span><span class="sep">·</span><span>Edición de vídeo</span><span class="sep">·</span><span>Subtitulado y guion para vídeo corto</span><span class="sep">·</span><span>Contenido para TikTok e Instagram Reels</span><span class="sep">·</span><span>Redes sociales</span><span class="sep">·</span><span>Gestión de comunidad (community management)</span><span class="sep">·</span><span>Copywriting y estrategia de contenido</span><span class="sep">·</span><span>Analítica de redes (Metricool, Meta Business Suite)</span><span class="sep">·</span><span>SEO</span><span class="sep">·</span><span>Comunicación</span><span class="sep">·</span>
         </div>
+    </div>
 
-        <div class="contenidor-projectes">
-            <!-- Proyecto: Ball de Diables -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <video id="video-webball" loop muted playsinline preload="none" poster="../media/webball-poster.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/WebBall.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo Web</div>
-                    <h3 class="titol-projecte">Ball de Diables del Prat</h3>
-                    <p class="descripcio-projecte">
-                        Renovación completa del sitio web de la entidad cultural, modernizando el diseño
-                        y mejorando la experiencia de usuario para reflejar la identidad del Ball de Diables.
-                    </p>
-                    <a href="https://balldediablesdelprat.cat/" target="_blank" rel="noopener noreferrer"
-                        class="link-projecte">
-                        <span>Ver proyecto</span><span>→</span>
-                    </a>
-                </div>
-            </article>
+    <!-- QUÈ FAIG -->
+    <section class="cap-intro" id="que-faig">
+        <span class="brand-eyebrow" data-reveal>Qué hago</span>
+        <h2 class="coll-title" data-fill>De la idea al lanzamiento</h2>
+        <p class="coll-desc" data-reveal>Diseño, desarrollo, integraciones, inteligencia artificial, SEO y mantenimiento, con un único interlocutor durante todo el proyecto.</p>
+    </section>
 
-            <!-- Proyecto: Estela English Academy -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte contenidor-eea">
-                    <video id="video-webeea" loop muted playsinline preload="none" poster="../media/webEEA.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/webEEA.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
+    <!-- C01 · Desenvolupament web -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Desarrollo</span>
+            <span class="proj-count" data-reveal>01 / 07</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Webs a medida</span></span></h3>
+                <p class="proj-desc" data-reveal>Webs a medida, cuidadas y optimizadas para móviles, con criterios de rendimiento y SEO técnico desde el primer momento.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">Diseño a medida</span><span class="tp">Responsive</span><span class="tp">SEO técnico</span><span class="tp">WordPress</span><span class="tp">Astro</span><span class="tp">React</span><span class="tp">Landing pages</span><span class="tp">Mantenimiento</span>
+                        <span class="tp">Diseño a medida</span><span class="tp">Responsive</span><span class="tp">SEO técnico</span><span class="tp">WordPress</span><span class="tp">Astro</span><span class="tp">React</span><span class="tp">Landing pages</span><span class="tp">Mantenimiento</span>
+                    </div>
                 </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo Web</div>
-                    <h3 class="titol-projecte">Estela English Academy</h3>
-                    <p class="descripcio-projecte">
-                        Diseño y desarrollo completo del sitio web de la academia de inglés,
-                        incluyendo un campus virtual interno para alumnos y profesores.
-                    </p>
-                    <span class="link-projecte link-projecte-privat">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" style="vertical-align: middle; margin-right: 6px;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                        Proyecto privado
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">CMS</span></div>
+                    <div class="mock-cms">
+                        <div class="cms-side">
+                            <div class="ci on">Páginas <span class="c">8</span></div>
+                            <div class="ci">Blog <span class="c">320</span></div>
+                            <div class="ci">Tienda <span class="c">96</span></div>
+                            <div class="ci">Medios <span class="c">12</span></div>
+                        </div>
+                        <div class="cms-main">
+                            <div class="cms-h"><span class="b g"></span><span class="b"></span><span class="b"></span></div>
+                            <div class="cms-rw"><span class="sq"></span><span class="t">Inicio</span><span class="tag">Publicada</span></div>
+                            <div class="cms-rw"><span class="sq"></span><span class="t">Servicios</span><span class="tag">Publicada</span></div>
+                            <div class="cms-rw"><span class="sq"></span><span class="t">Proyectos</span><span class="tag">Borrador</span></div>
+                            <div class="cms-rw"><span class="sq"></span><span class="t">Contacto</span><span class="tag">Publicada</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- C02 · Panells i eines internes -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Herramientas internas</span>
+            <span class="proj-count" data-reveal>02 / 07</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Gestión que</span></span><span class="ln"><span class="dim">te ahorra tiempo</span></span></h3>
+                <p class="proj-desc" data-reveal>Centralizo la gestión de reservas, clientes, alumnos y otros procesos en un solo espacio. Menos hojas de cálculo dispersas y más control.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">Panel</span><span class="tp">Backoffice</span><span class="tp">Reservas</span><span class="tp">Pagos</span><span class="tp">CRM</span><span class="tp">Gestión de usuarios</span><span class="tp">Informes</span>
+                        <span class="tp">Panel</span><span class="tp">Backoffice</span><span class="tp">Reservas</span><span class="tp">Pagos</span><span class="tp">CRM</span><span class="tp">Gestión de usuarios</span><span class="tp">Informes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock mock-dash" data-mockup>
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
+                        Panel
                     </span>
+                    <div class="dash-stats">
+                        <div class="dash-stat"><span class="n green" data-count="128" data-pre="€" data-suf="K">0</span><span class="l">Facturado</span></div>
+                        <div class="dash-stat"><span class="n" data-count="1240">0</span><span class="l">Registros</span></div>
+                        <div class="dash-stat"><span class="n" data-count="98" data-suf="%">0</span><span class="l">Automatizado</span></div>
+                    </div>
+                    <div class="dash-chart">
+                        <div class="dash-bar" style="--h:45%"></div>
+                        <div class="dash-bar" style="--h:62%"></div>
+                        <div class="dash-bar" style="--h:38%"></div>
+                        <div class="dash-bar" style="--h:78%"></div>
+                        <div class="dash-bar hi" style="--h:92%"></div>
+                        <div class="dash-bar" style="--h:56%"></div>
+                        <div class="dash-bar" style="--h:70%"></div>
+                    </div>
                 </div>
-            </article>
+            </div>
+        </div>
+    </section>
 
-            <!-- Proyecto: Joan Avilés -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <video id="video-joan" loop muted playsinline preload="none" poster="../media/webJOAN.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/webJOAN.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
+    <!-- C03 · Integracions i APIs -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Integraciones</span>
+            <span class="proj-count" data-reveal>03 / 07</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Conecta tus</span></span><span class="ln"><span class="dim">sistemas</span></span></h3>
+                <p class="proj-desc" data-reveal>Conecto tu web con CRM, ERP, sistemas de pago, reservas o mapas para que los datos estén sincronizados y se reduzcan las tareas manuales duplicadas.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">APIs REST</span><span class="tp">CRM y ERP</span><span class="tp">Stripe</span><span class="tp">Webhooks</span><span class="tp">Mapbox</span><span class="tp">Google</span><span class="tp">Sincronización</span>
+                        <span class="tp">APIs REST</span><span class="tp">CRM y ERP</span><span class="tp">Stripe</span><span class="tp">Webhooks</span><span class="tp">Mapbox</span><span class="tp">Google</span><span class="tp">Sincronización</span>
+                    </div>
                 </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo Web</div>
-                    <h3 class="titol-projecte">Joan Avilés · Estudio de Imaginería</h3>
-                    <p class="descripcio-projecte">
-                        Desarrollo web para el estudio de Joan Avilés, escultor del Prat de Llobregat
-                        especializado en imaginería festiva y religiosa. Un espacio para presentar su obra,
-                        la creación de figuras y su labor de restauración y conservación del patrimonio.
-                    </p>
-                    <a href="https://joanaviles.art/" target="_blank" rel="noopener noreferrer"
-                        class="link-projecte">
-                        <span>Ver proyecto</span><span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Proyecto: Alyseu Consultores -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <video id="video-alyseu" loop muted playsinline preload="none" poster="../media/webALYSEU.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/webALYSEU.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo Web</div>
-                    <h3 class="titol-projecte">Alyseu Consultores</h3>
-                    <p class="descripcio-projecte">
-                        Desarrollo web para Alyseu Consultores, consultoría de personas, estrategia y talento.
-                        Presenta sus servicios de desarrollo directivo, selección y coaching ejecutivo con un
-                        diseño limpio y profesional.
-                    </p>
-                    <a href="https://alyseu.com/" target="_blank" rel="noopener noreferrer"
-                        class="link-projecte">
-                        <span>Ver proyecto</span><span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Proyecto: Finances — Landing -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <video id="video-finances-landing" loop muted playsinline preload="none"
-                        poster="../media/webFINANCES-landing.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/webFINANCES-landing.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo Web</div>
-                    <h3 class="titol-projecte">Finances · Landing</h3>
-                    <p class="descripcio-projecte">
-                        Landing de presentación y venta de una aplicación propia de gestión de finanzas
-                        personales. Muestra las funcionalidades de la app, los planes de suscripción y permite
-                        a los usuarios descubrirla y adquirirla.
-                    </p>
-                    <a href="https://financesapp.es/" target="_blank" rel="noopener noreferrer"
-                        class="link-projecte">
-                        <span>Ver proyecto</span><span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Proyecto: Finances — App -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte contenidor-finances">
-                    <video id="video-webfinances" loop muted playsinline preload="none"
-                        poster="../media/webFINANCES.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/webFINANCES.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo de App</div>
-                    <h3 class="titol-projecte">Finances · App</h3>
-                    <p class="descripcio-projecte">
-                        Aplicación de gestión de finanzas personales con estadísticas,
-                        categorías personalizadas, gastos recurrentes y objetivos de ahorro.
-                    </p>
-                    <a href="https://app.financesapp.es/" target="_blank" rel="noopener noreferrer"
-                        class="link-projecte">
-                        <span>Ver proyecto</span><span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Proyecto: Estela — Panel de Gestión -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte contenidor-panell">
-                    <img src="../media/webPANELL.png"
-                        alt="Panel de gestión interno de la academia Estela con datos de ejemplo" loading="lazy"
-                        style="width: 100%; height: auto; display: block;">
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Desarrollo de App</div>
-                    <h3 class="titol-projecte">Estela English Academy · Panel de Gestión</h3>
-                    <p class="descripcio-projecte">
-                        Panel interno de gestión para la academia de inglés: control de alumnos, pagos
-                        recurrentes, devoluciones y profesorado, centralizando toda la administración en una
-                        única plataforma.
-                    </p>
-                    <span class="link-projecte link-projecte-privat">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" style="vertical-align: middle; margin-right: 6px;">
-                            <rect x="3" y="11" width="18" height="11" rx="2" />
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                        </svg>
-                        Proyecto privado
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="globe-stage">
+                    <span class="globe-chip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20"/></svg>
+                        Red global
                     </span>
-                </div>
-            </article>
-            <!-- Proyecto: Fotografía -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <div class="graella-fotos">
-                        <div class="foto">
-                            <img src="../media/Foto7.jpg" alt="Vista del Big Ben en Londres" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Arquitectura</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto3.jpg" alt="Paisaje de los Picos de Europa" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Paisaje</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto5.jpg" alt="Carretillas" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Tradición</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto1.jpg" alt="Actuación del Ball de Diables del Prat" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Cultura</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto6.jpg" alt="Retrato artístico" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Retrato</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto9.jpg" alt="Costa de Menorca" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Naturaleza</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto10.jpg" alt="Vidrieras con escudos heráldicos" loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Patrimonio</span>
-                            </div>
-                        </div>
-                        <div class="foto">
-                            <img src="../media/Foto11.jpg" alt="Salón de plenos del Ayuntamiento del Prat de Llobregat"
-                                loading="lazy">
-                            <div class="capa-foto">
-                                <span class="etiqueta-foto">Institucional</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Fotografía</div>
-                    <h3 class="titol-projecte">Fotografía Creativa</h3>
-                    <p class="descripcio-projecte">
-                        Exploración visual del mundo que me rodea, capturando momentos, luces y texturas
-                        con una mirada personal.
-                    </p>
-                </div>
-            </article>
-
-            <!-- Proyectos Videos Verticales Duales -->
-            <div class="projecte-vertical-dual">
-                <div class="graella-vertical-dual">
-                    <!-- Festa Major 2024 -->
-                    <div class="targeta-projecte-vertical">
-                        <div class="contenidor-imatge-projecte">
-                            <video id="video-festa2024" loop muted playsinline preload="none"
-                                poster="../media/festa2024-poster.jpg"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                                <source src="../media/FestaMajor2024.mp4" type="video/mp4">
-                                Tu navegador no soporta videos HTML5.
-                            </video>
-                        </div>
-                        <div class="info-projecte">
-                            <div class="categoria-projecte">Audiovisual</div>
-                            <h3 class="titol-projecte">Festa Major 2024</h3>
-                            <p class="descripcio-projecte">
-                                Video promocional de los actos de la Festa Major del Prat 2024,
-                                realizado para difundir y promocionar las actividades del Ball de Diables del Prat.
-                            </p>
-                            <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank"
-                                rel="noopener noreferrer" class="link-projecte">
-                                <span>Ver en Instagram</span><span>→</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Festa Major 2025 -->
-                    <div class="targeta-projecte-vertical">
-                        <div class="contenidor-imatge-projecte">
-                            <video id="video-festa2025" loop muted playsinline preload="none"
-                                poster="../media/festa2025-poster.jpg"
-                                style="width: 100%; height: 100%; object-fit: cover;">
-                                <source src="../media/FestaMajor2025.mp4" type="video/mp4">
-                                Tu navegador no soporta videos HTML5.
-                            </video>
-                        </div>
-                        <div class="info-projecte">
-                            <div class="categoria-projecte">Audiovisual</div>
-                            <h3 class="titol-projecte">Festa Major 2025</h3>
-                            <p class="descripcio-projecte">
-                                Video promocional de los actos de la Festa Major del Prat 2025,
-                                continuando con la tarea de difusión de la Cultura Popular del Prat.
-                            </p>
-                            <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank"
-                                rel="noopener noreferrer" class="link-projecte">
-                                <span>Ver en Instagram</span><span>→</span>
-                            </a>
-                        </div>
-                    </div>
+                    <canvas class="globe-canvas" aria-hidden="true"></canvas>
                 </div>
             </div>
-
-            <!-- Proyecto: Festa Major 2026 -->
-            <article class="projecte projecte-centrat">
-                <div class="contenidor-imatge-projecte">
-                    <video id="video-festa2026" loop muted playsinline preload="none"
-                        poster="../media/festa2026-poster.jpg"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                        <source src="../media/FestaMajor2026.mp4" type="video/mp4">
-                        Tu navegador no soporta videos HTML5.
-                    </video>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Audiovisual</div>
-                    <h3 class="titol-projecte">Festa Major 2026</h3>
-                    <p class="descripcio-projecte">
-                        Vídeo promocional de los actos de la Festa Major del Prat 2026, continuando con la
-                        tarea de difusión de la Cultura Popular del Prat.
-                    </p>
-                    <a href="https://www.instagram.com/reel/Ddjb_zRNlw6/" target="_blank"
-                        rel="noopener noreferrer" class="link-projecte">
-                        <span>Ver en Instagram</span><span>→</span>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Proyecto: Redes Sociales -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <div class="graella-xarxes">
-                        <a href="https://www.instagram.com/balldediablesdelprat/" target="_blank"
-                            rel="noopener noreferrer" class="targeta-xarxa"
-                            aria-label="Instagram Ball de Diables del Prat">
-                            <img src="../media/igball.jpg" alt="Perfil de Instagram del Ball de Diables del Prat"
-                                loading="lazy">
-                        </a>
-                        <a href="https://www.instagram.com/federacioelnus/" target="_blank" rel="noopener noreferrer"
-                            class="targeta-xarxa" aria-label="Instagram Federació El Nus">
-                            <img src="../media/ignus.jpg" alt="Perfil de Instagram de la Federació El Nus"
-                                loading="lazy">
-                        </a>
-                        <a href="https://www.instagram.com/ballsdediables/" target="_blank" rel="noopener noreferrer"
-                            class="targeta-xarxa" aria-label="Instagram Xarxa de Balls de Diables">
-                            <img src="../media/igxarxa.jpg"
-                                alt="Perfil de Instagram de la Xarxa de Balls de Diables de Catalunya" loading="lazy">
-                        </a>
-                        <a href="https://www.instagram.com/estelaenglishacademy/" target="_blank"
-                            rel="noopener noreferrer" class="targeta-xarxa"
-                            aria-label="Instagram Estela English Academy">
-                            <img src="../media/igeea.jpg" alt="Perfil de Instagram de Estela English Academy"
-                                loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Redes Sociales</div>
-                    <h3 class="titol-projecte">Gestión de Redes Sociales</h3>
-                    <p class="descripcio-projecte">
-                        Estrategia de contenido y gestión de redes sociales para diferentes entidades culturales y
-                        educativas,
-                        creando contenido visualmente atractivo y gestionando la comunidad online.
-                    </p>
-                    <div class="xarxes-stats">
-                        <div class="xarxa-stat"><span class="num">+180K</span><span class="lbl">Reproducciones</span>
-                        </div>
-                        <div class="xarxa-stat"><span class="num">+95K</span><span class="lbl">Visualizaciones en
-                                stories</span></div>
-                        <div class="xarxa-stat"><span class="num">21K</span><span class="lbl">Espectadores</span></div>
-                        <div class="xarxa-stat"><span class="num">4K</span><span class="lbl">Interacciones</span></div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Proyecto: Diseño & Branding -->
-            <article class="projecte">
-                <div class="contenidor-imatge-projecte">
-                    <div class="graella-disseny">
-                        <div class="disseny">
-                            <img src="../media/DissenyiBranding1.jpg"
-                                alt="Diseño de lonas publicitarias para eventos culturales" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Lonas</span>
-                            </div>
-                        </div>
-                        <div class="disseny">
-                            <img src="../media/DissenyiBranding2.jpg"
-                                alt="Diseño de globos aerostáticos promocionales personalizados" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Globos</span>
-                            </div>
-                        </div>
-                        <div class="disseny">
-                            <img src="../media/DissenyiBranding3.jpg"
-                                alt="Roll-up publicitario con diseño corporativo moderno" loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Roll-up</span>
-                            </div>
-                        </div>
-                        <div class="disseny">
-                            <img src="../media/DissenyiBranding4.jpg" alt="Figura promocional de goma de gran formato"
-                                loading="lazy">
-                            <div class="capa-disseny">
-                                <span class="etiqueta-disseny">Figura</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="info-projecte">
-                    <div class="categoria-projecte">Diseño Gráfico</div>
-                    <h3 class="titol-projecte">Diseño & Branding</h3>
-                    <p class="descripcio-projecte">
-                        Diseño y creación de materiales gráficos para eventos y entidades culturales: lonas, roll-ups,
-                        globos y elementos de comunicación visual que reflejan la identidad de cada proyecto.
-                    </p>
-                </div>
-            </article>
         </div>
     </section>
 
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi">
-        <div class="cap-seccio">
-            <div class="numero-seccio">02 — SOBRE MÍ</div>
-            <h2 class="titol-seccio">Marc García-Cuevas de Paz</h2>
+    <!-- C04 · Automatització i IA -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Automatización e IA</span>
+            <span class="proj-count" data-reveal>04 / 07</span>
         </div>
-
-        <div class="contingut-sobre-mi">
-            <p class="text-sobre-mi">
-                Soy un creador multidisciplinar apasionado por fusionar <strong>arte y tecnología</strong>.
-                Trabajo con diseño, fotografía, programación y música, siempre buscando
-                la belleza en la simplicidad y la autenticidad en cada proyecto.
-            </p>
-            <p class="text-sobre-mi">
-                <strong>«Para hacer las cosas bien hace falta: primero, el amor a ellas; segundo, la técnica.»</strong><br>
-                <span style="font-weight: 400; opacity: 0.7;">— Antoni Gaudí</span>
-            </p>
-
-            <div class="marquee-habilitats">
-                <div class="marquee-fila">
-                    <div class="marquee-track">
-                        <span>HTML</span><span class="sep"></span>
-                        <span>CSS</span><span class="sep"></span>
-                        <span>JavaScript</span><span class="sep"></span>
-                        <span>React</span><span class="sep"></span>
-                        <span>Node.js</span><span class="sep"></span>
-                        <span>Figma</span><span class="sep"></span>
-                        <span>Git</span><span class="sep"></span>
-                        <span>.NET / C#</span><span class="sep"></span>
-                        <span>PHP / Laravel</span><span class="sep"></span>
-                        <span>HTML</span><span class="sep"></span>
-                        <span>CSS</span><span class="sep"></span>
-                        <span>JavaScript</span><span class="sep"></span>
-                        <span>React</span><span class="sep"></span>
-                        <span>Node.js</span><span class="sep"></span>
-                        <span>Figma</span><span class="sep"></span>
-                        <span>Git</span><span class="sep"></span>
-                        <span>.NET / C#</span><span class="sep"></span>
-                        <span>PHP / Laravel</span><span class="sep"></span>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Automatiza las</span></span><span class="ln"><span class="dim">tareas repetitivas</span></span></h3>
+                <p class="proj-desc" data-reveal>Integro inteligencia artificial cuando aporta un beneficio real, por ejemplo para clasificar información, preparar respuestas o corregir ejercicios. Automatizaciones pensadas para ahorrar tiempo y simplificar procesos.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">IA</span><span class="tp">Automatización</span><span class="tp">Flujos</span><span class="tp">Clasificación</span><span class="tp">Respuestas</span><span class="tp">Corrección</span><span class="tp">Agentes</span>
+                        <span class="tp">IA</span><span class="tp">Automatización</span><span class="tp">Flujos</span><span class="tp">Clasificación</span><span class="tp">Respuestas</span><span class="tp">Corrección</span><span class="tp">Agentes</span>
                     </div>
                 </div>
-                <div class="marquee-fila inversa">
-                    <div class="marquee-track">
-                        <span>Python</span><span class="sep"></span>
-                        <span>API REST</span><span class="sep"></span>
-                        <span>Responsive Design</span><span class="sep"></span>
-                        <span>UI/UX</span><span class="sep"></span>
-                        <span>Photoshop</span><span class="sep"></span>
-                        <span>After Effects</span><span class="sep"></span>
-                        <span>SQL</span><span class="sep"></span>
-                        <span>Azure</span><span class="sep"></span>
-                        <span>Anthropic Claude</span><span class="sep"></span>
-                        <span>Python</span><span class="sep"></span>
-                        <span>API REST</span><span class="sep"></span>
-                        <span>Responsive Design</span><span class="sep"></span>
-                        <span>UI/UX</span><span class="sep"></span>
-                        <span>Photoshop</span><span class="sep"></span>
-                        <span>After Effects</span><span class="sep"></span>
-                        <span>SQL</span><span class="sep"></span>
-                        <span>Azure</span><span class="sep"></span>
-                        <span>Anthropic Claude</span><span class="sep"></span>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock mock-auto">
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg>
+                        Automatizaciones
+                    </span>
+                    <div class="auto-canvas">
+                        <svg class="auto-wires" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <path class="flow-path" d="M20.5,47 C29,47 29,44 37,44" />
+                            <path class="flow-path" d="M56.5,44 C67,44 67,17 76.5,17" />
+                            <path class="flow-path" d="M56.5,45 C67,45 67,71 76.5,71" />
+                        </svg>
+                        <div class="anode a-msg">Nuevo mensaje<span>Web · WhatsApp</span></div>
+                        <div class="anode a-ai">Agente IA<span>Entiende y decide</span>
+                            <div class="a-pills"><i>Intención: compra</i><i>Catálogo</i></div>
+                        </div>
+                        <div class="anode a-resp">Respuesta<span>Automática</span></div>
+                        <div class="anode a-crm">CRM<span>Registrado</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Experiencia -->
-    <section id="experiencia">
-        <div class="experiencia-sticky-wrapper">
-            <div class="experiencia-sticky-inner">
-                <div class="cap-seccio-experiencia">
-                    <div class="numero-seccio">03 — EXPERIENCIA</div>
-                    <h2 class="titol-seccio">Trayectoria</h2>
-                </div>
-                <div class="cards-track-wrapper">
-                    <div class="cards-track" id="cardsTrack">
-                        <div class="card-experiencia">
-                            <div class="card-cap">
-                                <div class="card-num-label">01 / 03</div>
-                                <div class="card-tag">Experiencia Profesional</div>
-                            </div>
-                            <div class="timeline-items">
-                                <div class="timeline-item">
-                                    <div class="item-dates">NOV 2025 — SEP 2026</div>
-                                    <div class="item-titol">Technical Analyst & Software Engineer</div>
-                                    <div class="item-empresa">Iterem · Barcelona · Híbrido</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">OCT 2024 — NOV 2025</div>
-                                    <div class="item-titol">Helpdesk & Frontend Developer</div>
-                                    <div class="item-empresa">Iterem · Barcelona · Híbrido</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">MAR 2024 — JUN 2024</div>
-                                    <div class="item-titol">Web Designer & Developer</div>
-                                    <div class="item-empresa">USACD · Barcelona · Remoto</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">DIC 2022 — OCT 2023</div>
-                                    <div class="item-titol">Web Developer & Systems Administrator</div>
-                                    <div class="item-empresa">Anytic Business Solutions · Barcelona · Híbrido</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">SEP 2021 — FEB 2022</div>
-                                    <div class="item-titol">Systems & Network Administration (Prácticas)</div>
-                                    <div class="item-empresa">Escola Enric D'ossó · Barcelona</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">MAY 2019 — NOV 2019</div>
-                                    <div class="item-titol">Microcomputer Systems & Networking (Prácticas)</div>
-                                    <div class="item-empresa">Indra · Barcelona</div>
-                                </div>
-                            </div>
-                            <div class="card-footer-exp">Experiencia</div>
-                            <div class="card-numero">01</div>
-                        </div>
-                        <div class="card-experiencia">
-                            <div class="card-cap">
-                                <div class="card-num-label">02 / 03</div>
-                                <div class="card-tag">Formación</div>
-                            </div>
-                            <div class="timeline-items">
-                                <div class="timeline-item">
-                                    <div class="item-dates">SEP 2023 — MAY 2024</div>
-                                    <div class="item-titol">Créditos convalidados de Ingeniería Informática (UOC)</div>
-                                    <div class="item-empresa">Certificado por examen</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">SEP 2022 — MAY 2023</div>
-                                    <div class="item-titol">CFGS Desarrollo de Aplicaciones Web (DAW)</div>
-                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">SEP 2020 — MAY 2022</div>
-                                    <div class="item-titol">CFGS Administración de Sistemas Informáticos en Red (ASIX)
-                                    </div>
-                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">SEP 2018 — MAY 2020</div>
-                                    <div class="item-titol">CFGM Sistemas Microinformáticos y Redes (SMX)</div>
-                                    <div class="item-empresa">Jesuïtes Educació · Barcelona</div>
-                                </div>
-                            </div>
-                            <div class="card-footer-exp">Formación</div>
-                            <div class="card-numero">02</div>
-                        </div>
-                        <div class="card-experiencia">
-                            <div class="card-cap">
-                                <div class="card-num-label">03 / 03</div>
-                                <div class="card-tag">Certificaciones</div>
-                            </div>
-                            <div class="timeline-items">
-                                <div class="timeline-item">
-                                    <div class="item-dates">MAR 2026</div>
-                                    <div class="item-titol">Desarrollo con IA</div>
-                                    <div class="item-empresa">BIG School</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">JUL 2025</div>
-                                    <div class="item-titol">Cybersecurity for Everyday</div>
-                                    <div class="item-empresa">UPC School</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">JUL 2024</div>
-                                    <div class="item-titol">Certified Kubernetes Administrator (CKA)</div>
-                                    <div class="item-empresa">Kubernetes Official</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">JUL 2024</div>
-                                    <div class="item-titol">Certified AWS</div>
-                                    <div class="item-empresa">Amazon Web Services</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">MAR 2024</div>
-                                    <div class="item-titol">Veeva Vault Certified Administrator</div>
-                                    <div class="item-empresa">Veeva Systems</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">ENE 2024</div>
-                                    <div class="item-titol">ReactJS & AngularJS</div>
-                                    <div class="item-empresa">LinkedIn Learning</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">2023</div>
-                                    <div class="item-titol">CCNP (Cisco Certified Network Professional)</div>
-                                    <div class="item-empresa">Cisco</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="item-dates">2021</div>
-                                    <div class="item-titol">CCNA (Cisco Certified Network Associate)</div>
-                                    <div class="item-empresa">Cisco</div>
-                                </div>
-                            </div>
-                            <div class="card-footer-exp">Certificaciones</div>
-                            <div class="card-numero">03</div>
-                        </div>
+    <!-- C05 · SEO + GEO -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>SEO i GEO</span>
+            <span class="proj-count" data-reveal>05 / 07</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>SEO técnico</span></span><span class="ln"><span class="dim">para la era de la IA</span></span></h3>
+                <p class="proj-desc" data-reveal>Optimización técnica, datos estructurados y contenido pensado para facilitar la comprensión de la web a los buscadores y a los sistemas de respuesta basados en IA.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">Core Web Vitals</span><span class="tp">Datos estructurados</span><span class="tp">AEO / GEO</span><span class="tp">Analítica</span><span class="tp">SEO técnico</span><span class="tp">Schema</span><span class="tp">Sitemaps</span>
+                        <span class="tp">Core Web Vitals</span><span class="tp">Datos estructurados</span><span class="tp">AEO / GEO</span><span class="tp">Analítica</span><span class="tp">SEO técnico</span><span class="tp">Schema</span><span class="tp">Sitemaps</span>
                     </div>
                 </div>
-                <div class="progress-dots">
-                    <div class="dot actiu" id="dot-0"></div>
-                    <div class="dot" id="dot-1"></div>
-                    <div class="dot" id="dot-2"></div>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock mock-seo" data-mockup>
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg>
+                        Analítica
+                    </span>
+                    <div class="seo-stats">
+                        <div class="seo-stat"><span class="l">Visitantes ahora</span><span class="n" data-count="416">0</span></div>
+                        <div class="seo-stat"><span class="l">Visitantes únicos</span><span class="n" data-count="1.7" data-suf="M">0</span></div>
+                        <div class="seo-stat"><span class="l">Páginas vistas</span><span class="n" data-count="2.2" data-suf="M">0</span></div>
+                        <div class="seo-stat"><span class="l">% Rebote</span><span class="n" data-count="40.9" data-suf="%">0</span></div>
+                    </div>
+                    <div class="seo-chart">
+                        <svg viewBox="0 0 400 130" preserveAspectRatio="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="segP" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(167,139,250,0.3)"/><stop offset="100%" stop-color="rgba(167,139,250,0)"/></linearGradient>
+                                <linearGradient id="segB" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(91,140,255,0.26)"/><stop offset="100%" stop-color="rgba(91,140,255,0)"/></linearGradient>
+                            </defs>
+                            <path class="seo-area" fill="url(#segP)" d="M0,95 L45,82 L90,90 L135,68 L180,76 L225,52 L270,60 L315,42 L360,34 L400,40 L400,130 L0,130 Z"/>
+                            <path class="seo-area" fill="url(#segB)" d="M0,116 L45,109 L90,113 L135,101 L180,106 L225,93 L270,99 L315,86 L360,80 L400,84 L400,130 L0,130 Z"/>
+                            <path class="seo-line l1" d="M0,95 L45,82 L90,90 L135,68 L180,76 L225,52 L270,60 L315,42 L360,34 L400,40"/>
+                            <path class="seo-line l2" d="M0,116 L45,109 L90,113 L135,101 L180,106 L225,93 L270,99 L315,86 L360,80 L400,84"/>
+                        </svg>
+                    </div>
                 </div>
-                <div class="scroll-hint" id="scrollHint">Scroll</div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contacte">
-        <div class="cap-seccio">
-            <div class="numero-seccio">04 — CONTACTO</div>
-            <h2 class="titol-seccio">Hablemos</h2>
-            <p class="descripcio-seccio">
-                ¿Tienes un proyecto en mente o quieres colaborar? ¡Escríbeme!
-            </p>
+    <!-- C06 · Manteniment -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Mantenimiento</span>
+            <span class="proj-count" data-reveal>06 / 07</span>
         </div>
-
-        <div class="contingut-contacte">
-            <a href="mailto:marcg-c20@hotmail.es" class="email-contacte">marcg-c20@hotmail.es</a>
-
-            <div class="links-xarxes">
-                <a href="https://www.instagram.com/marccgarciia/" target="_blank"
-                    rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.linkedin.com/in/marccgarciia/" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/marccgarciia" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Rendimiento y</span></span><span class="ln"><span class="dim">seguridad continuos</span></span></h3>
+                <p class="proj-desc" data-reveal>Copias de seguridad, actualizaciones verificadas, monitorización y soporte directo para mantener la web actualizada, segura y estable.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">Copias de seguridad</span><span class="tp">Actualizaciones</span><span class="tp">Monitorización</span><span class="tp">Seguridad</span><span class="tp">Core Web Vitals</span><span class="tp">CDN</span><span class="tp">Uptime</span>
+                        <span class="tp">Copias de seguridad</span><span class="tp">Actualizaciones</span><span class="tp">Monitorización</span><span class="tp">Seguridad</span><span class="tp">Core Web Vitals</span><span class="tp">CDN</span><span class="tp">Uptime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock mock-maint" data-mockup>
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+                        Mantenimiento
+                    </span>
+                    <div class="gauges">
+                        <div class="gauge"><div class="gwrap"><svg viewBox="0 0 60 60"><circle class="track" cx="30" cy="30" r="26"/><circle class="ring" cx="30" cy="30" r="26" style="--off:3.3"/></svg><span class="gn" data-count="98">0</span></div><span class="gl">Rendimiento</span></div>
+                        <div class="gauge"><div class="gwrap"><svg viewBox="0 0 60 60"><circle class="track" cx="30" cy="30" r="26"/><circle class="ring" cx="30" cy="30" r="26" style="--off:0"/></svg><span class="gn" data-count="100">0</span></div><span class="gl">Accesibilidad</span></div>
+                        <div class="gauge"><div class="gwrap"><svg viewBox="0 0 60 60"><circle class="track" cx="30" cy="30" r="26"/><circle class="ring" cx="30" cy="30" r="26" style="--off:0"/></svg><span class="gn" data-count="100">0</span></div><span class="gl">Buenas prácticas</span></div>
+                        <div class="gauge"><div class="gwrap"><svg viewBox="0 0 60 60"><circle class="track" cx="30" cy="30" r="26"/><circle class="ring" cx="30" cy="30" r="26" style="--off:0"/></svg><span class="gn" data-count="100">0</span></div><span class="gl">SEO</span></div>
+                    </div>
+                    <div class="cwv">
+                        <div class="cwv-row"><div class="top"><span class="k">LCP <span>Carga del contenido principal</span></span><span class="v">1.2 s</span></div><div class="cwv-bar" style="--p:22%"></div></div>
+                        <div class="cwv-row"><div class="top"><span class="k">INP <span>Respuesta a la interacción</span></span><span class="v">68 ms</span></div><div class="cwv-bar" style="--p:16%"></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Marc García-Cuevas de Paz</p>
+    <!-- C07 · Xarxes socials i contingut -->
+    <section class="proj cap">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Redes y contenido</span>
+            <span class="proj-count" data-reveal>07 / 07</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Estrategia y contenido</span></span><span class="ln"><span class="dim">para redes sociales</span></span></h3>
+                <p class="proj-desc" data-reveal>Estrategia, creación de contenido y gestión de comunidades para reforzar la presencia digital y conectar con el público adecuado.</p>
+                <div class="tag-marquee" data-reveal>
+                    <div class="tt">
+                        <span class="tp">Instagram</span><span class="tp">Reels</span><span class="tp">Contenido</span><span class="tp">Estrategia</span><span class="tp">Comunidad</span><span class="tp">Diseño</span><span class="tp">Calendario</span>
+                        <span class="tp">Instagram</span><span class="tp">Reels</span><span class="tp">Contenido</span><span class="tp">Estrategia</span><span class="tp">Comunidad</span><span class="tp">Diseño</span><span class="tp">Calendario</span>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock mock-social" data-mockup>
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H5.2L4 17.5z"/><path d="M8 9h8M8 12h5"/></svg>
+                        Social
+                    </span>
+                    <div class="social-row">
+                    <div class="phone">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <img src="../media/Foto1.jpg" alt="" loading="lazy">
+                            <div class="reel-ov">
+                                <div class="reel-actions">
+                                    <span class="ra"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>2.4K</span>
+                                    <span class="ra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>184</span>
+                                    <span class="ra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
+                                </div>
+                                <div class="reel-cap"><b>@balldediablesdelprat</b><br>Festa Major 2026 🔥</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-side" data-stagger>
+                        <div class="s-card green"><span class="n" data-count="12" data-pre="+" data-suf="%">0</span><span class="l">Alcance esta semana</span></div>
+                        <div class="s-card"><span class="n" data-count="180" data-pre="+" data-suf="K">0</span><span class="l">Reproducciones</span></div>
+                        <div class="s-card"><span class="n" data-count="108" data-pre="+">0</span><span class="l">Nuevos seguidores</span></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO PROJECTES -->
+    <section class="proj" id="projectes" style="border-top:0;">
+        <div class="scroll-intro">
+            <span class="brand-eyebrow">Proyectos</span>
+            <h2 class="fill-head" data-fill>Trabajos seleccionados</h2>
+            <p class="fill-sub" data-fill>Una selección de proyectos reales: web, herramientas internas, producción audiovisual, diseño...</p>
+        </div>
+    </section>
+
+    <!-- 01 · ESTELA (mockup animat) -->
+    <section class="proj">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Plataforma de gestión</span>
+            <span class="proj-count" data-reveal>01 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines>
+                    <span class="ln"><span>Estela English</span></span>
+                    <span class="ln"><span>Academy</span></span>
+                </h3>
+                <p class="proj-desc" data-reveal>Plataforma digital que integra la web corporativa, el campus virtual y un panel de gestión interna. Centraliza la información de alumnos, profesorado y pagos, e incorpora un sistema de corrección automatizada de ejercicios con inteligencia artificial.</p>
+                <span class="proj-cta privat" data-reveal>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg> Proyecto privado
+                </span>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="mock" data-mockup>
+                    <span class="mock-top">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+                        </svg> Panel · Estela
+                    </span>
+                    <div class="mock-stats">
+                        <div class="mock-stat"><span class="n" data-count="320">0</span><span class="l">Alumnos</span></div>
+                        <div class="mock-stat"><span class="n" data-count="24">0</span><span class="l">Profesores</span></div>
+                        <div class="mock-stat"><span class="n green" data-count="96" data-suf="%">0</span><span class="l">Corrección IA</span></div>
+                    </div>
+                    <div class="mock-list" data-stagger>
+                        <div class="mock-row"><span class="dot"></span><span class="nm">Pago recibido · Septiembre</span><span class="tg">OK</span></div>
+                        <div class="mock-row"><span class="dot"></span><span class="nm">Ejercicio corregido con IA</span><span class="tg">Auto</span></div>
+                        <div class="mock-row"><span class="dot"></span><span class="nm">Nuevo alumno inscrito</span><span class="tg">Campus</span></div>
+                        <div class="mock-row"><span class="dot"></span><span class="nm">Profesor asignado</span><span class="tg">Gestión</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 · FINANCES APP -->
+    <section class="proj alt">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Aplicación</span>
+            <span class="proj-count" data-reveal>02 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Finances App</span></span></h3>
+                <p class="proj-desc" data-reveal>Aplicación para gestionar las finanzas personales con estadísticas, categorías personalizables, seguimiento de gastos recurrentes y objetivos de ahorro.</p>
+                <a href="https://app.financesapp.es/" target="_blank" rel="noopener noreferrer" class="proj-cta" data-reveal>Ver proyecto →</a>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">app.financesapp.es</span></div>
+                    <div class="frame-media">
+                        <video data-lazy muted loop playsinline preload="none" poster="../media/webFINANCES-u.jpg">
+                            <source src="../media/webFINANCES-u.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 · JOAN AVILÉS -->
+    <section class="proj">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Web de artista</span>
+            <span class="proj-count" data-reveal>03 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines>
+                    <span class="ln"><span>Joan Avilés</span></span>
+                    <span class="ln"><span class="dim">Estudio de Imaginería</span></span>
+                </h3>
+                <p class="proj-desc" data-reveal>Web a medida para el escultor de El Prat, especializado en imaginería festiva y religiosa. Un espacio para presentar su obra, el proceso de creación de figuras y los trabajos de restauración del patrimonio.</p>
+                <a href="https://joanaviles.art/" target="_blank" rel="noopener noreferrer" class="proj-cta" data-reveal>Ver proyecto →</a>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">joanaviles.art</span></div>
+                    <div class="frame-media">
+                        <video data-lazy muted loop playsinline preload="none" poster="../media/webJOAN-u.jpg">
+                            <source src="../media/webJOAN-u.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 · ALYSEU -->
+    <section class="proj alt">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Web corporativa</span>
+            <span class="proj-count" data-reveal>04 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Alyseu Consultores</span></span></h3>
+                <p class="proj-desc" data-reveal>Web corporativa para una consultoría especializada en personas, estrategia y talento. Presenta los servicios de desarrollo directivo, selección y acompañamiento ejecutivo con un diseño claro y profesional.</p>
+                <a href="https://alyseu.com/" target="_blank" rel="noopener noreferrer" class="proj-cta" data-reveal>Ver proyecto →</a>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">alyseu.com</span></div>
+                    <div class="frame-media">
+                        <video data-lazy muted loop playsinline preload="none" poster="../media/webALYSEU-u.jpg">
+                            <source src="../media/webALYSEU-u.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 · BALL DE DIABLES -->
+    <section class="proj">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Web cultural</span>
+            <span class="proj-count" data-reveal>05 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines>
+                    <span class="ln"><span>Ball de Diables</span></span>
+                    <span class="ln"><span class="dim">del Prat</span></span>
+                </h3>
+                <p class="proj-desc" data-reveal>Renovación integral de la web de la entidad cultural, con un diseño actual, una experiencia de usuario mejorada y una identidad visual coherente con el Ball.</p>
+                <a href="https://balldediablesdelprat.cat/" target="_blank" rel="noopener noreferrer" class="proj-cta" data-reveal>Ver proyecto →</a>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">balldediablesdelprat.cat</span></div>
+                    <div class="frame-media">
+                        <video data-lazy muted loop playsinline preload="none" poster="../media/WebBall-u.jpg">
+                            <source src="../media/WebBall-u.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 · FINANCES LANDING -->
+    <section class="proj alt">
+        <div class="proj-head">
+            <span class="proj-cat" data-reveal>Web landing</span>
+            <span class="proj-count" data-reveal>06 / 06</span>
+        </div>
+        <div class="proj-grid">
+            <div class="proj-info">
+                <h3 class="proj-title" data-reveal-lines><span class="ln"><span>Finances App</span></span></h3>
+                <p class="proj-desc" data-reveal>Página de presentación de la aplicación de finanzas personales, con información sobre las funcionalidades, los planes de suscripción y las opciones para captar usuarios.</p>
+                <a href="https://financesapp.es/" target="_blank" rel="noopener noreferrer" class="proj-cta" data-reveal>Ver proyecto →</a>
+            </div>
+            <div class="proj-media" data-reveal>
+                <div class="frame">
+                    <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="lbl">financesapp.es</span></div>
+                    <div class="frame-media">
+                        <video data-lazy muted loop playsinline preload="none" poster="../media/webFINANCES-landing-u.jpg">
+                            <source src="../media/webFINANCES-landing-u.mp4" type="video/mp4"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COL·LECCIÓ · XARXES SOCIALS -->
+    <section class="coll">
+        <div class="coll-head">
+            <span class="brand-eyebrow" data-reveal>Redes sociales</span>
+            <h2 class="coll-title" data-fill>Gestión y crecimiento</h2>
+            <p class="coll-desc" data-reveal>Estrategia de contenido y gestión de comunidad</p>
+        </div>
+        <div class="xarxes-wrap">
+            <div class="ig-grid" data-stagger data-mockup>
+                <a class="ig-card" href="https://www.instagram.com/balldediablesdelprat/" target="_blank" rel="noopener noreferrer">
+                    <div class="ig-top">
+                        <img src="../media/av-ball.jpg" alt="Ball de Diables del Prat" loading="lazy">
+                        <div class="ig-id"><b>@balldediablesdelprat</b><span>Ball de Diables del Prat</span></div>
+                        <svg class="ig-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </div>
+                    <div class="ig-bottom">
+                        <div class="ig-num"><span class="n" data-count="3010">0</span><span class="l">Seguidores</span></div>
+                        <svg class="ig-spark" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon class="sp-area" points="0,34 15,31 30,33 45,26 60,27 75,19 90,20 105,10 120,6 120,40 0,40" fill="url(#gGreen)"/>
+                            <polyline class="sp-line" pathLength="1" points="0,34 15,31 30,33 45,26 60,27 75,19 90,20 105,10 120,6" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                    </div>
+                </a>
+                <a class="ig-card" href="https://www.instagram.com/federacioelnus/" target="_blank" rel="noopener noreferrer">
+                    <div class="ig-top">
+                        <img src="../media/av-nus.jpg" alt="Federació El Nus" loading="lazy">
+                        <div class="ig-id"><b>@federacioelnus</b><span>El Nus</span></div>
+                        <svg class="ig-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </div>
+                    <div class="ig-bottom">
+                        <div class="ig-num"><span class="n" data-count="2220">0</span><span class="l">Seguidores</span></div>
+                        <svg class="ig-spark" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon class="sp-area" points="0,35 18,33 36,30 54,31 72,24 90,18 108,14 120,10 120,40 0,40" fill="url(#gGreen)"/>
+                            <polyline class="sp-line" pathLength="1" points="0,35 18,33 36,30 54,31 72,24 90,18 108,14 120,10" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                    </div>
+                </a>
+                <a class="ig-card" href="https://www.instagram.com/estelaenglishacademy/" target="_blank" rel="noopener noreferrer">
+                    <div class="ig-top">
+                        <img src="../media/av-eea.jpg" alt="Estela English Academy" loading="lazy">
+                        <div class="ig-id"><b>@estelaenglishacademy</b><span>Estela English Academy</span></div>
+                        <svg class="ig-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </div>
+                    <div class="ig-bottom">
+                        <div class="ig-num"><span class="n" data-count="2090">0</span><span class="l">Seguidores</span></div>
+                        <svg class="ig-spark" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon class="sp-area" points="0,33 16,30 32,31 50,24 68,20 84,21 100,12 120,5 120,40 0,40" fill="url(#gGreen)"/>
+                            <polyline class="sp-line" pathLength="1" points="0,33 16,30 32,31 50,24 68,20 84,21 100,12 120,5" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                    </div>
+                </a>
+                <a class="ig-card" href="https://www.instagram.com/ballsdediables/" target="_blank" rel="noopener noreferrer">
+                    <div class="ig-top">
+                        <img src="../media/av-xarxa.jpg" alt="Xarxa de Balls de Diables" loading="lazy">
+                        <div class="ig-id"><b>@ballsdediables</b><span>Xarxa de Balls de Diables de Catalunya</span></div>
+                        <svg class="ig-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    </div>
+                    <div class="ig-bottom">
+                        <div class="ig-num"><span class="n" data-count="1865">0</span><span class="l">Seguidores</span></div>
+                        <svg class="ig-spark" viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon class="sp-area" points="0,36 20,34 40,28 55,30 75,22 95,23 110,12 120,8 120,40 0,40" fill="url(#gGreen)"/>
+                            <polyline class="sp-line" pathLength="1" points="0,36 20,34 40,28 55,30 75,22 95,23 110,12 120,8" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="growth" data-stagger data-mockup>
+                <div class="g-card g-hero">
+                    <div class="g-top"><span class="g-lab">Reproducciones</span>
+                        <svg class="g-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+                    <span class="n green" data-count="180" data-pre="+" data-suf="K">0</span>
+                    <div class="g-chart">
+                        <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon class="sp-area" fill="url(#gGreen)" points="0,100 30,92 60,96 95,80 130,84 165,66 200,70 235,50 270,54 305,34 340,28 375,16 400,10 400,120 0,120"/>
+                            <polyline class="sp-line" pathLength="1" points="0,100 30,92 60,96 95,80 130,84 165,66 200,70 235,50 270,54 305,34 340,28 375,16 400,10" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                        <i class="g-dot"></i>
+                    </div>
+                </div>
+                <div class="g-row">
+                    <div class="g-card g-mini">
+                        <div class="g-bars"><i style="--h:28%"></i><i style="--h:34%"></i><i style="--h:31%"></i><i style="--h:46%"></i><i style="--h:52%"></i><i style="--h:63%"></i><i class="hi" style="--h:80%"></i></div>
+                        <span class="n" data-count="95" data-pre="+" data-suf="K">0</span><span class="l">Visualizaciones en stories</span>
+                    </div>
+                    <div class="g-card g-mini">
+                        <div class="g-line">
+                            <svg viewBox="0 0 120 44" preserveAspectRatio="none" aria-hidden="true">
+                                <polygon class="sp-area" fill="url(#gBlue)" points="0,36 15,34 30,35 45,26 60,28 75,20 90,22 105,12 120,6 120,44 0,44"/>
+                                <polyline class="sp-line blue" pathLength="1" points="0,36 15,34 30,35 45,26 60,28 75,20 90,22 105,12 120,6" vector-effect="non-scaling-stroke"/>
+                            </svg>
+                        </div>
+                        <span class="n" data-count="21" data-suf="K">0</span><span class="l">Espectadores</span>
+                    </div>
+                    <div class="g-card g-mini">
+                        <div class="g-ring"><svg viewBox="0 0 60 60" aria-hidden="true"><circle class="track" cx="30" cy="30" r="24"/><circle class="ring" cx="30" cy="30" r="24" style="--off:38"/></svg></div>
+                        <span class="n" data-count="4" data-suf="K">0</span><span class="l">Interacciones</span>
+                    </div>
+                </div>
+                <div class="g-card g-plan">
+                    <div class="g-top"><span class="g-lab">Calendario de contenido</span><span class="g-tag">Estrategia</span></div>
+                    <div class="cal"><div class="cal-d"><span class="dn">L</span><span class="chip reel">Reel</span></div><div class="cal-d"><span class="dn">M</span><span class="chip off"></span></div><div class="cal-d"><span class="dn">X</span><span class="chip post">Post</span></div><div class="cal-d"><span class="dn">J</span><span class="chip story">Story</span></div><div class="cal-d"><span class="dn">V</span><span class="chip reel">Reel</span></div><div class="cal-d"><span class="dn">S</span><span class="chip story">Story</span></div><div class="cal-d"><span class="dn">D</span><span class="chip off"></span></div></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COL·LECCIÓ · AUDIOVISUAL (FESTA MAJOR) -->
+    <section class="coll">
+        <div class="coll-head">
+            <span class="brand-eyebrow" data-reveal>Audiovisual</span>
+            <h2 class="coll-title" data-fill>Fiesta Mayor de El Prat</h2>
+            <p class="coll-desc" data-reveal>Producción de vídeos para dar visibilidad en redes</p>
+        </div>
+        <div class="vert-grid" data-stagger>
+            <div class="vcard">
+                <div class="frame"><div class="frame-media">
+                    <video data-lazy muted loop playsinline preload="none" poster="../media/festa2026-poster.jpg"><source src="../media/FestaMajor2026.mp4" type="video/mp4"></video>
+                </div></div>
+                <div class="v-info"><span class="cat">2026</span><h4>Fiesta Mayor 2026</h4>
+                    <a href="https://www.instagram.com/reel/Ddjb_zRNlw6/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
+            </div>
+            <div class="vcard">
+                <div class="frame"><div class="frame-media">
+                    <video data-lazy muted loop playsinline preload="none" poster="../media/festa2025-poster.jpg"><source src="../media/FestaMajor2025.mp4" type="video/mp4"></video>
+                </div></div>
+                <div class="v-info"><span class="cat">2025</span><h4>Fiesta Mayor 2025</h4>
+                    <a href="https://www.instagram.com/reel/DO_WZDvjd4b/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
+            </div>
+            <div class="vcard">
+                <div class="frame"><div class="frame-media">
+                    <video data-lazy muted loop playsinline preload="none" poster="../media/festa2024-poster.jpg"><source src="../media/FestaMajor2024.mp4" type="video/mp4"></video>
+                </div></div>
+                <div class="v-info"><span class="cat">2024</span><h4>Fiesta Mayor 2024</h4>
+                    <a href="https://www.instagram.com/reel/DARXwvPopFR/" target="_blank" rel="noopener noreferrer" class="link-arrow">Ver en Instagram →</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COL·LECCIÓ · FOTOGRAFIA -->
+    <section class="coll">
+        <div class="coll-head">
+            <span class="brand-eyebrow" data-reveal>Fotografía</span>
+            <h2 class="coll-title" data-fill>Mirada personal</h2>
+            <p class="coll-desc" data-reveal>Momentos, luces y texturas del mundo que me rodea.</p>
+        </div>
+        <div class="media-grid cols-4" data-stagger>
+            <div class="gitem"><img src="../media/Foto7.jpg" alt="Big Ben, Londres" loading="lazy"><div class="cap"><span>Arquitectura</span></div></div>
+            <div class="gitem"><img src="../media/Foto3.jpg" alt="Picos de Europa" loading="lazy"><div class="cap"><span>Paisaje</span></div></div>
+            <div class="gitem"><img src="../media/Foto5.jpg" alt="Carretillas" loading="lazy"><div class="cap"><span>Tradición</span></div></div>
+            <div class="gitem"><img src="../media/Foto1.jpg" alt="Ball de Diables del Prat" loading="lazy"><div class="cap"><span>Cultura</span></div></div>
+            <div class="gitem"><img src="../media/Foto6.jpg" alt="Retrato artístico" loading="lazy"><div class="cap"><span>Retrato</span></div></div>
+            <div class="gitem"><img src="../media/Foto9.jpg" alt="Costa de Menorca" loading="lazy"><div class="cap"><span>Naturaleza</span></div></div>
+            <div class="gitem"><img src="../media/Foto10.jpg" alt="Vidrieras heráldicas" loading="lazy"><div class="cap"><span>Patrimonio</span></div></div>
+            <div class="gitem"><img src="../media/Foto11.jpg" alt="Salón de plenos del Ayuntamiento de El Prat" loading="lazy"><div class="cap"><span>Institucional</span></div></div>
+        </div>
+    </section>
+
+    <!-- COL·LECCIÓ · DISSENY -->
+    <section class="coll">
+        <div class="coll-head">
+            <span class="brand-eyebrow" data-reveal>Diseño gráfico</span>
+            <h2 class="coll-title" data-fill>Diseño y Branding</h2>
+            <p class="coll-desc" data-reveal>Materiales gráficos para eventos y entidades culturales.</p>
+        </div>
+        <div class="media-grid cols-4" data-stagger>
+            <div class="gitem"><img src="../media/DissenyiBranding1.jpg" alt="Lonas publicitarias" loading="lazy"><div class="cap"><span>Lonas</span></div></div>
+            <div class="gitem"><img src="../media/DissenyiBranding2.jpg" alt="Globos aerostáticos" loading="lazy"><div class="cap"><span>Globos</span></div></div>
+            <div class="gitem"><img src="../media/DissenyiBranding3.jpg" alt="Roll-up corporativo" loading="lazy"><div class="cap"><span>Roll-up</span></div></div>
+            <div class="gitem"><img src="../media/DissenyiBranding4.jpg" alt="Figura promocional" loading="lazy"><div class="cap"><span>Figura</span></div></div>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="coll" id="sobre-mi">
+        <div class="about-grid">
+            <img class="about-photo" src="../media/fotoperfil-web.jpg" alt="Marc García-Cuevas" width="1200" height="1200" loading="lazy" data-reveal>
+            <div class="about-body">
+                <span class="brand-eyebrow" data-reveal>Sobre mí</span>
+                <p class="about-text" data-reveal>Creador multidisciplinar que fusiona arte y tecnología.</p>
+                <div class="about-quote" data-reveal>
+                    Trabajo con diseño, fotografía, programación y música, buscando la belleza en la simplicidad y la autenticidad en cada proyecto.
+                    <span class="who">«Para hacer las cosas bien hace falta: primero, el amor a ellas; segundo, la técnica.» – Antoni Gaudí</span>
+                </div>
+            </div>
+        </div>
+        <div class="skills">
+            <div class="row"><div class="track">
+                <span>HTML</span><span class="sep">·</span><span>Figma</span><span class="sep">·</span><span>Redes sociales</span><span class="sep">·</span><span>OpenAI API (ChatGPT)</span><span class="sep">·</span><span>Lightroom</span><span class="sep">·</span><span>JavaScript</span><span class="sep">·</span><span>Sketch</span><span class="sep">·</span><span>Copywriting y estrategia de contenido</span><span class="sep">·</span><span>Automatización de procesos</span><span class="sep">·</span><span>Premiere Pro</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>UI/UX</span><span class="sep">·</span><span>SEO</span><span class="sep">·</span><span>Wireframing y prototipado</span><span class="sep">·</span><span>Comunicación</span><span class="sep">·</span><span>Diseño responsive</span><span class="sep">·</span><span>Python</span><span class="sep">·</span><span>Edición de foto</span><span class="sep">·</span><span>Tipografía</span><span class="sep">·</span><span>PHP / Laravel</span><span class="sep">·</span><span>Subtitulado y guion para vídeo corto</span><span class="sep">·</span><span>Canva</span><span class="sep">·</span><span>SQL</span><span class="sep">·</span><span>Postman</span><span class="sep">·</span><span>Linux</span><span class="sep">·</span>
+                <span>HTML</span><span class="sep">·</span><span>Figma</span><span class="sep">·</span><span>Redes sociales</span><span class="sep">·</span><span>OpenAI API (ChatGPT)</span><span class="sep">·</span><span>Lightroom</span><span class="sep">·</span><span>JavaScript</span><span class="sep">·</span><span>Sketch</span><span class="sep">·</span><span>Copywriting y estrategia de contenido</span><span class="sep">·</span><span>Automatización de procesos</span><span class="sep">·</span><span>Premiere Pro</span><span class="sep">·</span><span>React</span><span class="sep">·</span><span>UI/UX</span><span class="sep">·</span><span>SEO</span><span class="sep">·</span><span>Wireframing y prototipado</span><span class="sep">·</span><span>Comunicación</span><span class="sep">·</span><span>Diseño responsive</span><span class="sep">·</span><span>Python</span><span class="sep">·</span><span>Edición de foto</span><span class="sep">·</span><span>Tipografía</span><span class="sep">·</span><span>PHP / Laravel</span><span class="sep">·</span><span>Subtitulado y guion para vídeo corto</span><span class="sep">·</span><span>Canva</span><span class="sep">·</span><span>SQL</span><span class="sep">·</span><span>Postman</span><span class="sep">·</span><span>Linux</span><span class="sep">·</span>
+            </div></div>
+            <div class="row rev"><div class="track">
+                <span>Anthropic Claude</span><span class="sep">·</span><span>Photoshop</span><span class="sep">·</span><span>CSS</span><span class="sep">·</span><span>Adobe XD</span><span class="sep">·</span><span>Gestión de comunidad (community management)</span><span class="sep">·</span><span>GitHub Copilot / Microsoft Copilot</span><span class="sep">·</span><span>After Effects</span><span class="sep">·</span><span>TypeScript</span><span class="sep">·</span><span>Framer</span><span class="sep">·</span><span>Analítica de redes (Metricool, Meta Business Suite)</span><span class="sep">·</span><span>Integración de sistemas</span><span class="sep">·</span><span>CapCut</span><span class="sep">·</span><span>Node.js</span><span class="sep">·</span><span>DaVinci Resolve</span><span class="sep">·</span><span>Tailwind CSS</span><span class="sep">·</span><span>Motion graphics</span><span class="sep">·</span><span>Diseño de logos e identidad de marca</span><span class="sep">·</span><span>.NET / C#</span><span class="sep">·</span><span>Edición de vídeo</span><span class="sep">·</span><span>Illustrator</span><span class="sep">·</span><span>WordPress</span><span class="sep">·</span><span>Contenido para TikTok e Instagram Reels</span><span class="sep">·</span><span>API REST</span><span class="sep">·</span><span>Azure</span><span class="sep">·</span><span>Git</span><span class="sep">·</span>
+                <span>Anthropic Claude</span><span class="sep">·</span><span>Photoshop</span><span class="sep">·</span><span>CSS</span><span class="sep">·</span><span>Adobe XD</span><span class="sep">·</span><span>Gestión de comunidad (community management)</span><span class="sep">·</span><span>GitHub Copilot / Microsoft Copilot</span><span class="sep">·</span><span>After Effects</span><span class="sep">·</span><span>TypeScript</span><span class="sep">·</span><span>Framer</span><span class="sep">·</span><span>Analítica de redes (Metricool, Meta Business Suite)</span><span class="sep">·</span><span>Integración de sistemas</span><span class="sep">·</span><span>CapCut</span><span class="sep">·</span><span>Node.js</span><span class="sep">·</span><span>DaVinci Resolve</span><span class="sep">·</span><span>Tailwind CSS</span><span class="sep">·</span><span>Motion graphics</span><span class="sep">·</span><span>Diseño de logos e identidad de marca</span><span class="sep">·</span><span>.NET / C#</span><span class="sep">·</span><span>Edición de vídeo</span><span class="sep">·</span><span>Illustrator</span><span class="sep">·</span><span>WordPress</span><span class="sep">·</span><span>Contenido para TikTok e Instagram Reels</span><span class="sep">·</span><span>API REST</span><span class="sep">·</span><span>Azure</span><span class="sep">·</span><span>Git</span><span class="sep">·</span>
+            </div></div>
+        </div>
+    </section>
+
+    <!-- TRAJECTÒRIA -->
+    <section class="coll" id="trajectoria">
+        <div class="coll-head">
+            <span class="brand-eyebrow" data-reveal>Trayectoria</span>
+            <h2 class="coll-title" data-fill>Experiencia y formación</h2>
+        </div>
+                <div class="traj-grid" data-stagger>
+            <div class="traj-card">
+                <div class="t-head"><span class="t-tag">Experiencia</span><span class="t-num">01 / 03</span></div>
+                <div class="traj-item"><div class="d">NOV 2025 – SEP 2026</div><div class="t">Technical Analyst &amp; Software Engineer</div><div class="e">Iterem · Barcelona · Híbrido</div></div>
+                <div class="traj-item"><div class="d">OCT 2024 – NOV 2025</div><div class="t">Helpdesk &amp; Frontend Developer</div><div class="e">Iterem · Barcelona · Híbrido</div></div>
+                <div class="traj-item"><div class="d">MAR 2024 – JUN 2024</div><div class="t">Web Designer &amp; Developer</div><div class="e">USACD · Barcelona · Remoto</div></div>
+                <div class="traj-item"><div class="d">DIC 2022 – OCT 2023</div><div class="t">Web Developer &amp; Systems Administrator</div><div class="e">Anytic Business Solutions · Barcelona · Híbrido</div></div>
+                <div class="traj-item"><div class="d">SEP 2021 – FEB 2022</div><div class="t">Systems &amp; Network Administration (Prácticas)</div><div class="e">Escola Enric D'ossó · Barcelona</div></div>
+                <div class="traj-item"><div class="d">MAY 2019 – NOV 2019</div><div class="t">Microcomputer Systems &amp; Networking (Prácticas)</div><div class="e">Indra · Barcelona</div></div>
+            </div>
+            <div class="traj-card">
+                <div class="t-head"><span class="t-tag">Formación</span><span class="t-num">02 / 03</span></div>
+                <div class="traj-item"><div class="d">SEP 2023 – MAY 2024</div><div class="t">Créditos convalidados de Ingeniería Informática (UOC)</div><div class="e">Certificado por examen</div></div>
+                <div class="traj-item"><div class="d">SEP 2022 – MAY 2023</div><div class="t">CFGS Desarrollo de Aplicaciones Web (DAW)</div><div class="e">Jesuïtes Bellvitge - Joan XXIII</div></div>
+                <div class="traj-item"><div class="d">SEP 2020 – MAY 2022</div><div class="t">CFGS Administración de Sistemas Informáticos en Red (ASIX)</div><div class="e">Jesuïtes Bellvitge - Joan XXIII</div></div>
+                <div class="traj-item"><div class="d">SEP 2018 – MAY 2020</div><div class="t">CFGM Sistemas Microinformáticos y Redes (SMX)</div><div class="e">Jesuïtes Bellvitge - Joan XXIII</div></div>
+            </div>
+            <div class="traj-card">
+                <div class="t-head"><span class="t-tag">Certificaciones</span><span class="t-num">03 / 03</span></div>
+                <div class="traj-item"><div class="d">JUL 2026</div><div class="t">Cybersecurity for Everyday</div><div class="e">UPC (Universidad Politécnica de Cataluña)</div></div>
+                <div class="traj-item"><div class="d">MAR 2026</div><div class="t">Desarrollo con IA</div><div class="e">BIG School</div></div>
+                <div class="traj-item"><div class="d">JUL 2024</div><div class="t">Certified Kubernetes Administrator (CKA)</div><div class="e">Kubernetes Official</div></div>
+                <div class="traj-item"><div class="d">JUL 2024</div><div class="t">Certified AWS</div><div class="e">Amazon Web Services</div></div>
+                <div class="traj-item"><div class="d">MAR 2024</div><div class="t">Veeva Vault Certified Administrator</div><div class="e">Veeva Systems</div></div>
+                <div class="traj-item"><div class="d">ENE 2024</div><div class="t">ReactJS &amp; AngularJS</div><div class="e">LinkedIn Learning</div></div>
+                <div class="traj-item"><div class="d">2023</div><div class="t">CCNP (Cisco Certified Network Professional)</div><div class="e">Cisco</div></div>
+                <div class="traj-item"><div class="d">2021</div><div class="t">CCNA (Cisco Certified Network Associate)</div><div class="e">Cisco</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTE -->
+    <section class="coll" id="contacte">
+        <span class="brand-eyebrow" data-reveal>Contacto</span>
+        <a href="mailto:marcg-c20@hotmail.es" class="contacte-email" data-fill>marcg-c20@hotmail.es</a>
+        <div class="contacte-links" data-stagger>
+            <a href="https://www.instagram.com/marccgarciia/" target="_blank" rel="noopener noreferrer" class="pill">Instagram</a>
+            <a href="https://www.linkedin.com/in/marccgarciia/" target="_blank" rel="noopener noreferrer" class="pill">LinkedIn</a>
+            <a href="https://github.com/marccgarciia" target="_blank" rel="noopener noreferrer" class="pill">GitHub</a>
+        </div>
+    </section>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+        <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(74,222,128,0.32)"/><stop offset="100%" stop-color="rgba(74,222,128,0)"/></linearGradient>
+        <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(91,140,255,0.3)"/><stop offset="100%" stop-color="rgba(91,140,255,0)"/></linearGradient>
+    </defs></svg>
+
+    <footer class="brand-footer">
+        <span>© 2026 Marc García-Cuevas de Paz</span>
+        <span>Hecho a mano, sin plantillas.</span>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="../js/cursor.js"></script>
-    <script src="../js/navegacio.js"></script>
-    <script src="../js/animacions.js"></script>
-    <script src="../js/videos.js"></script>
-    <script src="../js/smooth-scroll.js"></script>
-    <script src="../js/experiencia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="../js/brand.js"></script>
+
+    <!-- Globus real (continents en punts + glow de vora) amb cobe -->
+    <script type="module">
+        import createGlobe from 'https://cdn.jsdelivr.net/npm/cobe@0.6.3/+esm';
+        const canvas = document.querySelector('.globe-canvas');
+        if (canvas) {
+            const stage = canvas.closest('.globe-stage');
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let phi = 0, theta = 0.25, dragging = false, lastX = 0, lastY = 0;
+            const dpr = Math.min(2, window.devicePixelRatio || 1);
+            const size = () => Math.max(1, Math.round(canvas.getBoundingClientRect().width));
+            const w0 = size();
+            createGlobe(canvas, {
+                devicePixelRatio: dpr,
+                width: w0 * dpr, height: w0 * dpr,
+                phi: 0, theta: 0.25,
+                dark: 1, diffuse: 1.0, mapSamples: 16000, mapBrightness: 2.1,
+                baseColor: [0.45, 0.47, 0.56],
+                markerColor: [0.45, 0.6, 1],
+                glowColor: [0.28, 0.28, 0.5],
+                markers: [
+                    { location: [41.39, 2.16], size: 0.06 },
+                    { location: [40.42, -3.70], size: 0.045 },
+                    { location: [51.50, -0.12], size: 0.04 },
+                    { location: [-23.55, -46.63], size: 0.045 },
+                    { location: [35.68, 139.69], size: 0.045 }
+                ],
+                onRender: (state) => {
+                    if (!dragging && !reduce) phi += 0.004;
+                    state.phi = phi;
+                    state.theta = theta;
+                    const s = size() * dpr;
+                    state.width = s; state.height = s;
+                }
+            });
+            canvas.style.cursor = 'grab';
+            canvas.addEventListener('pointerdown', (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.style.cursor = 'grabbing'; });
+            window.addEventListener('pointermove', (e) => {
+                if (!dragging) return;
+                phi -= (e.clientX - lastX) * 0.01;
+                theta = Math.max(-0.6, Math.min(0.8, theta + (e.clientY - lastY) * 0.01));
+                lastX = e.clientX; lastY = e.clientY;
+            });
+            window.addEventListener('pointerup', () => { dragging = false; canvas.style.cursor = 'grab'; });
+        }
+    </script>
 </body>
 
 </html>
