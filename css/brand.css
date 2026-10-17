@@ -1034,3 +1034,30 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
     .coll { padding-top: 60px; padding-bottom: 60px; }
     .coll-head { margin-bottom: 30px; }
 }
+
+/* ============================================================
+   MÒBIL — Festa Major: els 3 vídeos en línia (es veuen grans en tocar-los)
+   ============================================================ */
+@media (max-width: 860px) {
+    .vert-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: none; margin: 0; }
+    .vcard .frame { padding: 5px; border-radius: 12px; box-shadow: none; cursor: pointer; }
+    .vcard .frame-media { border-radius: 8px; }
+    .vcard .v-info { margin-top: 10px; }
+    .vcard .v-info .cat { display: none; }
+    .vcard .v-info h4 { font-size: 0.8rem; line-height: 1.25; margin: 0 0 6px; }
+    .vcard .v-info .link-arrow { font-size: 0.7rem; gap: 4px; line-height: 1.3; }
+}
+
+/* Visor de vídeo (mòbil) */
+.vbox {
+    position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center;
+    background: rgba(0, 0, 0, 0.92); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.vbox.open { opacity: 1; visibility: visible; transition: opacity 0.3s ease; }
+.vbox video { max-width: 92vw; max-height: 82vh; border-radius: 14px; background: #000; transform: scale(0.94); transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.vbox.open video { transform: none; }
+.vbox-x {
+    position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid var(--line); background: rgba(255, 255, 255, 0.08); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer;
+}
