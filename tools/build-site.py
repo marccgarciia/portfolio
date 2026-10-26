@@ -267,7 +267,7 @@ EXP = [
     ("MAI 2019 – NOV 2019", ("Microcomputer Systems & Networking (Pràctiques)", "Microcomputer Systems & Networking (Prácticas)", "Microcomputer Systems & Networking (Internship)"), ("Indra · Barcelona",) * 3),
 ]
 EDU = [
-    ("SET 2023 – MAI 2024", ("Crèdits convalidats d'Enginyeria Informàtica (UOC)", "Créditos convalidados de Ingeniería Informática (UOC)", "Validated credits in Computer Engineering (UOC)"), ("UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Open University of Catalonia) · 2023 – 2024")),
+    ("SET 2023 – MAI 2024", ("Crèdits convalidats d'Enginyeria Informàtica (UOC)", "Créditos convalidados de Ingeniería Informática (UOC)", "Validated credits in Computer Engineering (UOC)"), ("UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Universitat Oberta de Catalunya) · 2023 – 2024")),
     ("SET 2022 – MAI 2023", ("CFGS Desenvolupament d'Aplicacions Web (DAW)", "CFGS Desarrollo de Aplicaciones Web (DAW)", "HND Web Application Development (DAW)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
     ("SET 2020 – MAI 2022", ("CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)", "CFGS Administración de Sistemas Informáticos en Red (ASIX)", "HND Network Computer Systems Administration (ASIX)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
     ("SET 2018 – MAI 2020", ("CFGM Sistemes Microinformàtics i Xarxes (SMX)", "CFGM Sistemas Microinformáticos y Redes (SMX)", "Microcomputer Systems and Networks (SMX)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
