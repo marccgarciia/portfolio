@@ -267,13 +267,13 @@ EXP = [
     ("MAI 2019 – NOV 2019", ("Microcomputer Systems & Networking (Pràctiques)", "Microcomputer Systems & Networking (Prácticas)", "Microcomputer Systems & Networking (Internship)"), ("Indra · Barcelona",) * 3),
 ]
 EDU = [
-    ("SET 2023 – MAI 2024", ("Crèdits convalidats d'Enginyeria Informàtica (UOC)", "Créditos convalidados de Ingeniería Informática (UOC)", "Validated credits in Computer Engineering (UOC)"), ("Certificat per examen", "Certificado por examen", "Certified by examination")),
+    ("SET 2023 – MAI 2024", ("Crèdits convalidats d'Enginyeria Informàtica (UOC)", "Créditos convalidados de Ingeniería Informática (UOC)", "Validated credits in Computer Engineering (UOC)"), ("UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Universitat Oberta de Catalunya) · 2023 – 2024", "UOC (Universitat Oberta de Catalunya) · 2023 – 2024")),
     ("SET 2022 – MAI 2023", ("CFGS Desenvolupament d'Aplicacions Web (DAW)", "CFGS Desarrollo de Aplicaciones Web (DAW)", "HND Web Application Development (DAW)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
     ("SET 2020 – MAI 2022", ("CFGS Administració de Sistemes Informàtics en Xarxa (ASIX)", "CFGS Administración de Sistemas Informáticos en Red (ASIX)", "HND Network Computer Systems Administration (ASIX)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
     ("SET 2018 – MAI 2020", ("CFGM Sistemes Microinformàtics i Xarxes (SMX)", "CFGM Sistemas Microinformáticos y Redes (SMX)", "Microcomputer Systems and Networks (SMX)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
 ]
 CERT = [
-    ("JUL 2026", ("Cybersecurity for Everyday",) * 3, ("UPC (Universitat Politècnica de Catalunya)", "UPC (Universidad Politécnica de Cataluña)", "UPC (Polytechnic University of Catalonia)")),
+    ("JUL 2026", ("Cybersecurity for Everyday",) * 3, ("UPC (Universitat Politècnica de Catalunya)", "UPC (Universidad Politécnica de Cataluña)", "UPC (Universitat Politècnica de Catalunya)")),
     ("MAR 2026", ("Desenvolupament amb IA", "Desarrollo con IA", "AI Development"), ("BIG School",) * 3),
     ("JUL 2024", ("Certified Kubernetes Administrator (CKA)",) * 3, ("Kubernetes Official",) * 3),
     ("JUL 2024", ("Certified AWS",) * 3, ("Amazon Web Services",) * 3),
