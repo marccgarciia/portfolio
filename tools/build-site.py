@@ -273,7 +273,7 @@ EDU = [
     ("SET 2018 – MAI 2020", ("CFGM Sistemes Microinformàtics i Xarxes (SMX)", "CFGM Sistemas Microinformáticos y Redes (SMX)", "Microcomputer Systems and Networks (SMX)"), ("Jesuïtes Bellvitge - Joan XXIII",) * 3),
 ]
 CERT = [
-    ("JUL 2026", ("Cybersecurity for Everyday",) * 3, ("UPC (Universitat Politècnica de Catalunya)", "UPC (Universidad Politécnica de Cataluña)", "UPC (Polytechnic University of Catalonia)")),
+    ("JUL 2026", ("Cybersecurity for Everyday",) * 3, ("UPC (Universitat Politècnica de Catalunya)", "UPC (Universidad Politécnica de Cataluña)", "UPC (Universitat Politècnica de Catalunya)")),
     ("MAR 2026", ("Desenvolupament amb IA", "Desarrollo con IA", "AI Development"), ("BIG School",) * 3),
     ("JUL 2024", ("Certified Kubernetes Administrator (CKA)",) * 3, ("Kubernetes Official",) * 3),
     ("JUL 2024", ("Certified AWS",) * 3, ("Amazon Web Services",) * 3),
