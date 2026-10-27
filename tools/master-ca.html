@@ -830,7 +830,7 @@
             canvas.addEventListener('pointerdown', (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.style.cursor = 'grabbing'; });
             window.addEventListener('pointermove', (e) => {
                 if (!dragging) return;
-                phi -= (e.clientX - lastX) * 0.01;
+                phi += (e.clientX - lastX) * 0.01;
                 theta = Math.max(-0.6, Math.min(0.8, theta + (e.clientY - lastY) * 0.01));
                 lastX = e.clientX; lastY = e.clientY;
             });
