@@ -208,6 +208,8 @@ Lones ⇒ Lonas ⇒ Banners
 Globus ⇒ Globos ⇒ Balloons
 Figura ⇒ Figura ⇒ Figure
 Maillot ⇒ Maillot ⇒ Jersey
+Samarreta ⇒ Camiseta ⇒ T-shirt
+Samarreta del Ball de Diables del Prat ⇒ Camiseta del Ball de Diables del Prat ⇒ Ball de Diables del Prat T-shirt
 
 Creador multidisciplinari que fusiona art i tecnologia. ⇒ Creador multidisciplinar que fusiona arte y tecnología. ⇒ Multidisciplinary creator blending art and technology.
 Treballo amb disseny, fotografia, programació i música, buscant la bellesa en la simplicitat i l'autenticitat en cada projecte. ⇒ Trabajo con diseño, fotografía, programación y música, buscando la belleza en la simplicidad y la autenticidad en cada proyecto. ⇒ I work with design, photography, programming and music, seeking beauty in simplicity and authenticity in every project.
