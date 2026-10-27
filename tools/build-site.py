@@ -399,10 +399,6 @@ def head(lang):
     od = html.escape(m["ogdesc"], quote=True)
     return f"""<head>
     <meta charset="UTF-8">
-    <script>
-        if (history.scrollRestoration) {{ history.scrollRestoration = 'manual'; }}
-        window.scrollTo(0, 0);
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{t}</title>
