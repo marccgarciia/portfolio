@@ -979,7 +979,10 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
         -webkit-mask-image: linear-gradient(to left, #000 90%, transparent 100%), linear-gradient(to bottom, #000 84%, transparent 100%);
         mask-image: linear-gradient(to left, #000 90%, transparent 100%), linear-gradient(to bottom, #000 84%, transparent 100%);
     }
-    .mock-auto .anode { zoom: 0.8; }
+    .mock-auto .anode { zoom: 0.72; }
+    .a-msg { left: 3%; }
+    .a-ai { left: 34%; }
+    .a-resp, .a-crm { left: 72%; }
     .phone { width: 128px; }
     .mock-social .social-row { gap: 14px; }
     .s-card { padding: 11px 12px; }

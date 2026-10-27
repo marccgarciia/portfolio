@@ -438,6 +438,32 @@
         window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
     }
 
+    /* ---------- Mockup d'automatització: els cables s'ajusten a les caixes reals ---------- */
+    document.querySelectorAll('.auto-canvas').forEach((cv) => {
+        const svg = cv.querySelector('.auto-wires');
+        const paths = svg && svg.querySelectorAll('.flow-path');
+        const q = (c) => cv.querySelector(c);
+        const [msg, ai, resp, crm] = [q('.a-msg'), q('.a-ai'), q('.a-resp'), q('.a-crm')];
+        if (!paths || paths.length < 3 || !msg || !ai || !resp || !crm) return;
+        const draw = () => {
+            const c = cv.getBoundingClientRect();
+            if (!c.width) return;
+            const box = (n) => { const r = n.getBoundingClientRect(); return { l: r.left - c.left, r: r.right - c.left, t: r.top - c.top, h: r.height }; };
+            const m = box(msg), a = box(ai), p = box(resp), k = box(crm);
+            const aiY = a.t + a.h * 0.2;
+            const wire = (x1, y1, x2, y2) => { const mx = (x1 + x2) / 2; return `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`; };
+            svg.setAttribute('viewBox', `0 0 ${c.width} ${c.height}`);
+            paths[0].setAttribute('d', wire(m.r, m.t + m.h / 2, a.l, aiY));
+            paths[1].setAttribute('d', wire(a.r, aiY, p.l, p.t + p.h / 2));
+            paths[2].setAttribute('d', wire(a.r, aiY, k.l, k.t + k.h / 2));
+        };
+        draw();
+        if (window.ResizeObserver) new ResizeObserver(draw).observe(cv);
+        window.addEventListener('resize', draw);
+        window.addEventListener('load', draw);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    });
+
     /* ---------- Fotos i vídeos: sense menú contextual ni arrossegar ---------- */
     const media = (e) => e.target.closest && e.target.closest('img, video');
     document.addEventListener('contextmenu', (e) => { if (media(e)) e.preventDefault(); });
