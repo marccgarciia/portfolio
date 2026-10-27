@@ -207,6 +207,7 @@ Materials gràfics per a esdeveniments i entitats culturals. ⇒ Materiales grá
 Lones ⇒ Lonas ⇒ Banners
 Globus ⇒ Globos ⇒ Balloons
 Figura ⇒ Figura ⇒ Figure
+Maillot ⇒ Maillot ⇒ Jersey
 
 Creador multidisciplinari que fusiona art i tecnologia. ⇒ Creador multidisciplinar que fusiona arte y tecnología. ⇒ Multidisciplinary creator blending art and technology.
 Treballo amb disseny, fotografia, programació i música, buscant la bellesa en la simplicitat i l'autenticitat en cada projecte. ⇒ Trabajo con diseño, fotografía, programación y música, buscando la belleza en la simplicidad y la autenticidad en cada proyecto. ⇒ I work with design, photography, programming and music, seeking beauty in simplicity and authenticity in every project.
@@ -226,6 +227,7 @@ Lones publicitàries ⇒ Lonas publicitarias ⇒ Advertising banners
 Globus aerostàtics ⇒ Globos aerostáticos ⇒ Hot air balloons
 Roll-up corporatiu ⇒ Roll-up corporativo ⇒ Corporate roll-up
 Figura promocional ⇒ Figura promocional ⇒ Promotional figure
+Maillot de ciclisme del Ball de Diables del Prat ⇒ Maillot de ciclismo del Ball de Diables del Prat ⇒ Cycling jersey for Ball de Diables del Prat
 """
 
 # Textos que es queden iguals en les 3 llengües (noms propis, tecnologies, xifres...)
