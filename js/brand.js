@@ -437,4 +437,9 @@
         box.addEventListener('click', (e) => { if (e.target === box || e.target.classList.contains('vbox-x')) closeBox(); });
         window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
     }
+
+    /* ---------- Fotos i vídeos: sense menú contextual ni arrossegar ---------- */
+    const media = (e) => e.target.closest && e.target.closest('img, video');
+    document.addEventListener('contextmenu', (e) => { if (media(e)) e.preventDefault(); });
+    document.addEventListener('dragstart', (e) => { if (media(e)) e.preventDefault(); });
 })();
