@@ -304,15 +304,30 @@
             W = r.width; H = r.height;
             gridCv.width = Math.round(W * dpr); gridCv.height = Math.round(H * dpr);
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            draw();
+            prev = null;
+            draw(true);
         };
-        const draw = () => {
-            ctx.clearRect(0, 0, W, H);
+        let prev = null;
+        const draw = (full) => {
             const cols = Math.ceil(W / GAP) + 1, rows = Math.ceil(H / GAP) + 1;
             const ox = (W % GAP) / 2;
-            for (let i = 0; i < cols; i++) {
+            // Només la zona afectada pel ratolí (la d'ara i la d'abans); la resta no canvia
+            const pad = RADIUS + GAP;
+            let x0 = 0, y0 = 0, x1 = W, y1 = H;
+            if (!full) {
+                x0 = mouse.sx - pad; y0 = mouse.sy - pad; x1 = mouse.sx + pad; y1 = mouse.sy + pad;
+                if (prev) { x0 = Math.min(x0, prev[0]); y0 = Math.min(y0, prev[1]); x1 = Math.max(x1, prev[2]); y1 = Math.max(y1, prev[3]); }
+                x0 = Math.max(0, x0); y0 = Math.max(0, y0); x1 = Math.min(W, x1); y1 = Math.min(H, y1);
+                prev = [mouse.sx - pad, mouse.sy - pad, mouse.sx + pad, mouse.sy + pad];
+                if (x1 <= x0 || y1 <= y0) return;
+            }
+            const i0 = Math.max(0, Math.floor((x0 - ox) / GAP)), i1 = Math.min(cols - 1, Math.ceil((x1 - ox) / GAP));
+            const j0 = Math.max(0, Math.floor((y0 - GAP / 2) / GAP)), j1 = Math.min(rows - 1, Math.ceil((y1 - GAP / 2) / GAP));
+            // S'esborren cel·les senceres perquè cap punt es pinti dues vegades
+            ctx.clearRect(ox + (i0 - 0.5) * GAP, j0 * GAP, (i1 - i0 + 1) * GAP, (j1 - j0 + 1) * GAP);
+            for (let i = i0; i <= i1; i++) {
                 const x = ox + i * GAP;
-                for (let j = 0; j < rows; j++) {
+                for (let j = j0; j <= j1; j++) {
                     const y = j * GAP + GAP / 2;
                     const d = Math.hypot(x - mouse.sx, y - mouse.sy);
                     const f = Math.max(0, 1 - d / RADIUS) * mouse.k;
@@ -374,18 +389,11 @@
         document.body.appendChild(cur);
         document.documentElement.classList.add('has-cursor');
         const LINKS = 'a, button, [role="button"], input, textarea, select, summary, label';
-        let tx = -100, ty = -100, cx = -100, cy = -100, shown = false, raf = 0;
-        const loop = () => {
-            cx += (tx - cx) * (reduce ? 1 : 0.34);
-            cy += (ty - cy) * (reduce ? 1 : 0.34);
-            cur.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0)';
-            raf = (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) ? requestAnimationFrame(loop) : 0;
-        };
+        let shown = false;
         window.addEventListener('pointermove', (e) => {
-            tx = e.clientX; ty = e.clientY;
-            if (!shown) { shown = true; cx = tx; cy = ty; cur.classList.add('on'); }
+            cur.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)';
+            if (!shown) { shown = true; cur.classList.add('on'); }
             cur.classList.toggle('is-link', !!(e.target.closest && e.target.closest(LINKS)));
-            if (!raf) raf = requestAnimationFrame(loop);
         }, { passive: true });
         window.addEventListener('pointerdown', () => cur.classList.add('down'));
         window.addEventListener('pointerup', () => cur.classList.remove('down'));
@@ -437,6 +445,32 @@
         box.addEventListener('click', (e) => { if (e.target === box || e.target.classList.contains('vbox-x')) closeBox(); });
         window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
     }
+
+    /* ---------- Mockup d'automatització: els cables s'ajusten a les caixes reals ---------- */
+    document.querySelectorAll('.auto-canvas').forEach((cv) => {
+        const svg = cv.querySelector('.auto-wires');
+        const paths = svg && svg.querySelectorAll('.flow-path');
+        const q = (c) => cv.querySelector(c);
+        const [msg, ai, resp, crm] = [q('.a-msg'), q('.a-ai'), q('.a-resp'), q('.a-crm')];
+        if (!paths || paths.length < 3 || !msg || !ai || !resp || !crm) return;
+        const draw = () => {
+            const c = cv.getBoundingClientRect();
+            if (!c.width) return;
+            const box = (n) => { const r = n.getBoundingClientRect(); return { l: r.left - c.left, r: r.right - c.left, t: r.top - c.top, h: r.height }; };
+            const m = box(msg), a = box(ai), p = box(resp), k = box(crm);
+            const aiY = a.t + a.h * 0.2;
+            const wire = (x1, y1, x2, y2) => { const mx = (x1 + x2) / 2; return `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`; };
+            svg.setAttribute('viewBox', `0 0 ${c.width} ${c.height}`);
+            paths[0].setAttribute('d', wire(m.r, m.t + m.h / 2, a.l, aiY));
+            paths[1].setAttribute('d', wire(a.r, aiY, p.l, p.t + p.h / 2));
+            paths[2].setAttribute('d', wire(a.r, aiY, k.l, k.t + k.h / 2));
+        };
+        draw();
+        if (window.ResizeObserver) new ResizeObserver(draw).observe(cv);
+        window.addEventListener('resize', draw);
+        window.addEventListener('load', draw);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+    });
 
     /* ---------- Fotos i vídeos: sense menú contextual ni arrossegar ---------- */
     const media = (e) => e.target.closest && e.target.closest('img, video');
