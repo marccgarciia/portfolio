@@ -894,10 +894,10 @@
             const stage = canvas.closest('.globe-stage');
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let phi = 0, theta = 0.25, dragging = false, lastX = 0, lastY = 0;
-            const dpr = Math.min(2, window.devicePixelRatio || 1);
+            const dpr = Math.min(1.5, window.devicePixelRatio || 1);
             const size = () => Math.max(1, Math.round(canvas.getBoundingClientRect().width));
             const w0 = size();
-            createGlobe(canvas, {
+            const globe = createGlobe(canvas, {
                 devicePixelRatio: dpr,
                 width: w0 * dpr, height: w0 * dpr,
                 phi: 0, theta: 0.25,
@@ -920,6 +920,10 @@
                     state.width = s; state.height = s;
                 }
             });
+            // Sense renderitzar quan el globus no és a la pantalla
+            if (globe && globe.toggle && 'IntersectionObserver' in window) {
+                new IntersectionObserver((en) => { globe.toggle(en[0].isIntersecting); }).observe(canvas);
+            }
             canvas.style.cursor = 'grab';
             canvas.addEventListener('pointerdown', (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; canvas.style.cursor = 'grabbing'; });
             window.addEventListener('pointermove', (e) => {

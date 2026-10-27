@@ -872,11 +872,11 @@ body.brand::-webkit-scrollbar { width: 0; height: 0; display: none; }
    CURSOR PERSONALITZAT
    ============================================================ */
 html.has-cursor, html.has-cursor * { cursor: none !important; }
-.cursor { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; mix-blend-mode: difference; opacity: 0; transition: opacity 0.25s ease; will-change: transform; }
+.cursor { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: opacity 0.25s ease; will-change: transform; }
 .cursor.on { opacity: 1; }
 .cursor-in {
     display: block; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%;
-    background: #fff; box-shadow: inset 0 0 0 0 #fff;
+    background: #fff; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45), inset 0 0 0 0 #fff;
     transition: width 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), height 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
         margin 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), background 0.28s ease, box-shadow 0.28s ease, transform 0.2s ease;
 }
