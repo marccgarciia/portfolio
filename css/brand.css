@@ -24,6 +24,7 @@
 }
 
 * { box-sizing: border-box; }
+img, video { -webkit-user-drag: none; -webkit-touch-callout: none; }
 
 body.brand {
     margin: 0;
