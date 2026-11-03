@@ -407,7 +407,7 @@ def head(lang):
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{url}">
-    <meta property="og:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="og:title" content="Marc García-Cuevas · Portfolio">
     <meta property="og:description" content="{od}">
     <meta property="og:image" content="{SITE}/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -418,7 +418,7 @@ def head(lang):
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{url}">
-    <meta property="twitter:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="twitter:title" content="Marc García-Cuevas · Portfolio">
     <meta property="twitter:description" content="{od}">
     <meta property="twitter:image" content="{SITE}/media/og-image.jpg">
 
