@@ -166,7 +166,7 @@ Web corporativa per a una consultoria especialitzada en persones, estratègia i 
 Web cultural ⇒ Web cultural ⇒ Cultural website
 Renovació integral del web de l'entitat cultural, amb un disseny actual, una experiència d'usuari millorada i una identitat visual coherent amb el Ball. ⇒ Renovación integral de la web de la entidad cultural, con un diseño actual, una experiencia de usuario mejorada y una identidad visual coherente con el Ball. ⇒ Complete overhaul of the cultural organisation's website, with a modern design, an improved user experience and a visual identity consistent with the Ball.
 Web landing ⇒ Web landing ⇒ Landing page
-Pàgina de presentació de l'aplicació de finances personals, amb informació sobre les funcionalitats, els plans de subscripció i les opcions per captar usuaris. ⇒ Página de presentación de la aplicación de finanzas personales, con información sobre las funcionalidades, los planes de suscripción y las opciones para captar usuarios. ⇒ Presentation page for the personal finance app, with information on its features, subscription plans and options to attract users.
+Lloc web de presentació de Finances, una aplicació de finances personals per a iPhone. Explica la seva proposta de valor i el seu enfocament en la privacitat de l'usuari. ⇒ Sitio web de presentación de Finances, una aplicación de finanzas personales para iPhone. Explica su propuesta de valor y su enfoque en la privacidad del usuario. ⇒ Presentation website for Finances, a personal finance app for iPhone. It explains the app's value proposition and its focus on user privacy.
 
 Gestió i creixement ⇒ Gestión y crecimiento ⇒ Management and growth
 Estratègia de contingut i gestió de comunitat ⇒ Estrategia de contenido y gestión de comunidad ⇒ Content strategy and community management
@@ -407,7 +407,7 @@ def head(lang):
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{url}">
-    <meta property="og:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="og:title" content="Marc García-Cuevas · Portfolio">
     <meta property="og:description" content="{od}">
     <meta property="og:image" content="{SITE}/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -418,7 +418,7 @@ def head(lang):
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{url}">
-    <meta property="twitter:title" content="Marc García-Cuevas — Portfolio">
+    <meta property="twitter:title" content="Marc García-Cuevas · Portfolio">
     <meta property="twitter:description" content="{od}">
     <meta property="twitter:image" content="{SITE}/media/og-image.jpg">
 
